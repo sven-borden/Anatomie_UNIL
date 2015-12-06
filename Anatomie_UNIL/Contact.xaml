@@ -5,9 +5,57 @@
     xmlns:local="using:Anatomie_UNIL"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    Background="#FF0294CA">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid x:Name="Grid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF0294CA">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock 
+            Text="Contact"
+            Grid.Row="0"
+            FontFamily="Monserrat"
+            FontSize="40"
+            Foreground="WhiteSmoke"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Margin="10"
+            />
+        <TextBox
+            x:Name="NameBox"
+            Grid.Row="1"
+            PlaceholderText="Entrez votre nom"
+            Margin="10"
+            Foreground="WhiteSmoke"
+            />
+        <TextBox
+            x:Name="TextBox"
+            Grid.Row="2"
+            PlaceholderText="Erreurs ou suggestions"
+            Margin="10"
+            Foreground="WhiteSmoke"
+            />
+        <Button
+            Grid.Row="3"
+            Content="Annuler"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Margin="10"
+            Foreground="WhiteSmoke"
+            Click="Button_Click"
+            />
+        <Button
+            Grid.Row="3"
+            Content="Envoyer"
+            HorizontalAlignment="right"
+            VerticalAlignment="Center"
+            Margin="10"
+            Foreground="WhiteSmoke"
+            Click="Button_Click_1"
+            />
 
     </Grid>
 </Page>
