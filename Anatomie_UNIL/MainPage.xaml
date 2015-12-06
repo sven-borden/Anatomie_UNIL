@@ -1,0 +1,168 @@
+﻿<Page
+    x:Class="Anatomie_UNIL.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Anatomie_UNIL"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#FF0294CA">
+
+    <Grid x:Name="Grid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF0294CA">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Button
+            Grid.Row="0"
+            x:Name="buttonSetting"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="buttonSetting_Click"
+            Background="Transparent"
+            Margin="5">
+            <Image
+                Source="Assets/réglage.png"
+                Height="40"/>
+        </Button>
+
+        <Button
+            Grid.Row="0"
+            x:Name="buttonAsk"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Click="buttonAsk_Click"
+            Background="Transparent"
+            Margin="5">
+            <Image
+                Source="Assets/QuestionMark.png"
+                Height="35"/>
+        </Button>
+
+        <Image
+            Grid.Row="0"
+            x:Name="imageTitle"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Top"
+            Height="195"
+            Margin="12,0,0,0"
+            Source="Assets/Fond.png"
+            />
+        
+        <Button 
+            Grid.Row="1"
+            x:Name="buttonMembSup"
+            FontFamily="Monserrat"
+            FontSize="15"
+            Content="Membre supérieur"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Top"
+            Margin="10,2,10,0"
+            Height="81"
+            BorderThickness="0"
+            Click="buttonMembSup_Click"
+            Background="#4C002CDE"
+            IsEnabled="True"
+            Foreground="WhiteSmoke"
+            />
+        <Button 
+            Grid.Row="2"
+            x:Name="buttonMembInf"
+            FontFamily="Monserrat"
+            FontSize="15"
+            Content="Membre inférieur"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Top"
+            Margin="10,2,10,0"
+            Height="81"
+            BorderThickness="0"
+            Click="buttonMembInf_Click"
+            Background="#4C002CDE"
+            IsEnabled="True"
+            Foreground="WhiteSmoke"
+            />
+        <Button 
+            Grid.Row="3"
+            x:Name="buttonTronc"
+            FontFamily="Monserrat"
+            FontSize="15"
+            Content="Tronc"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Top"
+            Margin="10,2,10,0"
+            Height="81"
+            BorderThickness="0"
+            Click="buttonTronc_Click"
+            Background="#4C002CDE"
+            IsEnabled="True"
+            Foreground="WhiteSmoke"
+            />
+        <Button 
+            Grid.Row="4"
+            x:Name="buttonTout"
+            FontFamily="Monserrat"
+            FontSize="15"
+            Content="Membre supérieur"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Top"
+            Margin="10,2,10,0"
+            Height="81"
+            BorderThickness="0"
+            Click="buttonTout_Click"
+            Background="#4C002CDE"
+            IsEnabled="False"
+            Foreground="WhiteSmoke"
+            />
+        
+        <CheckBox
+            Grid.Row="5"
+            x:Name="checkBoxInsertion"
+            Content="Insertion"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="10,0,0,0"
+            Checked="checkBoxInsertion_Checked"
+            Unchecked="checkBoxInsertion_Unchecked"
+            IsEnabled="True"
+            />
+        <CheckBox
+            Grid.Row="5"
+            x:Name="checkBoxTerminaison"
+            Content="Terminaison"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Margin="10,0,0,0" 
+            Checked="checkBoxTerminaison_Checked"
+            Unchecked="checkBoxTerminaison_Unchecked"
+            IsEnabled="True"
+            />
+        <CheckBox
+            Grid.Row="6"
+            x:Name="checkBoxInnervation"
+            Content="Innervation"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="10,0,0,0"
+            Checked="checkBoxInnervation_Checked"
+            Unchecked="checkBoxInnervation_Unchecked"
+            IsEnabled="True"
+            />
+        <CheckBox
+            Grid.Row="6"
+            x:Name="checkBoxMouvement"
+            Content="Mouvement"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Margin="10,0,0,0"
+            Checked="checkBoxMouvement_Checked"
+            Unchecked="checkBoxMouvement_Unchecked"
+            IsEnabled="False"
+            />
+    </Grid>
+</Page>
