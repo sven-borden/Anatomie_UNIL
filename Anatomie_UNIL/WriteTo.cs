@@ -74,6 +74,23 @@ namespace Anatomie_UNIL
             set { mouvementChecked = value; WriteSettings(); }
         }
 
+        public void ResetSettings()
+        {
+            localSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
+            compositeResults = new Windows.Storage.ApplicationDataCompositeValue();
+            compositeResults["QuestionToDo"] = 20;
+            compositeResults["totalQuestionDone"] = 0;
+            compositeResults["totalQuestionRight"] = 0;
+            compositeResults["totalQuestionFalse"] = 0;
+            compositeResults["displayResult"] = true;
+            compositeResults["isInsertion"] = true;
+            compositeResults["isTerminaison"] = true;
+            compositeResults["isInnervation"] = false;
+            compositeResults["isMouvement"] = false;
+
+            localSettings.Values["Results"] = compositeResults;
+        }
+
         public void ReadSettings()
         {
             localSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;

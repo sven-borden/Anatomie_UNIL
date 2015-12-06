@@ -20,31 +20,11 @@ namespace Anatomie_UNIL
     /// <summary>
     /// Une page vide peut être utilisée seule ou constituer une page de destination au sein d'un frame.
     /// </summary>
-    public sealed partial class Tronc : Page
+    public sealed partial class Resultats : Page
     {
-        public Tronc()
+        public Resultats()
         {
             this.InitializeComponent();
-        }
-
-        private void buttonQ1_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void buttonQ2_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void buttonQ3_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void buttonQ4_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

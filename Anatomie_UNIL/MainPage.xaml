@@ -26,7 +26,8 @@
             VerticalAlignment="Top"
             Click="buttonSetting_Click"
             Background="Transparent"
-            Margin="5">
+            Margin="5"
+            >
             <Image
                 Source="Assets/réglage.png"
                 Height="40"/>

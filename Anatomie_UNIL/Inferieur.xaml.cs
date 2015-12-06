@@ -43,6 +43,7 @@ namespace Anatomie_UNIL
         private bool alreadyError = false;
 
         private WriteTo settings;
+        private Partie listesPartie;
 
         public Inferieur()
         {
@@ -51,10 +52,11 @@ namespace Anatomie_UNIL
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
 
             settings = new WriteTo();
+            listesPartie = new Partie();
 
             lightColor = buttonQ1.Background;
 
-            progressbar.Maximum = settings.nbQuestionDone;
+            progressbar.Maximum = settings.nbQuestionToDo;
             textProgress.Text = "0/" + progressbar.Maximum.ToString();
 
             timer = new DispatcherTimer();
@@ -250,73 +252,94 @@ namespace Anatomie_UNIL
         #endregion GenBas
 
         #region buttonClick
-        private void ButtonQ1_Click(object sender, RoutedEventArgs e)
+        private void buttonQ1_Click(object sender, RoutedEventArgs e)
         {
             if (fourAnswer[0] == reponse)
             {
                 buttonQ1.Background = green;
                 rightAnswer = true;
-                GoodAnswer();
+                GoodAnswer(1);
             }
             else
             {
                 buttonQ1.Background = red;
                 if (rightAnswer == false)
-                    BadAnswer();
+                    BadAnswer(1);
             }
         }
 
-        private void ButtonQ2_Click(object sender, RoutedEventArgs e)
+        private void buttonQ2_Click(object sender, RoutedEventArgs e)
         {
             if (fourAnswer[1] == reponse)
             {
                 buttonQ2.Background = green;
                 rightAnswer = true;
-                GoodAnswer();
+                GoodAnswer(2);
             }
             else
             {
                 buttonQ2.Background = red;
                 if (rightAnswer == false)
-                    BadAnswer();
+                    BadAnswer(2);
             }
         }
 
-        private void ButtonQ3_Click(object sender, RoutedEventArgs e)
+        private void buttonQ3_Click(object sender, RoutedEventArgs e)
         {
             if (fourAnswer[2] == reponse.ToString())
             {
                 buttonQ3.Background = green;
                 rightAnswer = true;
-                GoodAnswer();
+                GoodAnswer(3);
             }
             else
             {
                 buttonQ3.Background = red;
                 if (rightAnswer == false)
-                    BadAnswer();
+                    BadAnswer(3);
             }
         }
 
-        private void ButtonQ4_Click(object sender, RoutedEventArgs e)
+        private void buttonQ4_Click(object sender, RoutedEventArgs e)
         {
+
             if (fourAnswer[3] == reponse.ToString())
             {
                 buttonQ4.Background = green;
                 rightAnswer = true;
-                GoodAnswer();
+                GoodAnswer(4);
             }
             else
             {
                 buttonQ4.Background = red;
                 if (rightAnswer == false)
-                    BadAnswer();
+                    BadAnswer(4);
             }
         }
 
-        private void GoodAnswer()
+        private void GoodAnswer(int buttonNb)
         {
-            if (alreadyError == false) { nbJuste++; }
+            if (alreadyError == false)
+            {
+                nbJuste++;
+                settings.nbQuestionDone++;
+                settings.nbQuestionRight++;
+                switch (buttonNb)
+                {
+                    case 1:
+                        listesPartie.addListHisAnswer = buttonQ1.Content.ToString();
+                        break;
+                    case 2:
+                        listesPartie.addListHisAnswer = buttonQ2.Content.ToString();
+                        break;
+                    case 3:
+                        listesPartie.addListHisAnswer = buttonQ3.Content.ToString();
+                        break;
+                    case 4:
+                        listesPartie.addListHisAnswer = buttonQ4.Content.ToString();
+                        break;
+                }
+            }
             Juste.Text = "Corrects :" + nbJuste;
             AttributionNote();
 
@@ -325,16 +348,38 @@ namespace Anatomie_UNIL
             textProgress.Text = nbQuestion.ToString() + "/" + progressbar.Maximum.ToString();
 
             if (nbQuestion == settings.nbQuestionToDo)
-                ;
-            timer.Interval = new TimeSpan(0);
+                Frame.Navigate(typeof(Resultats));//, listespartie));
+            timer.Interval = new TimeSpan(0,0,1);
             timer.Start();
         }
 
-        private void BadAnswer()
+        private void BadAnswer(int buttonNb)
         {
-            if (alreadyError == false) { nbFaux++; alreadyError = true; }
+            if (alreadyError == false)
+            {
+                nbFaux++;
+                alreadyError = true;
+                settings.nbQuestionDone++;
+                settings.nbQuestionFalse++;
+                switch (buttonNb)
+                {
+                    case 1:
+                        listesPartie.addListHisAnswer = buttonQ1.Content.ToString();
+                        break;
+                    case 2:
+                        listesPartie.addListHisAnswer = buttonQ2.Content.ToString();
+                        break;
+                    case 3:
+                        listesPartie.addListHisAnswer = buttonQ3.Content.ToString();
+                        break;
+                    case 4:
+                        listesPartie.addListHisAnswer = buttonQ4.Content.ToString();
+                        break;
+                }
+            }
             Faux.Text = "Fautes : " + nbFaux;
         }
+
 
         private void AttributionNote()
         {
@@ -364,7 +409,8 @@ namespace Anatomie_UNIL
                 }
             }
         }
-        #endregion buttonClick
+#endregion
+
         private void SetQuestion(string q1, string q2, string q3, string q4)
         {
             buttonQ1.Content = new TextBlock
@@ -401,11 +447,14 @@ namespace Anatomie_UNIL
         private void SetTypeOfQuestion(int type, string muscle)
         {
             if (type == 1)//origine
-                textQuestion.Text = "Quelle est l'origine du " + muscle + "?";
+                listesPartie.addListQuestions = "Quelle est l'origine du " + muscle + "?";
             if (type == 2)//Insertion
-                textQuestion.Text = "Quelle est la terminaison du " + muscle + "?";
+                listesPartie.addListQuestions = "Quelle est la terminaison du " + muscle + "?";
             if (type == 3)//innervation
-                textQuestion.Text = "Quelle est l'innervation du " + muscle + "?";
+                listesPartie.addListQuestions = "Quelle est l'innervation du " + muscle + "?";
+
+            int last = listesPartie.getListQuestions.Count;
+            textQuestion.Text = listesPartie.getListQuestions[last - 1];
         }
 
         private string[] MixArray(string[] input)
