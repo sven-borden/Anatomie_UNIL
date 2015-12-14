@@ -104,6 +104,7 @@
     <Compile Include="Ask.xaml.cs">
       <DependentUpon>Ask.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Question.cs" />
     <Compile Include="Contact.xaml.cs">
       <DependentUpon>Contact.xaml</DependentUpon>
     </Compile>

@@ -30,19 +30,11 @@ namespace Anatomie_UNIL
             statFaux.Text = "Total de questions fausses : " + setting.nbQuestionFalse.ToString();
             pourcentage.Text = "Pourcentage : ";
             if (setting.nbQuestionDone == 0)
-                pourcentage.Text += "*Répond d'abord à une question";
+                pourcentage.Text += "Répond d'abord à une question";
             else
             {
-                if (setting.nbQuestionFalse == 0)
-                {
-                    pourcentage.Text += "100%";
-                }
-                else
-                {
-                    if (setting.nbQuestionRight == 0)
-                        pourcentage.Text += "0%";
-                    else pourcentage.Text += setting.nbQuestionRight /setting.nbQuestionDone + "%";
-                }
+                double val = setting.nbQuestionRight*100 / setting.nbQuestionDone;
+                pourcentage.Text += val.ToString() + "%";
             }
 
         }
@@ -54,7 +46,10 @@ namespace Anatomie_UNIL
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            //reset
+            setting.nbQuestionDone = 0;
+            setting.nbQuestionRight = 0;
+            setting.nbQuestionFalse = 0;
         }
 
         private void Inferieur_BackRequested(object sender, BackRequestedEventArgs e)

@@ -31,7 +31,11 @@
             Margin="10"
             Foreground="WhiteSmoke"
             />
+        
         <TextBox
+            AcceptsReturn="True"
+            TextWrapping="Wrap"
+            ScrollViewer.VerticalScrollBarVisibility="Auto"
             x:Name="TextBox"
             Grid.Row="2"
             PlaceholderText="Erreurs ou suggestions"

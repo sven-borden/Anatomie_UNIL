@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.Email;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Core;
@@ -30,14 +31,23 @@ namespace Anatomie_UNIL
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)//ANNULER
         {
-
+            Frame.Navigate(typeof(MainPage));
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e)//ENVOYER
         {
+            EmailMessage mail = new EmailMessage();
+            mail.To.Add(new EmailRecipient("glaglasven@live.com"));
+            mail.Body = TextBox.Text;
+            mail.Subject = "[UNIL-Anatomie] Message de : " + NameBox.Text;
+            Send(mail);
+        }
 
+        private async void Send(EmailMessage mail)
+        {
+            await EmailManager.ShowComposeNewEmailAsync(mail);
         }
 
         private void Inferieur_BackRequested(object sender, BackRequestedEventArgs e)

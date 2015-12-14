@@ -101,7 +101,7 @@
             BorderThickness="0"
             Click="buttonTronc_Click"
             Background="#4C002CDE"
-            IsEnabled="True"
+            IsEnabled="false"
             Foreground="WhiteSmoke"
             />
         <Button 
