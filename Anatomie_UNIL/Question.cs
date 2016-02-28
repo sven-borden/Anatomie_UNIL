@@ -210,46 +210,603 @@ namespace Anatomie_UNIL
         #endregion
 
         private string[] questions;
-        private int questionType = 0;
+        private int _membre = 1;
         Random rand;
         WriteTo settings;
 
-        public Question()
+        public Question(int membre)
         {
+            _membre = membre;
             rand = new Random();
             settings = new WriteTo();
-            questions = new string[4];
+            questions = new string[5];
         }
 
-        public string[] getQuestion(int membre, List<string> listeQuestion)
+        //return question[5] containing the question and the 4 possible answer, the position 1 is reserved for the right answer
+        //ENTRY POINT
+        public string[] getQuestion(List<string> listeQuestion)
         {
-            switch(membre)
+            switch(_membre)
             {
-                case 1: questions[0] = SetQuestion(SetQuestionType(), listeQuestion, "Sup");
-                    break;
-                case 2: questions[0] = SetQuestion(SetQuestionType(), listeQuestion, "Inf");
-                    break;
-                case 3: questions[0] = SetQuestion(SetQuestionType(), listeQuestion, "Trc");
-                    break;
-                case 4: questions[0] = SetQuestion(SetQuestionType(), listeQuestion, "Tt");
-                    break;
+                case 1: return SetQuestion(SetQuestionType(), listeQuestion);
+                case 2: return SetQuestion(SetQuestionType(), listeQuestion);
+                case 3: return SetQuestion(SetQuestionType(), listeQuestion);
+                case 4: return CaseAll(listeQuestion);
             }
 
             return questions;
         }
 
-        private string SetQuestion(int questionType, List<string> liste, string membre)
+        private string[] SetQuestion(int questionType, List<string> liste)
         {
-            for(int i = 0; i < 10; i ++)
-            {
-                GenQueston(questionType);
-            }
-            return "1";
+            string[] question = new string[5];
+
+            question = GenQuestion(questionType, liste);
+            return question;
         }
 
-        private int GenQuestion(int questionType)
+        private string[] GenQuestion(int questionType, List<string> liste)
         {
-            return 
+            switch(_membre)
+            {
+                case 1: return GenQuestionSup(questionType, liste);
+                case 2: return GenQuestionInf(questionType, liste);
+                case 3: return GenQuestionTrc(questionType, liste);
+                default: return GenQuestionSup(questionType, liste);
+            }
+        }
+        
+        private string[] GenQuestionSup(int type, List<string> liste)
+        {
+            
+            switch (Random(1, 6))
+            {
+                case 1: return GenEpauleAnt(type, liste);
+                case 2: return GenEpaulePost(type, liste);
+                case 3: return GenBras(type, liste);
+                case 4: return GenAvantBrasAnt(type, liste);
+                case 5: return GenAvantBrasPost(type, liste);
+                case 6: return GenMain(type, liste);
+                default: return GenEpauleAnt(type, liste);
+            }
+        }
+
+
+        #region genSup
+        private string[] GenEpauleAnt(int type, List<string> liste)
+        {
+            
+            int length = 5;
+            int answerNb = Random(0, length - 1);
+            string[] question = new string[5];
+            for (int i = 0; i < 10; i++)
+            {
+                question[0] = RequireQuestion(type, epauleAnterieur[answerNb, 0]);
+                if (liste.Contains(question[0]) == false)
+                    break;
+            }
+
+            question[1] = epauleAnterieur[answerNb, type];
+
+            for(int i = 0; i < 10; i++)
+            {
+                question[2] = epauleAnterieur[Random(0, length - 1), type];
+                if (question[2] != question[1])
+                    break;
+            }
+
+            for(int i = 0; i < 10; i++)
+            {
+                question[3] = epauleAnterieur[Random(0, length - 1), type];
+                if (question[3] != question[2] && question[3] != question[1])
+                    break;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[4] = epauleAnterieur[Random(0, length - 1), type];
+                if (question[4] != question[3] &&question[4] != question[2] && question[4] != question[1])
+                    break;
+            }
+
+            return question;
+        }
+
+        private string[] GenEpaulePost(int type, List<string> liste)
+        {
+            
+            int length = 11;
+            int answerNb = Random(0, length - 1);
+            string[] question = new string[5];
+            for (int i = 0; i < 10; i++)
+            {
+                question[0] = RequireQuestion(type, epaulePosterieur[answerNb, 0]);
+                if (liste.Contains(question[0]) == false)
+                    break;
+            }
+
+            question[1] = epaulePosterieur[answerNb, type];
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[2] = epaulePosterieur[Random(0, length - 1), type];
+                if (question[2] != question[1])
+                    break;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[3] = epaulePosterieur[Random(0, length - 1), type];
+                if (question[3] != question[2] && question[3] != question[1])
+                    break;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[4] = epaulePosterieur[Random(0, length - 1), type];
+                if (question[4] != question[3] && question[4] != question[2] && question[4] != question[1])
+                    break;
+            }
+
+            return question;
+        }
+
+        private string[] GenBras(int type, List<string> liste)
+        {
+            
+            int length = 8;
+            int answerNb = Random(0, length - 1);
+            string[] question = new string[5];
+            for (int i = 0; i < 10; i++)
+            {
+                question[0] = RequireQuestion(type, bras[answerNb, 0]);
+                if (liste.Contains(question[0]) == false)
+                    break;
+            }
+
+            question[1] = bras[answerNb, type];
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[2] = bras[Random(0, length - 1), type];
+                if (question[2] != question[1])
+                    break;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[3] = bras[Random(0, length - 1), type];
+                if (question[3] != question[2] && question[3] != question[1])
+                    break;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[4] = bras[Random(0, length - 1), type];
+                if (question[4] != question[3] && question[4] != question[2] && question[4] != question[1])
+                    break;
+            }
+
+            return question;
+        }
+
+        private string[] GenAvantBrasAnt(int type, List<string> liste)
+        {
+            
+            int length = 8;
+            int answerNb = Random(0, length - 1);
+            string[] question = new string[5];
+            for (int i = 0; i < 10; i++)
+            {
+                question[0] = RequireQuestion(type, avantBrasAntérieur[answerNb, 0]);
+                if (liste.Contains(question[0]) == false)
+                    break;
+            }
+
+            question[1] = avantBrasAntérieur[answerNb, type];
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[2] = avantBrasAntérieur[Random(0, length - 1), type];
+                if (question[2] != question[1])
+                    break;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[3] = avantBrasAntérieur[Random(0, length - 1), type];
+                if (question[3] != question[2] && question[3] != question[1])
+                    break;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[4] = avantBrasAntérieur[Random(0, length - 1), type];
+                if (question[4] != question[3] && question[4] != question[2] && question[4] != question[1])
+                    break;
+            }
+
+            return question;
+        }
+
+        private string[] GenAvantBrasPost(int type, List<string> liste)
+        {
+            
+            int length = 8;
+            int answerNb = Random(0, length - 1);
+            string[] question = new string[5];
+            for (int i = 0; i < 10; i++)
+            {
+                question[0] = RequireQuestion(type, avantBrasPostérieur[answerNb, 0]);
+                if (liste.Contains(question[0]) == false)
+                    break;
+            }
+
+            question[1] = avantBrasPostérieur[answerNb, type];
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[2] = avantBrasPostérieur[Random(0, length - 1), type];
+                if (question[2] != question[1])
+                    break;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[3] = avantBrasPostérieur[Random(0, length - 1), type];
+                if (question[3] != question[2] && question[3] != question[1])
+                    break;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[4] = avantBrasPostérieur[Random(0, length - 1), type];
+                if (question[4] != question[3] && question[4] != question[2] && question[4] != question[1])
+                    break;
+            }
+
+            return question;
+        }
+
+        private string[] GenMain(int type, List<string> liste)
+        {
+            
+            int length = 8;
+            int answerNb = Random(0, length - 1);
+            string[] question = new string[5];
+            for (int i = 0; i < 10; i++)
+            {
+                question[0] = RequireQuestion(type, main[answerNb, 0]);
+                if (liste.Contains(question[0]) == false)
+                    break;
+            }
+
+            question[1] = main[answerNb, type];
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[2] = main[Random(0, length - 1), type];
+                if (question[2] != question[1])
+                    break;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[3] = main[Random(0, length - 1), type];
+                if (question[3] != question[2] && question[3] != question[1])
+                    break;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[4] = main[Random(0, length - 1), type];
+                if (question[4] != question[3] && question[4] != question[2] && question[4] != question[1])
+                    break;
+            }
+
+            return question;
+        }
+        #endregion
+
+        private string[] GenQuestionInf(int type, List<string> liste)
+        {
+            switch(Random(1, 4))
+            {
+                case 1: return GenHanche(type, liste);
+                case 2: return GenCuisse(type, liste);
+                case 3: return GenJambe(type, liste);
+                case 4: return GenPied(type, liste);
+                default: return GenHanche(type, liste);
+            }
+        }
+
+        #region genInf
+        private string[] GenHanche(int type, List<string> liste)
+        {
+            int length = 13;
+            int answerNb = Random(0, length - 1);
+            string[] question = new string[5];
+            for (int i = 0; i < 10; i++)
+            {
+                question[0] = RequireQuestion(type, hanche[answerNb, 0]);
+                if (liste.Contains(question[0]) == false)
+                    break;
+            }
+
+            question[1] = hanche[answerNb, type];
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[2] = hanche[Random(0, length - 1), type];
+                if (question[2] != question[1])
+                    break;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[3] = hanche[Random(0, length - 1), type];
+                if (question[3] != question[2] && question[3] != question[1])
+                    break;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[4] = hanche[Random(0, length - 1), type];
+                if (question[4] != question[3] && question[4] != question[2] && question[4] != question[1])
+                    break;
+            }
+
+            return question;
+        }
+        private string[] GenCuisse(int type, List<string> liste)
+        {
+            int length = 16;
+            int answerNb = Random(0, length - 1);
+            string[] question = new string[5];
+            for (int i = 0; i < 10; i++)
+            {
+                question[0] = RequireQuestion(type, cuisse[answerNb, 0]);
+                if (liste.Contains(question[0]) == false)
+                    break;
+            }
+
+            question[1] = cuisse[answerNb, type];
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[2] = cuisse[Random(0, length - 1), type];
+                if (question[2] != question[1])
+                    break;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[3] = cuisse[Random(0, length - 1), type];
+                if (question[3] != question[2] && question[3] != question[1])
+                    break;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[4] = cuisse[Random(0, length - 1), type];
+                if (question[4] != question[3] && question[4] != question[2] && question[4] != question[1])
+                    break;
+            }
+
+            return question;
+        }
+
+        private string[] GenJambe(int type, List<string> liste)
+        {
+            int length = 14;
+            int answerNb = Random(0, length - 1);
+            string[] question = new string[5];
+            for (int i = 0; i < 10; i++)
+            {
+                question[0] = RequireQuestion(type, jambe[answerNb, 0]);
+                if (liste.Contains(question[0]) == false)
+                    break;
+            }
+
+            question[1] = jambe[answerNb, type];
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[2] = jambe[Random(0, length - 1), type];
+                if (question[2] != question[1])
+                    break;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[3] = jambe[Random(0, length - 1), type];
+                if (question[3] != question[2] && question[3] != question[1])
+                    break;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[4] = jambe[Random(0, length - 1), type];
+                if (question[4] != question[3] && question[4] != question[2] && question[4] != question[1])
+                    break;
+            }
+
+            return question;
+        }
+
+        private string[] GenPied(int type, List<string> liste)
+        {
+            int length = 14;
+            int answerNb = Random(0, length - 1);
+            string[] question = new string[5];
+            for (int i = 0; i < 10; i++)
+            {
+                question[0] = RequireQuestion(type, pied[answerNb, 0]);
+                if (liste.Contains(question[0]) == false)
+                    break;
+            }
+
+            question[1] = pied[answerNb, type];
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[2] = pied[Random(0, length - 1), type];
+                if (question[2] != question[1])
+                    break;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[3] = pied[Random(0, length - 1), type];
+                if (question[3] != question[2] && question[3] != question[1])
+                    break;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[4] = pied[Random(0, length - 1), type];
+                if (question[4] != question[3] && question[4] != question[2] && question[4] != question[1])
+                    break;
+            }
+
+            return question;
+        }
+        #endregion
+
+        private string[] GenQuestionTrc(int type, List<string> liste)
+        {
+            switch(Random(1, 3))
+            {
+                case 1: return GenNuque(type, liste);
+                case 2: return GenDos(type, liste);
+                case 3: return GenThorax(type, liste);
+                default: return GenNuque(type, liste);
+            }
+        }
+
+        #region genTrc
+        private string[] GenNuque(int type, List<string> liste)
+        {
+            int length = 10;
+            int answerNb = Random(0, length - 1);
+            string[] question = new string[5];
+            for (int i = 0; i < 10; i++)
+            {
+                question[0] = RequireQuestion(type, nuqueEtCou[answerNb, 0]);
+                if (liste.Contains(question[0]) == false)
+                    break;
+            }
+
+            question[1] = nuqueEtCou[answerNb, type];
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[2] = nuqueEtCou[Random(0, length - 1), type];
+                if (question[2] != question[1])
+                    break;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[3] = nuqueEtCou[Random(0, length - 1), type];
+                if (question[3] != question[2] && question[3] != question[1])
+                    break;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[4] = nuqueEtCou[Random(0, length - 1), type];
+                if (question[4] != question[3] && question[4] != question[2] && question[4] != question[1])
+                    break;
+            }
+
+            return question;
+        }
+
+        private string[] GenDos(int type, List<string> liste)
+        {
+            int length = 19;
+            int answerNb = Random(0, length - 1);
+            string[] question = new string[5];
+            for (int i = 0; i < 10; i++)
+            {
+                question[0] = RequireQuestion(type, dos[answerNb, 0]);
+                if (liste.Contains(question[0]) == false)
+                    break;
+            }
+
+            question[1] = dos[answerNb, type];
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[2] = dos[Random(0, length - 1), type];
+                if (question[2] != question[1])
+                    break;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[3] = dos[Random(0, length - 1), type];
+                if (question[3] != question[2] && question[3] != question[1])
+                    break;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[4] = dos[Random(0, length - 1), type];
+                if (question[4] != question[3] && question[4] != question[2] && question[4] != question[1])
+                    break;
+            }
+
+            return question;
+        }
+
+        private string[] GenThorax(int type, List<string> liste)
+        {
+            int length = 9;
+            int answerNb = Random(0, length - 1);
+            string[] question = new string[5];
+            for (int i = 0; i < 10; i++)
+            {
+                question[0] = RequireQuestion(type, thoraxEtAbdomen[answerNb, 0]);
+                if (liste.Contains(question[0]) == false)
+                    break;
+            }
+
+            question[1] = thoraxEtAbdomen[answerNb, type];
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[2] = thoraxEtAbdomen[Random(0, length - 1), type];
+                if (question[2] != question[1])
+                    break;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[3] = thoraxEtAbdomen[Random(0, length - 1), type];
+                if (question[3] != question[2] && question[3] != question[1])
+                    break;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                question[4] = thoraxEtAbdomen[Random(0, length - 1), type];
+                if (question[4] != question[3] && question[4] != question[2] && question[4] != question[1])
+                    break;
+            }
+
+            return question;
+        }
+        #endregion
+
+        private string[] CaseAll(List<string> liste)
+        {
+            string[] tmp = new string[5];
+            _membre = Random(1, 3);
+            tmp = getQuestion(liste);
+            _membre = 4;
+            return tmp;
         }
         
         private int SetQuestionType()
@@ -270,11 +827,19 @@ namespace Anatomie_UNIL
             return type;
         }
 
-        private int Random(int borneInf, int borneSup)
+        private string RequireQuestion(int type, string muscle)
         {
-            rand = new System.Random(((int)DateTime.Now.Ticks & 0x0000FFFF));
-            return rand.Next(borneInf, borneSup + 1);
+            if (type == 1)//origine
+                return "Quelle est l'origine du " + muscle + "?";
+            if (type == 2)//Insertion
+                return "Quelle est la terminaison du " + muscle + "?";
+            if (type == 3)//innervation
+                return "Quelle est l'innervation du " + muscle + "?";
+            else
+                return "Quelle est l'origine du " + muscle + "?";
         }
+
+        private int Random(int borneInf, int borneSup) { return rand.Next(borneInf, borneSup + 1); }
 
     }
 }

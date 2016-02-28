@@ -27,9 +27,10 @@
             Margin="10"
             />
 
-            <TextBlock
-            x:Name="Note"
-            Text="4"
+        <TextBlock
+            x:Name="note"
+            Text="N/A"
+            Grid.Row="1"
             Foreground="#FFFF8300"
             FontFamily="Monserrat"
             FontSize="144"
@@ -37,5 +38,41 @@
             VerticalAlignment="Stretch"
             Margin="10"
             />
+        <Button
+            x:Name="HomeButton"
+            Grid.Row="2"
+            Content="Fin de la partie"
+            Foreground="WhiteSmoke"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Margin="5"
+            Click="HomeButton_Click"
+            />
+        <Rectangle
+            Height="4"
+            Fill="WhiteSmoke"
+            Grid.Row="3"
+            Margin="10"
+            />
+        <ScrollViewer 
+            HorizontalAlignment="Stretch" 
+            VerticalAlignment="Stretch"
+            Grid.Row="4"
+            ScrollViewer.VerticalScrollMode="Enabled"
+                >
+            <Grid
+                Margin="10"
+                x:Name="resultGrid"
+                
+                >
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Page>

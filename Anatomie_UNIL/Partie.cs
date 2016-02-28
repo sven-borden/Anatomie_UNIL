@@ -8,12 +8,15 @@ namespace Anatomie_UNIL
 {
     class Partie
     {
+        private string _membre;
+        private int _note;
         private List<string> listQuestions;
         private List<string> listHisAnswer;
         private List<string> listAnswer;
 
-        public Partie()
+        public Partie(string membre)
         {
+            _membre = membre;
             listQuestions = new List<string>();
             listHisAnswer = new List<string>();
             listAnswer = new List<string>();
@@ -22,9 +25,12 @@ namespace Anatomie_UNIL
         public string addListQuestions { set { listQuestions.Add(value); } }
         public string addListHisAnswer { set { listHisAnswer.Add(value); } }
         public string addListAnswer { set { listAnswer.Add(value); } }
+        public int addNote { set { _note = value; } }
 
         public List<string> getListQuestions { get { return listQuestions; } }
         public List<string> getListHisAnswer { get { return listHisAnswer; } }
         public List<string> getListAnswer { get { return listAnswer; } }
+        public string getMembre { get { return _membre; } }
+        public int getNote { get { return _note; } }
     }
 }

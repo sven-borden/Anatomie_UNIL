@@ -48,6 +48,7 @@ namespace Anatomie_UNIL
         private async void Send(EmailMessage mail)
         {
             await EmailManager.ShowComposeNewEmailAsync(mail);
+            Frame.Navigate(typeof(MainPage));
         }
 
         private void Inferieur_BackRequested(object sender, BackRequestedEventArgs e)

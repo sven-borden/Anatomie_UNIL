@@ -31,17 +31,20 @@ namespace Anatomie_UNIL
         private int nbFaux      = 0;
         private int nbAnswer    = 0;
         private int nbQuestion  = 0;
+        private int valNote     = 0;
 
         private const int nbTry = 10;
 
-        private string[] fourAnswer;
+        private string[] questionAnswer;
         private string reponse;
+        string[] propositions;
         private Random random;
         private bool rightAnswer    = false;
         private bool alreadyError   = false;
 
         private WriteTo settings;
         private Partie listesPartie;
+        private Question question;
 
         public Superieur()
         {
@@ -50,8 +53,10 @@ namespace Anatomie_UNIL
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
 
             settings = new WriteTo();
-            listesPartie = new Partie();
-
+            listesPartie = new Partie("Supérieur");
+            question = new Question(1);
+            questionAnswer = new string[5];
+            random = new Random();
             lightColor = buttonQ1.Background;
 
             progressbar.Maximum = settings.nbQuestionToDo;
@@ -66,7 +71,7 @@ namespace Anatomie_UNIL
         private void GAMETICK(object sender, object e)
         {
             timer.Stop();
-            int questionType = 0;
+
             rightAnswer     = false;
             alreadyError    = false;
 
@@ -75,256 +80,22 @@ namespace Anatomie_UNIL
             buttonQ3.Background = lightColor;
             buttonQ4.Background = lightColor;
 
-            random = new Random();
-            for(int Try = 0; Try < nbTry; Try++)
-            {
-                questionType = GenRand(1, 3, random);
+            questionAnswer = question.getQuestion(listesPartie.getListQuestions);
+            listesPartie.addListQuestions = questionAnswer[0];
+            listesPartie.addListAnswer = questionAnswer[1];
+            textQuestion.Text = questionAnswer[0];
+            reponse = questionAnswer[1];
+            propositions = new string[4];
+            for (int i = 0; i < 4; i++)
+                propositions[i] = questionAnswer[i + 1];
 
-                if (questionType == 1 && settings.isInsertion == true)
-                    Try = nbTry;
-                if (questionType == 2 && settings.isTerminaison == true)
-                    Try = nbTry;
-                if (questionType == 3 && settings.isInnevervation == true)
-                    Try = nbTry;
-                if (questionType == 4 && settings.isMouvement == true)
-                    Try = nbTry;
-            }
-
-            GenQuestion(questionType);
+            propositions = SetProposition(MixArray(propositions));
         }
-
-        private void GenQuestion(int questionType)
-        {
-            //epauleAnterieur, epaulePosterieur, bras, anantvrasAnterieur, avantBrasPosterieur, main
-            random = new Random(((int)DateTime.Now.Ticks & 0x0000FFFF));
-            int val = GenRand(1, 6, random);
-
-            switch(val)
-            {
-                case 1: GenEpauleAnt(questionType);
-                    break;
-                case 2: GenEpaulePost(questionType);
-                    break;
-                case 3: GenBras(questionType);
-                    break;
-                case 4: GenAvantBrasAnt(questionType);
-                    break;
-                case 5: GenAvantBrasPost(questionType);
-                    break;
-                case 6: GenMain(questionType);
-                    break;
-            }
-        }
-
-        #region GenHaut
-        private void GenEpauleAnt(int questionType)
-        {
-            int length = 5;
-            random = new Random(((int)DateTime.Now.Ticks & 0x0000FFFF));
-            nbAnswer = GenRand(0, length - 1, random);//numéro de réponse
-            SetTypeOfQuestion(questionType, MainPage.epauleAnterieur[nbAnswer, 0]);
-
-            reponse = MainPage.epauleAnterieur[nbAnswer, questionType];
-            //preparation des réponses
-            fourAnswer = new string[4];
-            fourAnswer[0] = reponse;
-            for (int i = 0; i < nbTry; i++)
-            {
-                fourAnswer[1] = MainPage.epauleAnterieur[GenRand(0, length - 1, random), questionType];
-                if (fourAnswer[1] != fourAnswer[0])
-                    break;
-            }
-            for (int i = 0; i < nbTry; i++)
-            {
-                fourAnswer[2] = MainPage.epauleAnterieur[GenRand(0, length - 1, random), questionType];
-                if (fourAnswer[2] != fourAnswer[1] && fourAnswer[2] != fourAnswer[0])
-                    break;
-            }
-            for (int i = 0; i < nbTry; i++)
-            {
-                fourAnswer[3] = MainPage.epauleAnterieur[GenRand(0, length - 1, random), questionType];
-                if (fourAnswer[3] != fourAnswer[2] && fourAnswer[3] != fourAnswer[1] && fourAnswer[3] != fourAnswer[0])
-                    break;
-            }
-            fourAnswer = MixArray(fourAnswer);
-            SetQuestion(fourAnswer[0], fourAnswer[1], fourAnswer[2], fourAnswer[3]);
-        }
-
-        private void GenEpaulePost(int questionType)
-        {
-            int length = 11;
-            random = new Random(((int)DateTime.Now.Ticks & 0x0000FFFF));
-            nbAnswer = GenRand(0, length - 1, random);//numéro de réponse
-            SetTypeOfQuestion(questionType, MainPage.epaulePosterieur[nbAnswer, 0]);
-
-            reponse = MainPage.epaulePosterieur[nbAnswer, questionType];
-
-            //preparation des réponses
-            fourAnswer = new string[4];
-            fourAnswer[0] = reponse;
-            for (int i = 0; i < nbTry; i++)
-            {
-                fourAnswer[1] = MainPage.epaulePosterieur[GenRand(0, length - 1, random), questionType];
-                if (fourAnswer[1] != fourAnswer[0])
-                    break;
-            }
-            for (int i = 0; i < nbTry; i++)
-            {
-                fourAnswer[2] = MainPage.epaulePosterieur[GenRand(0, length - 1, random), questionType];
-                if (fourAnswer[2] != fourAnswer[1] && fourAnswer[2] != fourAnswer[0])
-                    break;
-            }
-            for (int i = 0; i < nbTry; i++)
-            {
-                fourAnswer[3] = MainPage.epaulePosterieur[GenRand(0, 4, random), questionType];
-                if (fourAnswer[3] != fourAnswer[2] && fourAnswer[3] != fourAnswer[1] && fourAnswer[3] != fourAnswer[0])
-                    break;
-            }
-            fourAnswer = MixArray(fourAnswer);
-            SetQuestion(fourAnswer[0], fourAnswer[1], fourAnswer[2], fourAnswer[3]);
-        }
-
-        private void GenBras(int questionType)
-        {
-            int length = 8;
-            random = new Random(((int)DateTime.Now.Ticks & 0x0000FFFF));
-            nbAnswer = GenRand(0, length - 1, random);//numéro de réponse
-            SetTypeOfQuestion(questionType, MainPage.bras[nbAnswer, 0]);
-
-            reponse = MainPage.bras[nbAnswer, questionType];
-
-            //preparation des réponses
-            fourAnswer = new string[4];
-            fourAnswer[0] = reponse;
-            for (int i = 0; i < nbTry; i++)
-            {
-                fourAnswer[1] = MainPage.bras[GenRand(0, length - 1, random), questionType];
-                if (fourAnswer[1] != fourAnswer[0])
-                    break;
-            }
-            for (int i = 0; i < nbTry; i++)
-            {
-                fourAnswer[2] = MainPage.bras[GenRand(0, length - 1, random), questionType];
-                if (fourAnswer[2] != fourAnswer[1] && fourAnswer[2] != fourAnswer[0])
-                    break;
-            }
-            for (int i = 0; i < nbTry; i++)
-            {
-                fourAnswer[3] = MainPage.bras[GenRand(0, length - 1, random), questionType];
-                if (fourAnswer[3] != fourAnswer[2] && fourAnswer[3] != fourAnswer[1] && fourAnswer[3] != fourAnswer[0])
-                    break;
-            }
-            fourAnswer = MixArray(fourAnswer);
-            SetQuestion(fourAnswer[0], fourAnswer[1], fourAnswer[2], fourAnswer[3]);
-        }
-
-        private void GenAvantBrasAnt(int questionType)
-        {
-            int length = 8;
-            random = new Random(((int)DateTime.Now.Ticks & 0x0000FFFF));
-            nbAnswer = GenRand(0, length - 1, random);//numéro de réponse
-            SetTypeOfQuestion(questionType, MainPage.avantBrasAntérieur[nbAnswer, 0]);
-
-            reponse = MainPage.avantBrasAntérieur[nbAnswer, questionType];
-
-            //preparation des réponses
-            fourAnswer = new string[4];
-            fourAnswer[0] = reponse;
-            for (int i = 0; i < nbTry; i++)
-            {
-                fourAnswer[1] = MainPage.avantBrasAntérieur[GenRand(0, length - 1, random), questionType];
-                if (fourAnswer[1] != fourAnswer[0])
-                    break;
-            }
-            for (int i = 0; i < nbTry; i++)
-            {
-                fourAnswer[2] = MainPage.avantBrasAntérieur[GenRand(0, length - 1, random), questionType];
-                if (fourAnswer[2] != fourAnswer[1] && fourAnswer[2] != fourAnswer[0])
-                    break;
-            }
-            for (int i = 0; i < nbTry; i++)
-            {
-                fourAnswer[3] = MainPage.avantBrasAntérieur[GenRand(0, length - 1, random), questionType];
-                if (fourAnswer[3] != fourAnswer[2] && fourAnswer[3] != fourAnswer[1] && fourAnswer[3] != fourAnswer[0])
-                    break;
-            }
-            fourAnswer = MixArray(fourAnswer);
-            SetQuestion(fourAnswer[0], fourAnswer[1], fourAnswer[2], fourAnswer[3]);
-        }
-
-        private void GenAvantBrasPost(int questionType)
-        {
-            int length = 11;
-            random = new Random(((int)DateTime.Now.Ticks & 0x0000FFFF));
-            nbAnswer = GenRand(0, length - 1, random);//numéro de réponse
-            SetTypeOfQuestion(questionType, MainPage.avantBrasPostérieur[nbAnswer, 0]);
-
-            reponse = MainPage.avantBrasPostérieur[nbAnswer, questionType];
-
-            //preparation des réponses
-            fourAnswer = new string[4];
-            fourAnswer[0] = reponse;
-            for (int i = 0; i < nbTry; i++)
-            {
-                fourAnswer[1] = MainPage.avantBrasPostérieur[GenRand(0, length - 1, random), questionType];
-                if (fourAnswer[1] != fourAnswer[0])
-                    break;
-            }
-            for (int i = 0; i < nbTry; i++)
-            {
-                fourAnswer[2] = MainPage.avantBrasPostérieur[GenRand(0, length - 1, random), questionType];
-                if (fourAnswer[2] != fourAnswer[1] && fourAnswer[2] != fourAnswer[0])
-                    break;
-            }
-            for (int i = 0; i < nbTry; i++)
-            {
-                fourAnswer[3] = MainPage.avantBrasPostérieur[GenRand(0, length - 1, random), questionType];
-                if (fourAnswer[3] != fourAnswer[2] && fourAnswer[3] != fourAnswer[1] && fourAnswer[3] != fourAnswer[0])
-                    break;
-            }
-            fourAnswer = MixArray(fourAnswer);
-            SetQuestion(fourAnswer[0], fourAnswer[1], fourAnswer[2], fourAnswer[3]);
-        }
-
-        private void GenMain(int questionType)
-        {
-            int length = 13;
-            random = new Random(((int)DateTime.Now.Ticks & 0x0000FFFF));
-            nbAnswer = GenRand(0, length - 1, random);//numéro de réponse
-            SetTypeOfQuestion(questionType, MainPage.main[nbAnswer, 0]);
-
-            reponse = MainPage.main[nbAnswer, questionType];
-
-            //preparation des réponses
-            fourAnswer = new string[4];
-            fourAnswer[0] = reponse;
-            for (int i = 0; i < nbTry; i++)
-            {
-                fourAnswer[1] = MainPage.main[GenRand(0, length - 1, random), questionType];
-                if (fourAnswer[1] != fourAnswer[0])
-                    break;
-            }
-            for (int i = 0; i < nbTry; i++)
-            {
-                fourAnswer[2] = MainPage.main[GenRand(0, length - 1, random), questionType];
-                if (fourAnswer[2] != fourAnswer[1] && fourAnswer[2] != fourAnswer[0])
-                    break;
-            }
-            for (int i = 0; i < nbTry; i++)
-            {
-                fourAnswer[3] = MainPage.main[GenRand(0, length - 1, random), questionType];
-                if (fourAnswer[3] != fourAnswer[2] && fourAnswer[3] != fourAnswer[1] && fourAnswer[3] != fourAnswer[0])
-                    break;
-            }
-            fourAnswer = MixArray(fourAnswer);
-            SetQuestion(fourAnswer[0], fourAnswer[1], fourAnswer[2], fourAnswer[3]);
-        }
-        #endregion GenHaut
 
         #region ButtonClick
         private void buttonQ1_Click(object sender, RoutedEventArgs e)
         {
-            if (fourAnswer[0] == reponse)
+            if (propositions[0] == reponse)
             {
                 buttonQ1.Background = green;
                 rightAnswer = true;
@@ -340,7 +111,7 @@ namespace Anatomie_UNIL
 
         private void buttonQ2_Click(object sender, RoutedEventArgs e)
         {
-            if (fourAnswer[1] == reponse)
+            if (propositions[1] == reponse)
             {
                 buttonQ2.Background = green;
                 rightAnswer = true;
@@ -356,7 +127,7 @@ namespace Anatomie_UNIL
 
         private void buttonQ3_Click(object sender, RoutedEventArgs e)
         {
-            if (fourAnswer[2] == reponse.ToString())
+            if (propositions[2] == reponse.ToString())
             {
                 buttonQ3.Background = green;
                 rightAnswer = true;
@@ -373,7 +144,7 @@ namespace Anatomie_UNIL
         private void buttonQ4_Click(object sender, RoutedEventArgs e)
         {
 
-            if (fourAnswer[3] == reponse.ToString())
+            if (propositions[3] == reponse.ToString())
             {
                 buttonQ4.Background = green;
                 rightAnswer = true;
@@ -397,16 +168,16 @@ namespace Anatomie_UNIL
                 switch (buttonNb)
                 {
                     case 1:
-                        listesPartie.addListHisAnswer = buttonQ1.Content.ToString();
+                        listesPartie.addListHisAnswer = propositions[0];
                         break;
                     case 2:
-                        listesPartie.addListHisAnswer = buttonQ2.Content.ToString();
+                        listesPartie.addListHisAnswer = propositions[1];
                         break;
                     case 3:
-                        listesPartie.addListHisAnswer = buttonQ3.Content.ToString();
+                        listesPartie.addListHisAnswer = propositions[2];
                         break;
                     case 4:
-                        listesPartie.addListHisAnswer = buttonQ4.Content.ToString();
+                        listesPartie.addListHisAnswer = propositions[3];
                         break;
                 }
             }
@@ -418,7 +189,10 @@ namespace Anatomie_UNIL
             textProgress.Text = nbQuestion.ToString() + "/" + progressbar.Maximum.ToString();
 
             if (nbQuestion == settings.nbQuestionToDo)
-                Frame.Navigate(typeof(Resultats));//, listespartie));
+            {
+                listesPartie.addNote = valNote;
+                Frame.Navigate(typeof(Resultats), listesPartie);
+            }
             timer.Interval = new TimeSpan(0, 0, 1);
             timer.Start();
         }
@@ -433,13 +207,17 @@ namespace Anatomie_UNIL
                 settings.nbQuestionFalse++;
                 switch(buttonNb)
                 {
-                    case 1: listesPartie.addListHisAnswer = buttonQ1.Content.ToString();
+                    case 1:
+                        listesPartie.addListHisAnswer = propositions[0];
                         break;
-                    case 2: listesPartie.addListHisAnswer = buttonQ2.Content.ToString();
+                    case 2:
+                        listesPartie.addListHisAnswer = propositions[1];
                         break;
-                    case 3: listesPartie.addListHisAnswer = buttonQ3.Content.ToString();
+                    case 3:
+                        listesPartie.addListHisAnswer = propositions[2];
                         break;
-                    case 4: listesPartie.addListHisAnswer = buttonQ4.Content.ToString();
+                    case 4:
+                        listesPartie.addListHisAnswer = propositions[3];
                         break;
                 }
             }
@@ -451,25 +229,25 @@ namespace Anatomie_UNIL
         {
             int percent = nbJuste * 100 / (nbJuste + nbFaux);
             if (percent < 30)
-            { Note.Text = "Note : 1"; }
+            { Note.Text = "Note : 1"; valNote = 1; }
             else
             {
                 if (percent < 50)
-                { Note.Text = "Note : 2"; }
+                { Note.Text = "Note : 2"; valNote = 2; }
                 else
                 {
                     if (percent < 72)
-                    { Note.Text = "Note : 3"; }
+                    { Note.Text = "Note : 3"; valNote = 3; }
                     else
                     {
                         if (percent < 85)
-                        { Note.Text = "Note : 4"; }
+                        { Note.Text = "Note : 4"; valNote = 4; }
                         else
                         {
                             if (percent < 92)
-                            { Note.Text = "Note : 5"; }
+                            { Note.Text = "Note : 5"; valNote = 5; }
                             else
-                            { Note.Text = "Note : 6"; }
+                            { Note.Text = "Note : 6"; valNote = 6; }
                         }
                     }
                 }
@@ -477,56 +255,41 @@ namespace Anatomie_UNIL
         }
         #endregion
 
-        private void SetQuestion(string q1, string q2, string q3, string q4)
+        private string[] SetProposition(string[] input)
         {
             buttonQ1.Content = new TextBlock
             {
-                Text = q1,
+                Text = input[0],
                 TextWrapping = TextWrapping.Wrap,
                 TextAlignment = TextAlignment.Center,
             };
             buttonQ2.Content = new TextBlock
             {
-                Text = q2,
+                Text = input[1],
                 TextWrapping = TextWrapping.Wrap,
                 TextAlignment = TextAlignment.Center,
             };
             buttonQ3.Content = new TextBlock
             {
-                Text = q3,
+                Text = input[2],
                 TextWrapping = TextWrapping.Wrap,
                 TextAlignment = TextAlignment.Center,
             };
             buttonQ4.Content = new TextBlock
             {
-                Text = q4,
+                Text = input[3],
                 TextWrapping = TextWrapping.Wrap,
                 TextAlignment = TextAlignment.Center,
             };
+            return input;
         }
-
-        private void SetTypeOfQuestion(int type, string muscle)
-        {
-            if (type == 1)//origine
-                listesPartie.addListQuestions = "Quelle est l'origine du " + muscle + "?";
-            if (type == 2)//Insertion
-                listesPartie.addListQuestions = "Quelle est la terminaison du " + muscle + "?";
-            if (type == 3)//innervation
-                listesPartie.addListQuestions = "Quelle est l'innervation du " + muscle + "?";
-
-            int last = listesPartie.getListQuestions.Count;
-            textQuestion.Text = listesPartie.getListQuestions[last - 1];
-        }
-
-        private int GenRand(int low, int high, Random random) { return random.Next(low, high + 1); }//borne inf et sup en param
 
         private string[] MixArray(string[] input)
         {
-            Random rand = new Random();
             List<KeyValuePair<int, string>> list = new List<KeyValuePair<int, string>>();
             
             foreach(string s in input)
-                list.Add(new KeyValuePair<int, string>(rand.Next(), s));
+                list.Add(new KeyValuePair<int, string>(random.Next(), s));
 
             var sorted = from item in list
                          orderby item.Key
@@ -549,8 +312,6 @@ namespace Anatomie_UNIL
             if (rootFrame == null)
                 return;
 
-            // Navigate back if possible, and if the event has not 
-            // already been handled .
             if (rootFrame.CanGoBack && e.Handled == false)
             {
                 e.Handled = true;
