@@ -7,6 +7,7 @@ using Windows.ApplicationModel.Email;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Core;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -24,11 +25,29 @@ namespace Anatomie_UNIL
     /// </summary>
     public sealed partial class Contact : Page
     {
+        string[] input;
         public Contact()
         {
             this.InitializeComponent();
             SystemNavigationManager.GetForCurrentView().BackRequested += Inferieur_BackRequested;
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            string tmp;
+            input = e.Parameter as string[];
+            if (input != null)
+            {
+                tmp = "Relevé d'erreur concernant la question :\n";
+                tmp += input[1] + "\n";
+                tmp += "Réponse de l'application :\n";
+                tmp += input[3] + "\n";
+                tmp += "Réponse de l'utilisateur :\n";
+                tmp += input[2] + "\n";
+                TextBox.Text = tmp;
+                NameBox.Focus(FocusState.Pointer);
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)//ANNULER
@@ -38,11 +57,23 @@ namespace Anatomie_UNIL
 
         private void Button_Click_1(object sender, RoutedEventArgs e)//ENVOYER
         {
-            EmailMessage mail = new EmailMessage();
-            mail.To.Add(new EmailRecipient("glaglasven@live.com"));
-            mail.Body = TextBox.Text;
-            mail.Subject = "[UNIL-Anatomie] Message de : " + NameBox.Text;
-            Send(mail);
+            if (NameBox.Text != "" && TextBox.Text != "")
+            {
+                EmailMessage mail = new EmailMessage();
+                mail.To.Add(new EmailRecipient("glaglasven@live.com"));
+                mail.Body = TextBox.Text;
+                mail.Subject = "[UNIL-Anatomie] Message de : " + NameBox.Text;
+                Send(mail);
+            }
+            if (NameBox.Text != null || TextBox.Text != null)
+                NoText();
+        }
+
+        private async void NoText()
+        {
+            var messageDialog = new MessageDialog("Veuillez remplir tous les champs", "Champs vides");
+            messageDialog.Commands.Add(new UICommand("Ok"));
+            await messageDialog.ShowAsync();
         }
 
         private async void Send(EmailMessage mail)

@@ -25,6 +25,7 @@ namespace Anatomie_UNIL
         private int nbFaux      = 0;
         private int nbAnswer    = 0;
         private int nbQuestion  = 0;
+        private int valNote     = 0;
 
         private const int nbTry = 10;
 
@@ -161,16 +162,16 @@ namespace Anatomie_UNIL
                 switch (buttonNb)
                 {
                     case 1:
-                        listesPartie.addListHisAnswer = buttonQ1.Content.ToString();
+                        listesPartie.addListHisAnswer = propositions[0];
                         break;
                     case 2:
-                        listesPartie.addListHisAnswer = buttonQ2.Content.ToString();
+                        listesPartie.addListHisAnswer = propositions[1];
                         break;
                     case 3:
-                        listesPartie.addListHisAnswer = buttonQ3.Content.ToString();
+                        listesPartie.addListHisAnswer = propositions[2];
                         break;
                     case 4:
-                        listesPartie.addListHisAnswer = buttonQ4.Content.ToString();
+                        listesPartie.addListHisAnswer = propositions[3];
                         break;
                 }
             }
@@ -182,8 +183,11 @@ namespace Anatomie_UNIL
             textProgress.Text = nbQuestion.ToString() + "/" + progressbar.Maximum.ToString();
 
             if (nbQuestion == settings.nbQuestionToDo)
-                Frame.Navigate(typeof(Resultats));//, listespartie));
-            timer.Interval = new TimeSpan(0,0,1);
+            {
+                listesPartie.addNote = valNote;
+                Frame.Navigate(typeof(Resultats), listesPartie);
+            }
+            timer.Interval = new TimeSpan(0, 0, 1);
             timer.Start();
         }
 
@@ -198,16 +202,16 @@ namespace Anatomie_UNIL
                 switch (buttonNb)
                 {
                     case 1:
-                        listesPartie.addListHisAnswer = buttonQ1.Content.ToString();
+                        listesPartie.addListHisAnswer = propositions[0];
                         break;
                     case 2:
-                        listesPartie.addListHisAnswer = buttonQ2.Content.ToString();
+                        listesPartie.addListHisAnswer = propositions[1];
                         break;
                     case 3:
-                        listesPartie.addListHisAnswer = buttonQ3.Content.ToString();
+                        listesPartie.addListHisAnswer = propositions[2];
                         break;
                     case 4:
-                        listesPartie.addListHisAnswer = buttonQ4.Content.ToString();
+                        listesPartie.addListHisAnswer = propositions[3];
                         break;
                 }
             }
@@ -219,31 +223,31 @@ namespace Anatomie_UNIL
         {
             int percent = nbJuste * 100 / (nbJuste + nbFaux);
             if (percent < 30)
-            { Note.Text = "Note : 1"; }
+            { Note.Text = "Note : 1"; valNote = 1; }
             else
             {
                 if (percent < 50)
-                { Note.Text = "Note : 2"; }
+                { Note.Text = "Note : 2"; valNote = 2; }
                 else
                 {
                     if (percent < 72)
-                    { Note.Text = "Note : 3"; }
+                    { Note.Text = "Note : 3"; valNote = 3; }
                     else
                     {
                         if (percent < 85)
-                        { Note.Text = "Note : 4"; }
+                        { Note.Text = "Note : 4"; valNote = 4; }
                         else
                         {
                             if (percent < 92)
-                            { Note.Text = "Note : 5"; }
+                            { Note.Text = "Note : 5"; valNote = 5; }
                             else
-                            { Note.Text = "Note : 6"; }
+                            { Note.Text = "Note : 6"; valNote = 6; }
                         }
                     }
                 }
             }
         }
-#endregion
+        #endregion
 
         private string[] SetProposition(string[] input)
         {

@@ -109,7 +109,7 @@
             x:Name="buttonTout"
             FontFamily="Monserrat"
             FontSize="15"
-            Content="Membre supérieur"
+            Content="Tout"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Top"
             Margin="10,2,10,0"

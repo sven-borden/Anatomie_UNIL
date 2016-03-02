@@ -7,6 +7,7 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI;
 using Windows.UI.Core;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -28,7 +29,8 @@ namespace Anatomie_UNIL
         Partie partie;
         RowDefinition rd;
         ColumnDefinition cd;
-
+        List<string> listing;
+        string[] selection;
         public Resultats()
         {
             this.InitializeComponent();
@@ -59,6 +61,9 @@ namespace Anatomie_UNIL
 
         private void sup(List<string> listQuestions, List<string> listAnswer, List<string> listHisAnswer)
         {
+            listing = new List<string>();
+            //gonna parse a string like this buttonUID|question|hisans|ans
+
             for (int i = 0; i < listQuestions.Count; i++)
             {
                 rd = new RowDefinition();
@@ -164,7 +169,7 @@ namespace Anatomie_UNIL
                 if (listHisAnswer[i] != listAnswer[i])
                 {
                     FontIcon iconResult = new FontIcon();//info = &#xE946;
-                    iconResult.Glyph = "Close";//"&#xE106";
+                    iconResult.Glyph = "\uE106";
                     iconResult.Foreground = new SolidColorBrush(Colors.WhiteSmoke);
                     Grid.SetRow(iconResult, i);
                     Grid.SetColumn(iconResult, 2);
@@ -173,7 +178,7 @@ namespace Anatomie_UNIL
                 else
                 {
                     FontIcon iconResult = new FontIcon();//info = &#xE946
-                    iconResult.Glyph = "Check";//"&#xE001;";
+                    iconResult.Glyph = "\uE001";
                     iconResult.Foreground = new SolidColorBrush(Colors.WhiteSmoke);
                     Grid.SetRow(iconResult, i);
                     Grid.SetColumn(iconResult, 2);
@@ -181,42 +186,73 @@ namespace Anatomie_UNIL
                 }
 
                 Button infoButton = new Button();
+                infoButton.Margin = new Thickness(5);
+                infoButton.Click += InfoButton_Click;
                 infoButton.Content = new FontIcon
                 {
                     FontFamily = new FontFamily("Segoe MDL2 Assets"),
-                    Glyph = "&#xE946;",
+                    Glyph = "\uE946",
                     Foreground = new SolidColorBrush(Colors.WhiteSmoke)
                 };
 
                 Grid.SetRow(infoButton, i);
                 Grid.SetColumn(infoButton, 3);
                 resultGrid.Children.Add(infoButton);
+
+                //adding to list
+                infoButton.Tag = i;
+                string tmp = infoButton.Tag.ToString() + '|';
+                tmp += listQuestions[i] + '|';
+                tmp += listHisAnswer[i] + '|';
+                tmp += listAnswer[i] + '|';
+                listing.Add(tmp);
             }
+        }
+
+        private void InfoButton_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            string s = "";
+            
+            foreach(string tmp in listing)
+                if (tmp.Contains(button.Tag.ToString()))
+                    s = tmp;
+            selection = s.Split('|');
+            Erreur(selection[1], selection[2], selection[3]);
+        }
+
+        private async void Erreur(string question, string hisAnswer, string answer)
+        {
+            var messageDialog = new MessageDialog("Il y a une erreur?", "Contestation!");
+            messageDialog.Content = "La réponse de la question:\n\"" + question + "\" est fausse?\n\n Réponse :\n\"" + answer + "\"\n\n Votre réponse était : \"" + hisAnswer + "\"";
+            messageDialog.Commands.Add(new UICommand("Oui", new UICommandInvokedHandler(this.CommandInvokeHandler)));
+            messageDialog.Commands.Add(new UICommand("Non"));
+            messageDialog.DefaultCommandIndex = 0;
+            messageDialog.CancelCommandIndex = 1;
+            await messageDialog.ShowAsync();
+        }
+
+        private void CommandInvokeHandler(IUICommand command)
+        {
+            Frame.Navigate(typeof(Contact), selection);
         }
 
         private void inf(List<string> listQuestions, List<string> listAnswer, List<string> listHisAnswer)
         {
-            throw new NotImplementedException();
+            sup(listQuestions, listAnswer, listHisAnswer);
         }
 
         private void trc(List<string> listQuestions, List<string> listAnswer, List<string> listHisAnswer)
         {
-            throw new NotImplementedException();
+            sup(listQuestions, listAnswer, listHisAnswer);
         }
 
         private void tt(List<string> listQuestions, List<string> listAnswer, List<string> listHisAnswer)
         {
-            throw new NotImplementedException();
+            sup(listQuestions, listAnswer, listHisAnswer);
         }
 
-        private void HomeButton_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(MainPage));
-        }
-
-        private void Resultats_BackRequested(object sender, BackRequestedEventArgs e)
-        {
-            Frame.Navigate(typeof(MainPage));
-        }
+        private void HomeButton_Click(object sender, RoutedEventArgs e) { Frame.Navigate(typeof(MainPage)); }
+        private void Resultats_BackRequested(object sender, BackRequestedEventArgs e) { Frame.Navigate(typeof(MainPage)); }
     }
 }
