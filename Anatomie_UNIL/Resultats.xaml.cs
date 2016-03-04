@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Xaml.Shapes;
 
 // Pour plus d'informations sur le modèle d'élément Page vierge, voir la page http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -66,10 +67,19 @@ namespace Anatomie_UNIL
 
             for (int i = 0; i < listQuestions.Count; i++)
             {
+                
                 rd = new RowDefinition();
                 resultGrid.RowDefinitions.Add(rd);
+                if (i % 2 == 0)
+                {
+                    Rectangle backgroundRectangle = new Rectangle();
+                    backgroundRectangle.Fill = new SolidColorBrush(Color.FromArgb(Convert.ToByte(76), Convert.ToByte(0), Convert.ToByte(44), Convert.ToByte("222")));
+                    Grid.SetRow(backgroundRectangle, i);
+                    Grid.SetColumn(backgroundRectangle, 0);
+                    Grid.SetColumnSpan(backgroundRectangle, 3);
+                    resultGrid.Children.Add(backgroundRectangle);
+                }
 
-                
                 TextBlock tx0 = new TextBlock();
                 tx0.Foreground = new SolidColorBrush(Colors.WhiteSmoke);
                 tx0.Margin = new Thickness(10);
@@ -171,6 +181,8 @@ namespace Anatomie_UNIL
                     FontIcon iconResult = new FontIcon();//info = &#xE946;
                     iconResult.Glyph = "\uE106";
                     iconResult.Foreground = new SolidColorBrush(Colors.WhiteSmoke);
+                    iconResult.VerticalAlignment = VerticalAlignment.Top;
+                    iconResult.Margin = new Thickness(0,10,5,0);
                     Grid.SetRow(iconResult, i);
                     Grid.SetColumn(iconResult, 2);
                     resultGrid.Children.Add(iconResult);
@@ -180,14 +192,17 @@ namespace Anatomie_UNIL
                     FontIcon iconResult = new FontIcon();//info = &#xE946
                     iconResult.Glyph = "\uE001";
                     iconResult.Foreground = new SolidColorBrush(Colors.WhiteSmoke);
+                    iconResult.VerticalAlignment = VerticalAlignment.Top;
+                    iconResult.Margin = new Thickness(0,10,5,0);
                     Grid.SetRow(iconResult, i);
                     Grid.SetColumn(iconResult, 2);
                     resultGrid.Children.Add(iconResult);
                 }
 
                 Button infoButton = new Button();
-                infoButton.Margin = new Thickness(5);
+                infoButton.Margin = new Thickness(0,0,5,10);
                 infoButton.Click += InfoButton_Click;
+                infoButton.VerticalAlignment = VerticalAlignment.Bottom;
                 infoButton.Content = new FontIcon
                 {
                     FontFamily = new FontFamily("Segoe MDL2 Assets"),
@@ -206,6 +221,8 @@ namespace Anatomie_UNIL
                 tmp += listHisAnswer[i] + '|';
                 tmp += listAnswer[i] + '|';
                 listing.Add(tmp);
+
+
             }
         }
 

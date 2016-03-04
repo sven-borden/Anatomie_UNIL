@@ -12,9 +12,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <!--<RowDefinition Height="*"/> used for the rectangle-->
         </Grid.RowDefinitions>
         <TextBlock
             Text="Résultats"
@@ -33,46 +33,47 @@
             Grid.Row="1"
             Foreground="#FFFF8300"
             FontFamily="Monserrat"
-            FontSize="144"
+            FontSize="90"
             HorizontalAlignment="Center"
             VerticalAlignment="Stretch"
             Margin="10"
             />
-        <Button
-            x:Name="HomeButton"
+
+        <Grid
+            Margin="10,0,10,0"
+            BorderBrush="AliceBlue"
+            BorderThickness="1"
             Grid.Row="2"
-            Content="Fin de la partie"
-            Foreground="WhiteSmoke"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Margin="5"
-            Click="HomeButton_Click"
             />
-        <Rectangle
-            Height="4"
-            Fill="WhiteSmoke"
-            Grid.Row="3"
-            Margin="10"
-            />
+
         <ScrollViewer 
             HorizontalAlignment="Stretch" 
             VerticalAlignment="Stretch"
-            Grid.Row="4"
+            Grid.Row="2"
             ScrollViewer.VerticalScrollMode="Enabled"
                 >
             <Grid
-                Margin="10"
+                Margin="10, 0, 10, 0"
                 x:Name="resultGrid"
-                
                 >
                 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
             </Grid>
         </ScrollViewer>
+
+        <Button
+            x:Name="HomeButton"
+            Grid.Row="3"
+            Content="Fin de la partie"
+            Foreground="WhiteSmoke"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Margin="10"
+            Click="HomeButton_Click"
+            />
     </Grid>
 </Page>

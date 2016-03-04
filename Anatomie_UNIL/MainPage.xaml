@@ -130,7 +130,7 @@
             Margin="10,0,0,0"
             Checked="checkBoxInsertion_Checked"
             Unchecked="checkBoxInsertion_Unchecked"
-            IsEnabled="True"
+            IsEnabled="True" IsChecked="True"
             />
         <CheckBox
             Grid.Row="5"
@@ -141,7 +141,7 @@
             Margin="10,0,0,0" 
             Checked="checkBoxTerminaison_Checked"
             Unchecked="checkBoxTerminaison_Unchecked"
-            IsEnabled="True"
+            IsEnabled="True" IsChecked="True"
             />
         <CheckBox
             Grid.Row="6"

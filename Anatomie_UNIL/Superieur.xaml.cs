@@ -41,6 +41,7 @@ namespace Anatomie_UNIL
         private Random random;
         private bool rightAnswer    = false;
         private bool alreadyError   = false;
+        private int questionToDo = 0;
 
         private WriteTo settings;
         private Partie listesPartie;
@@ -59,8 +60,11 @@ namespace Anatomie_UNIL
             random = new Random();
             lightColor = buttonQ1.Background;
 
-            progressbar.Maximum = settings.nbQuestionToDo;
-            textProgress.Text = "0/" + progressbar.Maximum.ToString();
+            progressbar.Maximum = questionToDo = settings.nbQuestionToDo;
+            if (questionToDo != 0)
+                textProgress.Text = "0/" + progressbar.Maximum.ToString();
+            else
+                textProgress.Text = "";
 
             timer = new DispatcherTimer();
             timer.Tick += GAMETICK;
@@ -185,13 +189,20 @@ namespace Anatomie_UNIL
             AttributionNote();
 
             nbQuestion++;
-            progressbar.Value = nbQuestion;
-            textProgress.Text = nbQuestion.ToString() + "/" + progressbar.Maximum.ToString();
+            if (questionToDo != 0)
+            {
+                progressbar.Value = nbQuestion;
+                textProgress.Text = nbQuestion.ToString() + "/" + progressbar.Maximum.ToString();
+            }
+
 
             if (nbQuestion == settings.nbQuestionToDo)
             {
                 listesPartie.addNote = valNote;
-                Frame.Navigate(typeof(Resultats), listesPartie);
+                if (settings.displayResults)
+                    Frame.Navigate(typeof(Resultats), listesPartie);
+                else
+                    Frame.Navigate(typeof(MainPage));
             }
             timer.Interval = new TimeSpan(0, 0, 1);
             timer.Start();

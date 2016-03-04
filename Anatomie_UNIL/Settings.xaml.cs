@@ -25,6 +25,14 @@ namespace Anatomie_UNIL
 
             Slider.Value = setting.nbQuestionToDo;
             Slider.ValueChanged += Slider_ValueChanged;
+            ToggleResults.IsOn = setting.displayResults;
+            if (setting.nbQuestionToDo == 0)
+                ToggleInfinite.IsOn = true;
+            else
+                ToggleInfinite.IsOn = false;
+
+            ToggleInfinite.Toggled += ToggleInfinite_Toggled;
+            ToggleResults.Toggled += ToggleResults_Toggled;
             statRepondue.Text = "Total de questions répondues : " + setting.nbQuestionDone.ToString();
             statCorrect.Text = "Total de questions correctes : " + setting.nbQuestionRight.ToString();
             statFaux.Text = "Total de questions fausses : " + setting.nbQuestionFalse.ToString();
@@ -37,6 +45,19 @@ namespace Anatomie_UNIL
                 pourcentage.Text += val.ToString() + "%";
             }
 
+        }
+
+        private void ToggleResults_Toggled(object sender, RoutedEventArgs e)
+        {
+            setting.displayResults = ToggleResults.IsOn;
+        }
+
+        private void ToggleInfinite_Toggled(object sender, RoutedEventArgs e)
+        {
+            if (ToggleInfinite.IsOn == true)
+                setting.nbQuestionToDo = 0;
+            else
+                setting.nbQuestionToDo = 20;
         }
 
         private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
