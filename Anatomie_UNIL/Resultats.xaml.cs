@@ -67,7 +67,8 @@ namespace Anatomie_UNIL
 
             for (int i = 0; i < listQuestions.Count; i++)
             {
-                
+                if (listQuestions.Count < 1)
+                    return;
                 rd = new RowDefinition();
                 resultGrid.RowDefinitions.Add(rd);
                 if (i % 2 == 0)
@@ -269,7 +270,29 @@ namespace Anatomie_UNIL
             sup(listQuestions, listAnswer, listHisAnswer);
         }
 
-        private void HomeButton_Click(object sender, RoutedEventArgs e) { Frame.Navigate(typeof(MainPage)); }
-        private void Resultats_BackRequested(object sender, BackRequestedEventArgs e) { Frame.Navigate(typeof(MainPage)); }
+        private void HomeButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+            if (rootFrame == null)
+                return;
+
+            if (rootFrame.CanGoBack)
+            {
+                Frame.Navigate(typeof(MainPage)); //some stuff is not working here
+            }
+        }
+
+        private void Resultats_BackRequested(object sender, BackRequestedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+            if (rootFrame == null)
+                return;
+
+            if (rootFrame.CanGoBack && e.Handled == false)
+            {
+                e.Handled = true;
+                Frame.Navigate(typeof(MainPage)); //some stuff is not working here
+            }
+        }
     }
 }

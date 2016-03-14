@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace Anatomie_UNIL_IOS
+namespace iOS
 {
     public class Application
     {

@@ -8,18 +8,35 @@
     mc:Ignorable="d"
     Background="#FF0294CA">
 
-    <Grid x:Name="Grid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF0294CA">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <StackPanel x:Name="LayoutRoot" >
+        <StackPanel.Resources>
+            <Storyboard x:Name="theStoryBoard">
+                <DoubleAnimation 
+                    From="1" 
+                    To="1.5" 
+                    Duration="00:00:1" 
+                    Storyboard.TargetName="debloquerTransform" 
+                    Storyboard.TargetProperty="ScaleX"   
+                    AutoReverse="True">
+                    <DoubleAnimation.EasingFunction>
+                        <CubicEase EasingMode="EaseInOut" />
+                    </DoubleAnimation.EasingFunction>
+                </DoubleAnimation>
+            </Storyboard>
+        </StackPanel.Resources>
 
-        <Button
+        <Grid x:Name="Grid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF0294CA">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Button
             Grid.Row="0"
             x:Name="buttonSetting"
             HorizontalAlignment="Left"
@@ -28,12 +45,12 @@
             Background="Transparent"
             Margin="5"
             >
-            <Image
+                <Image
                 Source="Assets/réglage.png"
                 Height="40"/>
-        </Button>
+            </Button>
 
-        <Button
+            <Button
             Grid.Row="0"
             x:Name="buttonAsk"
             HorizontalAlignment="Right"
@@ -41,12 +58,12 @@
             Click="buttonAsk_Click"
             Background="Transparent"
             Margin="5">
-            <Image
+                <Image
                 Source="Assets/QuestionMark.png"
                 Height="35"/>
-        </Button>
+            </Button>
 
-        <Image
+            <Image
             Grid.Row="0"
             x:Name="imageTitle"
             HorizontalAlignment="Stretch"
@@ -55,8 +72,8 @@
             Margin="12,0,0,0"
             Source="Assets/Fond.png"
             />
-        
-        <Button 
+
+            <Button 
             Grid.Row="1"
             x:Name="buttonMembSup"
             FontFamily="Monserrat"
@@ -72,24 +89,8 @@
             IsEnabled="True"
             Foreground="WhiteSmoke"
             />
-        <Button 
+            <Button 
             Grid.Row="2"
-            x:Name="buttonMembInf"
-            FontFamily="Monserrat"
-            FontSize="15"
-            Content="Membre inférieur"
-            HorizontalAlignment="Stretch"
-            VerticalAlignment="Top"
-            Margin="10,2,10,0"
-            Height="81"
-            BorderThickness="0"
-            Click="buttonMembInf_Click"
-            Background="#4C002CDE"
-            IsEnabled="True"
-            Foreground="WhiteSmoke"
-            />
-        <Button 
-            Grid.Row="3"
             x:Name="buttonTronc"
             FontFamily="Monserrat"
             FontSize="15"
@@ -104,7 +105,23 @@
             IsEnabled="True"
             Foreground="WhiteSmoke"
             />
-        <Button 
+            <Button 
+            Grid.Row="3"
+            x:Name="buttonMembInf"
+            FontFamily="Monserrat"
+            FontSize="15"
+            Content="Membre inférieur"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Top"
+            Margin="10,2,10,0"
+            Height="81"
+            BorderThickness="0"
+            Click="buttonMembInf_Click"
+            Background="#4C002CDE"
+            IsEnabled="True"
+            Foreground="WhiteSmoke"
+            />
+            <Button 
             Grid.Row="4"
             x:Name="buttonTout"
             FontFamily="Monserrat"
@@ -119,9 +136,26 @@
             Background="#4C002CDE"
             IsEnabled="true"
             Foreground="WhiteSmoke"
-            />
-        
-        <CheckBox
+            >
+            </Button>
+            <Button x:Name="buttondebloquer"
+            Grid.Row="3"
+            Grid.RowSpan="2"
+            Margin="10"
+            Content="Débloquer"
+            Foreground="WhiteSmoke"
+            FontFamily="Monserrat"
+            FontSize="30" 
+                HorizontalAlignment="Center" 
+                FontWeight="Bold" 
+                RenderTransformOrigin="0.5,0.5"
+                Background="#4C002CDE"
+                    Click="buttondebloquer_Click">
+                <Button.RenderTransform>
+                    <CompositeTransform Rotation="-30" x:Name="debloquerTransform"/>
+                </Button.RenderTransform>
+            </Button>
+            <CheckBox
             Grid.Row="5"
             x:Name="checkBoxInsertion"
             Content="Insertion"
@@ -132,7 +166,7 @@
             Unchecked="checkBoxInsertion_Unchecked"
             IsEnabled="True" IsChecked="True"
             />
-        <CheckBox
+            <CheckBox
             Grid.Row="5"
             x:Name="checkBoxTerminaison"
             Content="Terminaison"
@@ -143,7 +177,7 @@
             Unchecked="checkBoxTerminaison_Unchecked"
             IsEnabled="True" IsChecked="True"
             />
-        <CheckBox
+            <CheckBox
             Grid.Row="6"
             x:Name="checkBoxInnervation"
             Content="Innervation"
@@ -154,7 +188,7 @@
             Unchecked="checkBoxInnervation_Unchecked"
             IsEnabled="True"
             />
-        <CheckBox
+            <CheckBox
             Grid.Row="6"
             x:Name="checkBoxMouvement"
             Content="Mouvement"
@@ -165,5 +199,6 @@
             Unchecked="checkBoxMouvement_Unchecked"
             IsEnabled="False"
             />
-    </Grid>
+        </Grid>
+    </StackPanel>
 </Page>

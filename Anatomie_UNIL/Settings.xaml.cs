@@ -49,7 +49,10 @@ namespace Anatomie_UNIL
 
         private void ToggleResults_Toggled(object sender, RoutedEventArgs e)
         {
-            setting.displayResults = ToggleResults.IsOn;
+            if (ToggleResults.IsOn == true)
+                setting.displayResults = true;
+            else
+                setting.displayResults = false;
         }
 
         private void ToggleInfinite_Toggled(object sender, RoutedEventArgs e)

@@ -1,10 +1,11 @@
 ﻿using Foundation;
 using UIKit;
 
-namespace Anatomie_UNIL_IOS
+namespace iOS
 {
-    // The UIApplicationDelegate for the application. This class is responsible for launching the
-    // User Interface of the application, as well as listening (and optionally responding) to application events from iOS.
+    // The UIApplicationDelegate for the application. This class is responsible for launching the 
+    // User Interface of the application, as well as listening (and optionally responding) to 
+    // application events from iOS.
     [Register("AppDelegate")]
     public class AppDelegate : UIApplicationDelegate
     {
@@ -18,14 +19,8 @@ namespace Anatomie_UNIL_IOS
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            // create a new window instance based on the screen size
-            Window = new UIWindow(UIScreen.MainScreen.Bounds);
-
-            // If you have defined a root view controller, set it here:
-            // Window.RootViewController = myViewController;
-
-            // make the window visible
-            Window.MakeKeyAndVisible();
+            // Override point for customization after application launch.
+            // If not required for your application you can safely delete this method
 
             return true;
         }
@@ -62,5 +57,3 @@ namespace Anatomie_UNIL_IOS
         }
     }
 }
-
-

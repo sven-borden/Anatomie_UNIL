@@ -71,16 +71,16 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Fond.png" />
+    <AndroidResource Include="Resources\drawable\QuestionMark.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\mouton.png" />
+    <AndroidResource Include="Resources\drawable\reglage.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\QuestionMark.png" />
+    <AndroidResource Include="Resources\drawable\Fond.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\réglage.png" />
+    <AndroidResource Include="Resources\drawable\mouton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

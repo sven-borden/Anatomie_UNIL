@@ -30,7 +30,7 @@
             Foreground="WhiteSmoke"
             />
         <TextBlock
-            Text="UNIL Anatomie est une application destinée aux étudiants de médecine (entre autres Lausanne). Elle génère des QCMs concernant l'anatomie musculaire d'une manière aléatoire afin de préparer les étudiants en vue de leurs examens. Néanmoins, cette application ne peut à elle seule permettre de valider l'exament et doit être utilisée comme moyen accessoire de révision. Les erreurs ou les éventuelles suggestions peuvent être envoyées par le biais du bouton ci-dessous. Sven"
+            Text="UNIL Anatomie est une application destinée aux étudiants de médecine (entre autres Lausanne). Elle génère des QCMs concernant l'anatomie musculaire d'une manière aléatoire afin de préparer les étudiants en vue de leurs examens. Néanmoins, cette application ne peut à elle seule permettre de valider l'examen et doit être utilisée comme aide supplémentaire de révisions. Les erreurs ou les éventuelles suggestions peuvent être envoyées par le biais du bouton ci-dessous."
             Grid.Row="1"
             FontSize="17"
             FontFamily="Monserrat"
