@@ -74,6 +74,10 @@ namespace Anatomie_UNIL
             setting.nbQuestionDone = 0;
             setting.nbQuestionRight = 0;
             setting.nbQuestionFalse = 0;
+            statCorrect.Text = "Total de questions correctes : 0";
+            statFaux.Text = "Total de question fausses : 0";
+            statRepondue.Text = "Total de questions répondues : 0";
+            pourcentage.Text += "Répond d'abord à une question";
         }
 
         private void Inferieur_BackRequested(object sender, BackRequestedEventArgs e)

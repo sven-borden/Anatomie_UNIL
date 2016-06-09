@@ -32,12 +32,20 @@ namespace Anatomie_UNIL
         ColumnDefinition cd;
         List<string> listing;
         string[] selection;
+        //MediaElement soundApplause, soundSheep;
+
         public Resultats()
         {
             this.InitializeComponent();
             SystemNavigationManager.GetForCurrentView().BackRequested += Resultats_BackRequested; ;
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
-
+            //soundApplause = new MediaElement();
+            //soundApplause.Source = new Uri("ms-appx:///SOUND/applause.mp3");
+            //soundSheep = new MediaElement();
+            //soundSheep.Source = new Uri("ms-appx:///SOUND/mouton.mp3");
+            //soundApplause.Volume = 1;
+            //soundSheep.Volume = 0.5;
+            //soundSheep.Play();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -50,6 +58,7 @@ namespace Anatomie_UNIL
         {
             note.Text = partie.getNote.ToString();
 
+
             if (partie.getMembre.ToString() == "Supérieur")
                 sup(partie.getListQuestions, partie.getListAnswer, partie.getListHisAnswer);
             if (partie.getMembre.ToString() == "Inférieur")
@@ -58,6 +67,11 @@ namespace Anatomie_UNIL
                 trc(partie.getListQuestions, partie.getListAnswer, partie.getListHisAnswer);
             if (partie.getMembre.ToString() == "Tout")
                 tt(partie.getListQuestions, partie.getListAnswer, partie.getListHisAnswer);
+
+            //if (partie.getNote < 4)
+            //    soundSheep.Play();
+            //if (partie.getNote > 5)
+            //    soundApplause.Play();
         }
 
         private void sup(List<string> listQuestions, List<string> listAnswer, List<string> listHisAnswer)

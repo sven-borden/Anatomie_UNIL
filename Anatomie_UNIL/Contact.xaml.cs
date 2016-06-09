@@ -59,14 +59,24 @@ namespace Anatomie_UNIL
         {
             if (NameBox.Text != "" && TextBox.Text != "")
             {
+                string name = NameBox.Text;
+                if (name.Length < 5)
+                { noName(); return; }
                 EmailMessage mail = new EmailMessage();
                 mail.To.Add(new EmailRecipient("glaglasven@live.com"));
                 mail.Body = TextBox.Text;
                 mail.Subject = "[UNIL-Anatomie] Message de : " + NameBox.Text;
                 Send(mail);
             }
-            if (NameBox.Text != null || TextBox.Text != null)
+            if (NameBox.Text == "" || TextBox.Text == "")
                 NoText();
+        }
+
+        private async void noName()
+        {
+            var message = new MessageDialog("Nom trop court");
+            message.Commands.Add(new UICommand("Ok"));
+            await message.ShowAsync();
         }
 
         private async void NoText()

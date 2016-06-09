@@ -8,7 +8,7 @@
     mc:Ignorable="d"
     Background="#FF0294CA">
 
-    <Grid x:Name="Grid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF0294CA">
+    <Grid x:Name="Grid" MaxWidth="600" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF0294CA">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>

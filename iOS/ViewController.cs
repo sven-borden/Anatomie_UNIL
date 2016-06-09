@@ -4,6 +4,9 @@ using UIKit;
 
 namespace iOS
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class ViewController : UIViewController
     {
         public ViewController(IntPtr handle) : base(handle)

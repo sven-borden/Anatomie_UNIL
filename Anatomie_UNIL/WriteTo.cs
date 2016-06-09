@@ -9,9 +9,9 @@ namespace Anatomie_UNIL
     class WriteTo
     {
         Windows.Storage.ApplicationDataContainer localSettings;
-        Windows.Storage.StorageFolder localFolder;
+        //Windows.Storage.StorageFolder localFolder;
         Windows.Storage.ApplicationDataCompositeValue compositeResults;
-        Windows.Storage.StorageFile sampleFile;
+        //Windows.Storage.StorageFile sampleFile;
 
         private int questionToDo;
         private int totalQuestionDone;
@@ -22,6 +22,8 @@ namespace Anatomie_UNIL
         private bool? terminaisonChecked;
         private bool? innervationChecked;
         private bool? mouvementChecked;
+
+        private int viewCount;
 
         public WriteTo()
         {
@@ -53,6 +55,18 @@ namespace Anatomie_UNIL
             get { return displayBoolResults; }
             set { displayBoolResults = value; WriteSettings(); }
         }
+
+        public int getViewCount()
+        {
+            return viewCount;
+        }
+
+        public void addViewCount()
+        {
+            viewCount++;
+            WriteSettings();
+        }
+
         public bool? isInsertion
         {
             get { return insertionChecked; }
@@ -87,15 +101,16 @@ namespace Anatomie_UNIL
             compositeResults["isTerminaison"] = true;
             compositeResults["isInnervation"] = false;
             compositeResults["isMouvement"] = false;
+            compositeResults["viewCount"] = 1;
 
-            localSettings.Values["Results"] = compositeResults;
+            localSettings.Values["Setting"] = compositeResults;
         }
 
         public void ReadSettings()
         {
             localSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
 
-            compositeResults = (Windows.Storage.ApplicationDataCompositeValue)localSettings.Values["Results"];
+            compositeResults = (Windows.Storage.ApplicationDataCompositeValue)localSettings.Values["Setting"];
 
             if (compositeResults == null)
             {
@@ -110,8 +125,9 @@ namespace Anatomie_UNIL
                 compositeResults["isTerminaison"] = true;
                 compositeResults["isInnervation"] = false;
                 compositeResults["isMouvement"] = false;
+                compositeResults["viewCount"] = 1;
 
-                localSettings.Values["Results"] = compositeResults;
+                localSettings.Values["Setting"] = compositeResults;
             }
             else
             {
@@ -124,6 +140,7 @@ namespace Anatomie_UNIL
                 terminaisonChecked = Convert.ToBoolean(compositeResults["isTerminaison"]);
                 innervationChecked = Convert.ToBoolean(compositeResults["isInnervation"]);
                 mouvementChecked = Convert.ToBoolean(compositeResults["isMouvement"]);
+                viewCount = Convert.ToInt32(compositeResults["viewCount"]);
             }
         }
 
@@ -131,7 +148,7 @@ namespace Anatomie_UNIL
         {
             localSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
 
-            compositeResults = (Windows.Storage.ApplicationDataCompositeValue)localSettings.Values["Results"];
+            compositeResults = (Windows.Storage.ApplicationDataCompositeValue)localSettings.Values["Setting"];
             compositeResults["QuestionToDo"] = questionToDo;
             compositeResults["totalQuestionDone"] = totalQuestionDone;
             compositeResults["totalQuestionRight"] = totalQuestionRight;
@@ -141,7 +158,7 @@ namespace Anatomie_UNIL
             compositeResults["isTerminaison"] = terminaisonChecked;
             compositeResults["isInnervation"] = innervationChecked;
             compositeResults["isMouvement"] = mouvementChecked;
-
+            compositeResults["viewCount"] = viewCount;
             localSettings.Values["Results"] = compositeResults;
         }
     }

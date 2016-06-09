@@ -40,13 +40,49 @@ namespace Anatomie_UNIL
             checkBoxInnervation.IsChecked = settings.isInnevervation;
             checkBoxMouvement.IsChecked = settings.isMouvement;
 
-            ///THIS IS THE PART FOR INAPP PURCHASE
+            checkBoxInsertion.Checked += checkBoxInsertion_Checked;
+            checkBoxInsertion.Unchecked += checkBoxInsertion_Unchecked;
+            checkBoxTerminaison.Checked += checkBoxTerminaison_Checked;
+            checkBoxTerminaison.Unchecked += checkBoxTerminaison_Unchecked;
+            checkBoxInnervation.Checked += checkBoxInnervation_Checked;
+            checkBoxInnervation.Unchecked += checkBoxInnervation_Unchecked;
+            checkBoxMouvement.Checked += checkBoxMouvement_Checked;
+            checkBoxMouvement.Unchecked += checkBoxMouvement_Unchecked;
+
+            settings.addViewCount();
+
+            checkViewCount(settings.getViewCount());
+
+            ///THIS IS THE PART FOR IN APP PURCHASE
             ///CAREFUL WITH THIS SHIT
             ///
+            /*
             CheckLicense();
             licence.LicenseChanged += Licence_LicenseChanged;
-            
-            theStoryBoard.Begin();
+            theStoryBoard.Begin();*/
+        }
+
+        private async void checkViewCount(int view)
+        {
+            if(view == 20)
+            {
+                var dialog = new MessageDialog("Si tu peux prendre une seconde pour laisser un commentaire, ça aidera tout le monde", "Une seconde de ton précieux temps");
+                dialog.Commands.Add(new UICommand("Volontier, un com.", new UICommandInvokedHandler(this.CommandInvokeHandler)));
+                dialog.Commands.Add(new UICommand("Non, j'ai pas le temps"));
+                dialog.DefaultCommandIndex = 0;
+                dialog.CancelCommandIndex = 1;
+                await dialog.ShowAsync();
+            }
+        }
+
+        private void CommandInvokeHandler(IUICommand command)
+        {
+            callRating();
+        }
+
+        private async void callRating()
+        {
+            await Windows.System.Launcher.LaunchUriAsync(new Uri("https://www.microsoft.com/fr-fr/store/apps/anatomie-unil/9wzdncrd209s"));
         }
 
         private void Licence_LicenseChanged()
@@ -154,8 +190,8 @@ namespace Anatomie_UNIL
             {
                 buttonMembInf.IsEnabled = true;
                 buttonTout.IsEnabled = true;
-                buttondebloquer.IsEnabled = false;
-                buttondebloquer.Visibility = Visibility.Collapsed;
+                //buttondebloquer.IsEnabled = false;
+                //buttondebloquer.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -173,15 +209,15 @@ namespace Anatomie_UNIL
             {
                 buttonMembInf.IsEnabled = false;
                 buttonTout.IsEnabled = false;
-                buttondebloquer.IsEnabled = true;
-                buttondebloquer.Visibility = Visibility.Visible;
+                //buttondebloquer.IsEnabled = true;
+                //buttondebloquer.Visibility = Visibility.Visible;
             }
             else
             {
                 buttonMembInf.IsEnabled = true;
                 buttonTout.IsEnabled = true;
-                buttondebloquer.IsEnabled = false;
-                buttondebloquer.Visibility = Visibility.Collapsed;
+                //buttondebloquer.IsEnabled = false;
+                //buttondebloquer.Visibility = Visibility.Collapsed;
             }
         }
 

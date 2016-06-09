@@ -65,5 +65,14 @@
             Grid.Row="6"
             Source="Assets/mouton.png"
             />
+        <TextBlock
+            Grid.Row="6"
+            Text="Version 5.2.16"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            FontFamily="Segoe UI Light"
+            FontSize="12"
+            Foreground="WhiteSmoke"
+            />
     </Grid>
 </Page>

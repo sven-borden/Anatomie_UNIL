@@ -7,8 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="#FF0294CA">
-
-    <Grid x:Name="Grid" Background="#FF0294CA">
+    <Grid x:Name="Grid" Background="#FF0294CA" MaxWidth="600">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition MinHeight="80"/>
@@ -29,6 +28,7 @@
             x:Name="textQuestion"
             Grid.Row="0"
             TextWrapping="Wrap"
+            Padding="3"
             Text="Question" 
             IsTapEnabled="False"
             TextAlignment="Center"
