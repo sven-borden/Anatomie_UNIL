@@ -8,7 +8,7 @@ namespace Anatomie_UNIL
 {
     class WriteTo
     {
-        Windows.Storage.ApplicationDataContainer localSettings;
+        Windows.Storage.ApplicationDataContainer RoamingSettings;
         //Windows.Storage.StorageFolder localFolder;
         Windows.Storage.ApplicationDataCompositeValue compositeResults;
         //Windows.Storage.StorageFile sampleFile;
@@ -90,7 +90,7 @@ namespace Anatomie_UNIL
 
         public void ResetSettings()
         {
-            localSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
+            RoamingSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
             compositeResults = new Windows.Storage.ApplicationDataCompositeValue();
             compositeResults["QuestionToDo"] = 20;
             compositeResults["totalQuestionDone"] = 0;
@@ -103,14 +103,14 @@ namespace Anatomie_UNIL
             compositeResults["isMouvement"] = false;
             compositeResults["viewCount"] = 1;
 
-            localSettings.Values["Setting"] = compositeResults;
+            RoamingSettings.Values["Setting"] = compositeResults;
         }
 
         public void ReadSettings()
         {
-            localSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
+            RoamingSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
 
-            compositeResults = (Windows.Storage.ApplicationDataCompositeValue)localSettings.Values["Setting"];
+            compositeResults = (Windows.Storage.ApplicationDataCompositeValue)RoamingSettings.Values["Setting"];
 
             if (compositeResults == null)
             {
@@ -127,7 +127,7 @@ namespace Anatomie_UNIL
                 compositeResults["isMouvement"] = false;
                 compositeResults["viewCount"] = 1;
 
-                localSettings.Values["Setting"] = compositeResults;
+                RoamingSettings.Values["Setting"] = compositeResults;
             }
             else
             {
@@ -146,9 +146,9 @@ namespace Anatomie_UNIL
 
         public void  WriteSettings()
         {
-            localSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
+            RoamingSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
 
-            compositeResults = (Windows.Storage.ApplicationDataCompositeValue)localSettings.Values["Setting"];
+            compositeResults = (Windows.Storage.ApplicationDataCompositeValue)RoamingSettings.Values["Setting"];
             compositeResults["QuestionToDo"] = questionToDo;
             compositeResults["totalQuestionDone"] = totalQuestionDone;
             compositeResults["totalQuestionRight"] = totalQuestionRight;
@@ -159,7 +159,7 @@ namespace Anatomie_UNIL
             compositeResults["isInnervation"] = innervationChecked;
             compositeResults["isMouvement"] = mouvementChecked;
             compositeResults["viewCount"] = viewCount;
-            localSettings.Values["Results"] = compositeResults;
+            RoamingSettings.Values["Setting"] = compositeResults;
         }
     }
 }
