@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
 namespace Anatomie_UNIL
@@ -33,6 +34,7 @@ namespace Anatomie_UNIL
             this.InitializeComponent();
             SystemNavigationManager.GetForCurrentView().BackRequested += MainPage_BackRequested;
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
+            
 
             WriteTo settings = new WriteTo();
             checkBoxInsertion.IsChecked = settings.isInsertion;
@@ -102,7 +104,7 @@ namespace Anatomie_UNIL
             //    Frame.GoBack(); //some stuff is not working here
             //}
         }
-
+        
         private void buttonSetting_Click(object sender, RoutedEventArgs e) { Frame.Navigate(typeof(Settings)); }
 
         private void buttonAsk_Click(object sender, RoutedEventArgs e) { Frame.Navigate(typeof(Ask)); }

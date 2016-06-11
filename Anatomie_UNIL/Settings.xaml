@@ -21,6 +21,12 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition FromVerticalOffset="480" IsStaggeringEnabled="True"/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
         
         <TextBlock 
             Text="Settings"
@@ -90,6 +96,7 @@
             HorizontalAlignment="Stretch"
             Margin="10"
             StepFrequency="5"
+            IsThumbToolTipEnabled="True"
             />
         <TextBlock
             Grid.Row="3"

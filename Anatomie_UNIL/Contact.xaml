@@ -14,6 +14,13 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition FromVerticalOffset="480" IsStaggeringEnabled="True"/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+        
         <TextBlock 
             Text="Contact"
             Grid.Row="0"

@@ -8,6 +8,16 @@
     mc:Ignorable="d"
     Background="#FF0294CA">
 
+    <!--<Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    <ContinuumNavigationTransitionInfo/>
+                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>-->
+    
     <Grid x:Name="Grid" Background="#FF0294CA" MaxWidth="600">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -18,7 +28,11 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition MinHeight="20"/>
         </Grid.RowDefinitions>
-
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition FromVerticalOffset="480" IsStaggeringEnabled="True"/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
         <Rectangle 
             x:Name="Rectangle" 
             Grid.Row="0" 

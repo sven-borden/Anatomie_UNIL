@@ -19,6 +19,12 @@
             <RowDefinition MinHeight="20"/>
         </Grid.RowDefinitions>
 
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition FromVerticalOffset="480" IsStaggeringEnabled="True"/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+        
         <Rectangle 
             x:Name="Rectangle" 
             Grid.Row="0" 

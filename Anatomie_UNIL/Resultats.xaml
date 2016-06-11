@@ -16,6 +16,13 @@
             <RowDefinition Height="Auto"/>
             <!--<RowDefinition Height="*"/> used for the rectangle-->
         </Grid.RowDefinitions>
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition FromVerticalOffset="480" IsStaggeringEnabled="True"/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+        
         <TextBlock
             Text="Résultats"
             Grid.Row="0"

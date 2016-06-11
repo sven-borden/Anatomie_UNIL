@@ -324,7 +324,7 @@ namespace Anatomie_UNIL
             if (rootFrame.CanGoBack && e.Handled == false)
             {
                 e.Handled = true;
-                rootFrame.GoBack();
+                Frame.Navigate(typeof(MainPage));
             }
         }
     }

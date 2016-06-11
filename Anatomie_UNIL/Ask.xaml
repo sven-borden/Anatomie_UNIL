@@ -18,7 +18,13 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition FromVerticalOffset="480" IsStaggeringEnabled="True"/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
         <TextBlock
             Text="Aide"
             Grid.Row="0"
@@ -67,7 +73,7 @@
             />
         <TextBlock
             Grid.Row="6"
-            Text="Version 5.2.16"
+            Text="Version 5.2.20"
             HorizontalAlignment="Right"
             VerticalAlignment="Bottom"
             FontFamily="Segoe UI Light"
