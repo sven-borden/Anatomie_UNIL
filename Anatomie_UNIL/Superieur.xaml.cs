@@ -164,6 +164,8 @@ namespace Anatomie_UNIL
 
         private void GoodAnswer(int buttonNb)
         {
+            if (rightAnswer == true)
+                return;
             if(alreadyError == false)
             {
                 nbJuste++;

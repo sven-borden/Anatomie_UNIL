@@ -29,7 +29,7 @@ namespace Anatomie_UNIL
         public Contact()
         {
             this.InitializeComponent();
-            SystemNavigationManager.GetForCurrentView().BackRequested += Inferieur_BackRequested;
+            SystemNavigationManager.GetForCurrentView().BackRequested += Contact_BackRequested;
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
         }
 
@@ -60,7 +60,7 @@ namespace Anatomie_UNIL
             if (NameBox.Text != "" && TextBox.Text != "")
             {
                 string name = NameBox.Text;
-                if (name.Length < 5)
+                if (!isNameOk(name))
                 { noName(); return; }
                 EmailMessage mail = new EmailMessage();
                 mail.To.Add(new EmailRecipient("glaglasven@live.com"));
@@ -70,6 +70,26 @@ namespace Anatomie_UNIL
             }
             if (NameBox.Text == "" || TextBox.Text == "")
                 NoText();
+        }
+
+        private bool isNameOk(string name)
+        {
+            List<string> no = new List<string>();
+            no.Add("asd");
+            no.Add("sdf");
+            no.Add("dfg");
+            no.Add("fgh");
+            no.Add("ghj");
+            no.Add("hjk");
+            no.Add("jkl");
+            no.Add("fuck");
+            no.Add("connard");
+
+            name = name.ToLower();
+            foreach (string s in no)
+                if (name.Contains(s))
+                    return false;
+            return true;
         }
 
         private async void noName()
@@ -89,12 +109,30 @@ namespace Anatomie_UNIL
         private async void Send(EmailMessage mail)
         {
             await EmailManager.ShowComposeNewEmailAsync(mail);
-            Frame.Navigate(typeof(MainPage));
+            Frame rootFrame = Window.Current.Content as Frame;
+            if (rootFrame == null)
+                return;
+
+            if (rootFrame.CanGoBack)
+            {
+
+                Frame.GoBack(); //some stuff is not working here
+            }
         }
 
-        private void Inferieur_BackRequested(object sender, BackRequestedEventArgs e)
+        private void Contact_BackRequested(object sender, BackRequestedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage));
+            //Frame.Navigate(typeof(MainPage));
+
+            Frame rootFrame = Window.Current.Content as Frame;
+            if (rootFrame == null)
+                return;
+
+            if (rootFrame.CanGoBack)
+            {
+
+                Frame.GoBack(); //some stuff is not working here
+            }
         }
     }
 }

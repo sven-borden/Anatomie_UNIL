@@ -105,7 +105,7 @@ namespace Anatomie_UNIL
             //}
         }
         
-        private void buttonSetting_Click(object sender, RoutedEventArgs e) { Frame.Navigate(typeof(Settings)); }
+        private void buttonSetting_Click(object sender, RoutedEventArgs e) { Frame.Navigate(typeof(Settings)    ); }
 
         private void buttonAsk_Click(object sender, RoutedEventArgs e) { Frame.Navigate(typeof(Ask)); }
 

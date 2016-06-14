@@ -114,7 +114,7 @@ namespace Anatomie_UNIL
             {"muscle longissimus du cou", "Processus transverses T1-T6", "Processus transverses C2-C7", "Branche postérieure nn. spinaux"},
             {"muscle longissimus du thorax", "Crête iliaque, processus épineux L1-S4, processus mamillaires L1-L2, processus transverses T7-T12", "Processus costiformes L1-L5, angles des côtes 2-12, processus transverses T1-T12", "Branche postérieure nn. spinaux"},
             {"muscle épineux du thorax", "Processus épineux T11-L2", "Processus épineux T2-T11", "Branche postérieure nn. spinaux"},
-            {"muscle épineux du cou", "Processus épineux C6-T2", "Processus épineux C2-C4", "Branchee postérieur nn. spinaux"},
+            {"muscle épineux du cou", "Processus épineux C6-T2", "Processus épineux C2-C4", "Branche postérieur nn. spinaux"},
             {"muscle épineux de la tête", "Inconstant", "Inconstant", "Branche postérieure nn. spinaux"},
             {"muscle semi-épineux du cou", "Processus transverses T1-T6", "Processus épineux C2-C5", "Branche postérieure nn. spinaux"},
             {"muscle semi-épineux du thorax", "Processus transverses T7-T12", "Processus épineux C6-T6", "Branche postérieure nn. spinaux"},
@@ -131,8 +131,8 @@ namespace Anatomie_UNIL
             {"muscle droit de l'abdomen", "Cartilage côtes 5-7, processus xyphoïde", "Symphyse et crête pubiennes", "NN. intercostaux et n. subcostal"},
             {"muscle pyramidal", "Pubis", "Ligne blanche", "NN. subcostal"},
             {"muscle oblique externe", "Face externe côtes 5-12. crête iliaque, fascia thoraco-lombaire, lig. inguinal", "Gaine du muscle droit de l'abdomen et ligne blanche", "NN. intercostaux et n. subcostal"},
-            {"muscle oblique interne", "Crête iliaque, fascia thoraco-lombaire, lig. inguinal", "Côtes 10-12, gaine du muscle droit de l'abdomen et ligne blanche", "NN. intercostaux et n. subcostal"},
-            {"muscle transverse de l'abdomen", "Face interne côtes 7-12, crête iliaque, fascia thoraco-lombaire, lig. inguinal", "Gain du muscle droit de l'abdomen et ligne blanche", "NN. intercostaux et n. subcostal"},
+            {"muscle oblique interne", "Crête iliaque, fascia thoraco-lombaire, lig. inguinal", "Côtes 10-12, Gaine du muscle droit de l'abdomen et ligne blanche", "NN. intercostaux et n. subcostal"},
+            {"muscle transverse de l'abdomen", "Face interne côtes 7-12, crête iliaque, fascia thoraco-lombaire, lig. inguinal", "Gaine du muscle droit de l'abdomen et ligne blanche", "NN. intercostaux et n. subcostal"},
         };
 
         ///Hanche et jambe
