@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="47">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3" translatesAutoresizingMaskIntoConstraints="NO" layoutMarginsFollowReadableWidth="YES">
+                                <rect key="frame" x="164" y="198" width="46" height="30"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.50196078431372548" blue="0.74509803921568629" alpha="1"/>
+                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                <state key="normal" title="Membre supérieur">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="274" width="335" height="45"/>
+                                </variation>
+                                <connections>
+                                    <action selector="ButtonSup_TouchUpInside:" destination="BYZ-38-t0r" id="1078" eventType="touchUpInside"/>
+                                </connections>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="12" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="147" y="256" width="46" height="30"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.50196078431372548" blue="0.74509803921568629" alpha="1"/>
+                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                <state key="normal" title="Membre inférieur">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="327" width="335" height="45"/>
+                                    <mask key="constraints">
+                                        <include reference="952"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue id="1226" destination="489" kind="show"/>
+                                </connections>
+                                <constraints>
+                                    <constraint id="952" firstItem="12" firstAttribute="width" constant="335"/>
+                                    <constraint id="953" firstAttribute="width" secondItem="12" secondAttribute="height" multiplier="67:9"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="952"/>
+                                        <exclude reference="953"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="13" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="164" y="318" width="46" height="30"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.50196078431372548" blue="0.74509803921568629" alpha="1"/>
+                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                <state key="normal" title="Tronc">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="380" width="335" height="47"/>
+                                </variation>
+                                <connections>
+                                    <segue id="1260" destination="489" kind="show"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="14" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="154" y="417" width="46" height="30"/>
+                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.50196078431372548" blue="0.74509803921568629" alpha="1"/>
+                                <state key="normal" title="Tout">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="435" width="335" height="45"/>
+                                </variation>
+                                <connections>
+                                    <segue id="1653" destination="1362" kind="show"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="906" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="98" y="462" width="51" height="31"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="114" y="507" width="51" height="31"/>
+                                </variation>
+                                <color key="onTintColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.50196078431372548" blue="0.74509803921568629" alpha="1"/>
+                                <connections>
+                                    <action selector="ToggledOrigin:" destination="BYZ-38-t0r" id="1048" eventType="valueChanged"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="909" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="235" y="462" width="51" height="31"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="202" y="507" width="51" height="31"/>
+                                </variation>
+                                <color key="onTintColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.50196078431372548" blue="0.74509803921568629" alpha="1"/>
+                                <connections>
+                                    <action selector="ToggledTerminaison:" destination="BYZ-38-t0r" id="1051" eventType="valueChanged"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="910" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="98" y="568" width="51" height="31"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="114" y="592" width="51" height="31"/>
+                                </variation>
+                                <color key="onTintColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.50196078431372548" blue="0.74509803921568629" alpha="1"/>
+                                <connections>
+                                    <action selector="ToggledInnervation:" destination="BYZ-38-t0r" id="1052" eventType="valueChanged"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="911" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="235" y="568" width="51" height="31"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="202" y="593" width="51" height="31"/>
+                                </variation>
+                                <color key="onTintColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.50196078431372548" blue="0.74509803921568629" alpha="1"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Origine" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="912" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="30" y="467" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="512" width="86" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terminaison" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="988" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="301" y="512" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="261" y="512" width="94" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mouvement" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="989" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="300" y="597" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="261" y="597" width="94" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Innervation" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="990" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="598" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="598" width="86" height="21"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="3"/>
+                                <exclude reference="12"/>
+                                <exclude reference="13"/>
+                                <exclude reference="14"/>
+                                <exclude reference="906"/>
+                                <exclude reference="909"/>
+                                <exclude reference="910"/>
+                                <exclude reference="911"/>
+                                <exclude reference="912"/>
+                                <exclude reference="988"/>
+                                <exclude reference="989"/>
+                                <exclude reference="990"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="926"/>
+                                <exclude reference="927"/>
+                                <exclude reference="928"/>
+                                <exclude reference="929"/>
+                                <exclude reference="930"/>
+                                <exclude reference="931"/>
+                                <exclude reference="932"/>
+                                <exclude reference="933"/>
+                                <exclude reference="934"/>
+                                <exclude reference="935"/>
+                                <exclude reference="942"/>
+                                <exclude reference="943"/>
+                                <exclude reference="944"/>
+                                <exclude reference="956"/>
+                                <exclude reference="957"/>
+                                <exclude reference="963"/>
+                                <exclude reference="964"/>
+                                <exclude reference="967"/>
+                                <exclude reference="969"/>
+                                <exclude reference="970"/>
+                                <exclude reference="972"/>
+                                <exclude reference="973"/>
+                                <exclude reference="974"/>
+                                <exclude reference="978"/>
+                                <exclude reference="979"/>
+                                <exclude reference="980"/>
+                                <exclude reference="981"/>
+                                <exclude reference="982"/>
+                                <exclude reference="983"/>
+                                <exclude reference="996"/>
+                                <exclude reference="997"/>
+                                <exclude reference="998"/>
+                                <exclude reference="999"/>
+                                <exclude reference="1000"/>
+                                <exclude reference="1001"/>
+                                <exclude reference="1002"/>
+                                <exclude reference="1005"/>
+                                <exclude reference="1006"/>
+                                <exclude reference="1007"/>
+                                <exclude reference="1008"/>
+                                <exclude reference="1045"/>
+                                <exclude reference="1321"/>
+                                <exclude reference="1322"/>
+                                <exclude reference="1323"/>
+                                <exclude reference="1324"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="3"/>
+                                <include reference="12"/>
+                                <include reference="13"/>
+                                <include reference="14"/>
+                                <include reference="906"/>
+                                <include reference="909"/>
+                                <include reference="910"/>
+                                <include reference="911"/>
+                                <include reference="912"/>
+                                <include reference="988"/>
+                                <include reference="989"/>
+                                <include reference="990"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="926"/>
+                                <include reference="927"/>
+                                <include reference="928"/>
+                                <include reference="929"/>
+                                <include reference="930"/>
+                                <include reference="931"/>
+                                <include reference="932"/>
+                                <include reference="933"/>
+                                <include reference="934"/>
+                                <include reference="935"/>
+                                <include reference="942"/>
+                                <include reference="943"/>
+                                <include reference="944"/>
+                                <include reference="956"/>
+                                <include reference="957"/>
+                                <include reference="963"/>
+                                <include reference="964"/>
+                                <include reference="967"/>
+                                <include reference="969"/>
+                                <include reference="970"/>
+                                <include reference="972"/>
+                                <include reference="973"/>
+                                <include reference="974"/>
+                                <include reference="978"/>
+                                <include reference="979"/>
+                                <include reference="980"/>
+                                <include reference="981"/>
+                                <include reference="982"/>
+                                <include reference="983"/>
+                                <include reference="996"/>
+                                <include reference="997"/>
+                                <include reference="998"/>
+                                <include reference="999"/>
+                                <include reference="1000"/>
+                                <include reference="1001"/>
+                                <include reference="1002"/>
+                                <include reference="1005"/>
+                                <include reference="1006"/>
+                                <include reference="1007"/>
+                                <include reference="1008"/>
+                                <include reference="1045"/>
+                                <include reference="1321"/>
+                                <include reference="1322"/>
+                                <include reference="1323"/>
+                                <include reference="1324"/>
+                            </mask>
+                        </variation>
+                        <constraints>
+                            <constraint id="926" firstItem="12" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20"/>
+                            <constraint id="927" firstItem="13" firstAttribute="top" secondItem="12" secondAttribute="bottom" constant="8"/>
+                            <constraint id="928" firstItem="13" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20"/>
+                            <constraint id="929" firstItem="14" firstAttribute="top" secondItem="13" secondAttribute="bottom" constant="8"/>
+                            <constraint id="930" firstItem="14" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20"/>
+                            <constraint id="931" firstItem="912" firstAttribute="top" secondItem="14" secondAttribute="bottom" constant="28"/>
+                            <constraint id="932" firstItem="912" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20"/>
+                            <constraint id="933" firstItem="906" firstAttribute="leading" secondItem="912" secondAttribute="trailing" constant="26"/>
+                            <constraint id="934" firstItem="909" firstAttribute="top" secondItem="14" secondAttribute="bottom" constant="23"/>
+                            <constraint id="935" firstItem="910" firstAttribute="top" secondItem="906" secondAttribute="bottom" constant="75"/>
+                            <constraint id="942" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="12" secondAttribute="trailing" constant="20"/>
+                            <constraint id="943" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="13" secondAttribute="trailing" constant="20"/>
+                            <constraint id="944" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="14" secondAttribute="trailing" constant="20"/>
+                            <constraint id="956" firstItem="12" firstAttribute="width" secondItem="13" secondAttribute="width"/>
+                            <constraint id="957" firstItem="13" firstAttribute="width" secondItem="14" secondAttribute="width"/>
+                            <constraint id="963" firstItem="12" firstAttribute="height" secondItem="13" secondAttribute="height"/>
+                            <constraint id="964" firstItem="13" firstAttribute="height" secondItem="14" secondAttribute="height"/>
+                            <constraint id="967" firstItem="906" firstAttribute="top" secondItem="14" secondAttribute="bottom" constant="27"/>
+                            <constraint id="969" firstItem="912" firstAttribute="height" secondItem="906" secondAttribute="height"/>
+                            <constraint id="970" firstItem="909" firstAttribute="height" secondItem="906" secondAttribute="height"/>
+                            <constraint id="972" firstItem="910" firstAttribute="height" secondItem="906" secondAttribute="height"/>
+                            <constraint id="973" firstItem="910" firstAttribute="width" secondItem="906" secondAttribute="width"/>
+                            <constraint id="974" firstItem="909" firstAttribute="width" secondItem="906" secondAttribute="width"/>
+                            <constraint id="978" firstItem="12" firstAttribute="top" secondItem="3" secondAttribute="bottom" constant="8"/>
+                            <constraint id="979" firstItem="3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20"/>
+                            <constraint id="980" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" constant="20"/>
+                            <constraint id="981" firstItem="3" firstAttribute="height" secondItem="12" secondAttribute="height"/>
+                            <constraint id="982" firstItem="3" firstAttribute="width" secondItem="12" secondAttribute="width"/>
+                            <constraint id="983" firstItem="wfy-db-euE" firstAttribute="top" secondItem="910" secondAttribute="bottom" constant="45"/>
+                            <constraint id="996" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="988" secondAttribute="trailing" constant="20"/>
+                            <constraint id="997" firstItem="990" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20"/>
+                            <constraint id="998" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="989" secondAttribute="trailing" constant="20"/>
+                            <constraint id="999" firstItem="989" firstAttribute="top" secondItem="988" secondAttribute="bottom" constant="64"/>
+                            <constraint id="1000" firstItem="990" firstAttribute="top" secondItem="912" secondAttribute="bottom" constant="65"/>
+                            <constraint id="1001" firstItem="wfy-db-euE" firstAttribute="top" secondItem="990" secondAttribute="bottom" constant="48"/>
+                            <constraint id="1002" firstItem="wfy-db-euE" firstAttribute="top" secondItem="989" secondAttribute="bottom" constant="49"/>
+                            <constraint id="1005" firstItem="906" firstAttribute="leading" secondItem="912" secondAttribute="centerX" constant="51"/>
+                            <constraint id="1006" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="988" secondAttribute="trailing" constant="20"/>
+                            <constraint id="1007" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="988" secondAttribute="trailing" constant="20"/>
+                            <constraint id="1008" firstItem="910" firstAttribute="leading" secondItem="990" secondAttribute="centerX" constant="51"/>
+                            <constraint id="1045" firstItem="909" firstAttribute="leading" secondItem="906" secondAttribute="trailing" constant="37"/>
+                            <constraint id="1321" firstItem="wfy-db-euE" firstAttribute="top" secondItem="911" secondAttribute="bottom" constant="43"/>
+                            <constraint id="1322" firstItem="911" firstAttribute="leading" secondItem="910" secondAttribute="trailing" constant="37"/>
+                            <constraint id="1323" firstItem="911" firstAttribute="top" secondItem="909" secondAttribute="bottom" constant="55"/>
+                            <constraint id="1324" firstItem="989" firstAttribute="leading" secondItem="911" secondAttribute="trailing" constant="8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ButtonSup" destination="3" id="name-outlet-3"/>
+                        <outlet property="ButtonInf" destination="12" id="name-outlet-12"/>
+                        <outlet property="ButtonTronc" destination="13" id="name-outlet-13"/>
+                        <outlet property="ButtonTout" destination="14" id="name-outlet-14"/>
+                        <outlet property="ToggleOrigine" destination="906" id="name-outlet-906"/>
+                        <outlet property="ToggleTerminaison" destination="909" id="name-outlet-909"/>
+                        <outlet property="ToggleInnervation" destination="910" id="name-outlet-910"/>
+                    </connections>
+                    <navigationItem title="Anatomie" id="103" key="navigationItem"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-523" y="51"/>
+        </scene>
+        <scene sceneID="46">
+            <objects>
+                <navigationController id="47" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="49">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue id="104" destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="50" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-966" y="49"/>
+        </scene>
+        <scene sceneID="488">
+            <objects>
+                <viewController id="489" sceneMemberID="viewController" customClass="QuestionView">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="486"/>
+                        <viewControllerLayoutGuide type="bottom" id="487"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleAspectFit" id="490">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question?" textAlignment="center" lineBreakMode="wordWrap" id="897" translatesAutoresizingMaskIntoConstraints="NO" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" numberOfLines="6">
+                                <rect key="frame" x="161" y="109" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.50196078431372548" blue="0.74509803921568629" alpha="1"/>
+                                <nil key="highlightedColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.50196078431372548" blue="0.74509803921568629" alpha="1"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="77" width="335" height="126"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="898" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="146" y="281" width="46" height="30"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.50196078431372548" blue="0.74509803921568629" alpha="1"/>
+                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Reponse 1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="232" width="335" height="90"/>
+                                </variation>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="Response1Click:" destination="489" id="1055" eventType="touchUpInside"/>
+                                </connections>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="899" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="129" y="378" width="46" height="30"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.50196078431372548" blue="0.74509803921568629" alpha="1"/>
+                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Reponse 2">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="330" width="335" height="90"/>
+                                </variation>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="Reponse2Click:" destination="489" id="1056" eventType="touchUpInside"/>
+                                </connections>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="900" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="164" y="480" width="46" height="30"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.50196078431372548" blue="0.74509803921568629" alpha="1"/>
+                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Reponse 3">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="428" width="335" height="90"/>
+                                </variation>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="Reponse3Click:" destination="489" id="1057" eventType="touchUpInside"/>
+                                </connections>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="901" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="159" y="572" width="46" height="30"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.50196078431372548" blue="0.74509803921568629" alpha="1"/>
+                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Reponse 4">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="526" width="335" height="91"/>
+                                </variation>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="Reponse4Click:" destination="489" id="1058" eventType="touchUpInside"/>
+                                </connections>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                            </button>
+                        </subviews>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="897"/>
+                                <exclude reference="898"/>
+                                <exclude reference="899"/>
+                                <exclude reference="900"/>
+                                <exclude reference="901"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="1079"/>
+                                <exclude reference="1080"/>
+                                <exclude reference="1081"/>
+                                <exclude reference="1137"/>
+                                <exclude reference="1138"/>
+                                <exclude reference="1139"/>
+                                <exclude reference="1140"/>
+                                <exclude reference="1141"/>
+                                <exclude reference="1142"/>
+                                <exclude reference="1143"/>
+                                <exclude reference="1144"/>
+                                <exclude reference="1145"/>
+                                <exclude reference="1146"/>
+                                <exclude reference="1147"/>
+                                <exclude reference="1148"/>
+                                <exclude reference="1149"/>
+                                <exclude reference="1150"/>
+                                <exclude reference="1306"/>
+                                <exclude reference="1307"/>
+                                <exclude reference="1308"/>
+                                <exclude reference="1309"/>
+                                <exclude reference="1315"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="897"/>
+                                <include reference="898"/>
+                                <include reference="899"/>
+                                <include reference="900"/>
+                                <include reference="901"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="1079"/>
+                                <include reference="1080"/>
+                                <include reference="1081"/>
+                                <include reference="1137"/>
+                                <include reference="1138"/>
+                                <include reference="1139"/>
+                                <include reference="1140"/>
+                                <include reference="1141"/>
+                                <include reference="1142"/>
+                                <include reference="1143"/>
+                                <include reference="1144"/>
+                                <include reference="1145"/>
+                                <include reference="1146"/>
+                                <include reference="1147"/>
+                                <include reference="1148"/>
+                                <include reference="1149"/>
+                                <include reference="1150"/>
+                                <include reference="1306"/>
+                                <include reference="1307"/>
+                                <include reference="1308"/>
+                                <include reference="1309"/>
+                                <include reference="1315"/>
+                            </mask>
+                        </variation>
+                        <constraints>
+                            <constraint id="1079" firstItem="897" firstAttribute="leading" secondItem="490" secondAttribute="leading" constant="20"/>
+                            <constraint id="1080" firstItem="897" firstAttribute="top" secondItem="486" secondAttribute="bottom" constant="13"/>
+                            <constraint id="1081" firstItem="490" firstAttribute="trailing" secondItem="897" secondAttribute="trailing" constant="20"/>
+                            <constraint id="1137" firstItem="487" firstAttribute="top" secondItem="901" secondAttribute="bottom" constant="20"/>
+                            <constraint id="1138" firstItem="901" firstAttribute="top" secondItem="900" secondAttribute="bottom" constant="8"/>
+                            <constraint id="1139" firstItem="900" firstAttribute="top" secondItem="899" secondAttribute="bottom" constant="8"/>
+                            <constraint id="1140" firstItem="899" firstAttribute="top" secondItem="898" secondAttribute="bottom" constant="8"/>
+                            <constraint id="1141" firstItem="898" firstAttribute="leading" secondItem="490" secondAttribute="leading" constant="20"/>
+                            <constraint id="1142" firstItem="899" firstAttribute="leading" secondItem="490" secondAttribute="leading" constant="20"/>
+                            <constraint id="1143" firstItem="900" firstAttribute="leading" secondItem="490" secondAttribute="leading" constant="20"/>
+                            <constraint id="1144" firstItem="901" firstAttribute="leading" secondItem="490" secondAttribute="leading" constant="20"/>
+                            <constraint id="1145" firstItem="898" firstAttribute="width" secondItem="899" secondAttribute="width"/>
+                            <constraint id="1146" firstItem="899" firstAttribute="width" secondItem="900" secondAttribute="width"/>
+                            <constraint id="1147" firstItem="900" firstAttribute="width" secondItem="901" secondAttribute="width"/>
+                            <constraint id="1148" firstItem="898" firstAttribute="height" secondItem="899" secondAttribute="height"/>
+                            <constraint id="1149" firstItem="899" firstAttribute="height" secondItem="900" secondAttribute="height"/>
+                            <constraint id="1150" firstItem="900" firstAttribute="height" secondItem="901" secondAttribute="height"/>
+                            <constraint id="1306" firstItem="490" firstAttribute="trailing" secondItem="898" secondAttribute="trailing" constant="20"/>
+                            <constraint id="1307" firstItem="490" firstAttribute="trailing" secondItem="899" secondAttribute="trailing" constant="20"/>
+                            <constraint id="1308" firstItem="490" firstAttribute="trailing" secondItem="900" secondAttribute="trailing" constant="20"/>
+                            <constraint id="1309" firstItem="490" firstAttribute="trailing" secondItem="901" secondAttribute="trailing" constant="20"/>
+                            <constraint id="1315" firstItem="898" firstAttribute="top" secondItem="897" secondAttribute="bottom" constant="29"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Reponse1" destination="898" id="name-outlet-898"/>
+                        <outlet property="Reponse2" destination="899" id="name-outlet-899"/>
+                        <outlet property="Reponse3" destination="900" id="name-outlet-900"/>
+                        <outlet property="Reponse4" destination="901" id="name-outlet-901"/>
+                        <outlet property="TexteQuestion" destination="897" id="name-outlet-897"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="491" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5" y="47"/>
+        </scene>
+        <scene sceneID="1330">
+            <objects>
+                <tableViewController id="1331" sceneMemberID="viewController" title="Résultats" modalTransitionStyle="crossDissolve" customClass="ResultView">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1332">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="1331" id="1333"/>
+                            <outlet property="delegate" destination="1331" id="1334"/>
+                        </connections>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="1659" rowHeight="44" style="IBUITableViewCellStyleDefault" textLabel="1661" reuseIdentifier="taskCell" accessoryType="disclosureIndicator">
+                                <rect key="frame" x="0.0" y="28" width="240" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1659" id="1660">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1661">
+                                            <rect key="frame" x="15" y="0.0" width="210" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue id="1720" destination="1431" kind="showDetail"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem title="Résultats" id="1419" key="navigationItem">
+                        <barButtonItem key="backBarButtonItem" title="Retour" id="1422"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="ResultatsTitle" destination="1419" id="name-outlet-1419"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1337" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="891" y="55"/>
+        </scene>
+        <scene sceneID="1361">
+            <objects>
+                <navigationController id="1362" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1364">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue id="1420" destination="1331" kind="relationship" relationship="rootViewController"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1365" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="433" y="47"/>
+        </scene>
+        <scene sceneID="1430">
+            <objects>
+                <tableViewController id="1431" sceneMemberID="viewController" customClass="ResultDetails">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1432" allowsSelection="NO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="1431" id="1433"/>
+                            <outlet property="delegate" destination="1431" id="1434"/>
+                        </connections>
+                        <sections>
+                            <tableViewSection headerTitle="Section" id="1662">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1663" rowHeight="44">
+                                        <rect key="frame" x="0.0" y="28" width="240" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1663" id="1664">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1665" rowHeight="44">
+                                        <rect key="frame" x="0.0" y="28" width="240" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1665" id="1666">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1667" rowHeight="44">
+                                        <rect key="frame" x="0.0" y="28" width="240" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1667" id="1668">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Section" id="1669">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1670" rowHeight="44">
+                                        <rect key="frame" x="0.0" y="28" width="240" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1670" id="1671">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1672" rowHeight="44">
+                                        <rect key="frame" x="0.0" y="28" width="240" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1672" id="1673">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1674" rowHeight="44">
+                                        <rect key="frame" x="0.0" y="28" width="240" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1674" id="1675">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1437" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1352" y="52"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Fond.png" width="1000" height="1000"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedScreenMetrics key="destination" type="retina47"/>
+        <simulatedOrientationMetrics key="orientation"/>
+    </simulatedMetricsContainer>
+</document>
