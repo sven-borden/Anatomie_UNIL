@@ -22,6 +22,10 @@ namespace AnatUNIL
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UINavigationItem NavBar { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel Note { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (MyTableView != null) {
@@ -32,6 +36,11 @@ namespace AnatUNIL
             if (NavBar != null) {
                 NavBar.Dispose ();
                 NavBar = null;
+            }
+
+            if (Note != null) {
+                Note.Dispose ();
+                Note = null;
             }
         }
     }

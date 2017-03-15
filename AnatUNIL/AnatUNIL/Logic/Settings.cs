@@ -80,7 +80,7 @@ namespace Logic
 
 		private void ReadSettings()
 		{
-			questionToDo = 1;
+			questionToDo = 5;
 		}
 
 		void WriteSettings()

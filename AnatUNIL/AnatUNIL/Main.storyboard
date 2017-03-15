@@ -277,7 +277,7 @@
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="no9-cl-gqb">
                                 <rect key="frame" x="16" y="130" width="343" height="492"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.10588235294117647" green="0.49803921568627452" blue="0.74509803921568629" alpha="1"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="718" detailTextLabel="Huy-PR-wAk" style="IBUITableViewCellStyleDefault" id="MW3-3t-P3h">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
@@ -286,15 +286,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="718">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="718" textAlignment="natural">
                                                     <rect key="frame" x="15" y="0.0" width="313" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
+                                                    <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                                    <color key="highlightedColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                                    <color key="backgroundColor" colorSpace="calibratedRGB" red="0.10588235294117647" green="0.49803921568627452" blue="0.74509803921568629" alpha="1"/>
+                                                    <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.10588235294117647" green="0.49803921568627452" blue="0.74509803921568629" alpha="1"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="716">
                                         <rect key="frame" x="0.0" y="72" width="343" height="44"/>
@@ -361,6 +364,7 @@
                     </view>
                     <connections>
                         <outlet property="MyTableView" destination="no9-cl-gqb" id="name-outlet-no9-cl-gqb"/>
+                        <outlet property="Note" destination="KC6-Tf-RLc" id="name-outlet-KC6-Tf-RLc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SzT-7h-PgM" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -683,6 +683,7 @@ namespace Logic
 				case 1: return "Quelle est l'origine du " + muscle + "?";
 				case 2: return "Quelle est la terminaison du " + muscle + "?";
 				case 3: return "Quelle est l'innervation du " + muscle + "?";
+				case 4: return "Quelle est le mouvement du" + muscle + "?";
 				default: return "Quelle est l'origine du " + muscle + "?";
 			}
 		}

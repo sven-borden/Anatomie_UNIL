@@ -20,6 +20,7 @@ namespace AnatUNIL
 		private string realAnswer = null;
 		private Random random;
 		private int QuestionNb = 0;
+		private int nbofAnswerClicked = 0;
 
 		public override void ViewDidLoad()
 		{
@@ -50,6 +51,7 @@ namespace AnatUNIL
 				GoToResults();
 			else
 			{
+				nbofAnswerClicked = 0;
 				SetQuestion();
 				SetQuestionNumber();
 			}
@@ -140,8 +142,26 @@ namespace AnatUNIL
 			return i_member;
 		}
 
+		void AddQuestionToPartie(string HisAnswer)
+		{
+			if (nbofAnswerClicked != 1)
+				return;
+			try
+			{
+				partie.addListQuestions = listQuestion[0];;
+				partie.addListAnswer = realAnswer;
+				partie.addListHisAnswer = HisAnswer;
+			}
+			catch (Exception e)
+			{
+				e.ToString();
+			}
+		}
+
 		partial void Answer1Click(UIButton sender)
 		{
+			nbofAnswerClicked++;
+			AddQuestionToPartie(sender.Title(UIControlState.Normal));
 			string answer = sender.Title(UIControlState.Normal);
 			if (answer == realAnswer)
 			{
@@ -154,6 +174,8 @@ namespace AnatUNIL
 
 		partial void Answer2Click(UIButton sender)
 		{
+			nbofAnswerClicked++;
+			AddQuestionToPartie(sender.Title(UIControlState.Normal));
 			string answer = sender.Title(UIControlState.Normal);
 			if (answer == realAnswer)
 			{
@@ -166,6 +188,8 @@ namespace AnatUNIL
 
 		partial void Answer3Click(UIButton sender)
 		{
+			nbofAnswerClicked++;
+			AddQuestionToPartie(sender.Title(UIControlState.Normal));
 			string answer = sender.Title(UIControlState.Normal);
 			if (answer == realAnswer)
 			{
@@ -178,6 +202,8 @@ namespace AnatUNIL
 
 		partial void Answer4Click(UIButton sender)
 		{
+			nbofAnswerClicked++;
+			AddQuestionToPartie(sender.Title(UIControlState.Normal));
 			string answer = sender.Title(UIControlState.Normal);
 			if (answer == realAnswer)
 			{
@@ -200,6 +226,8 @@ namespace AnatUNIL
 
 			if (resultView != null)
 			{
+				resultView._partie = this.partie;
+				resultView._settings = this.settings;
 			}
 		}
 	}
