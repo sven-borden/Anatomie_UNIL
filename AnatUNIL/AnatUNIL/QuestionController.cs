@@ -191,5 +191,16 @@ namespace AnatUNIL
 		public QuestionController (IntPtr handle) : base (handle)
         {
         }
+
+		public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+		{
+			base.PrepareForSegue(segue, sender);
+
+			var resultView = segue.DestinationViewController as ResultController;
+
+			if (resultView != null)
+			{
+			}
+		}
 	}
 }
