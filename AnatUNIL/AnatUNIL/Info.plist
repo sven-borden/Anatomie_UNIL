@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleName</key>
-	<string>Anat UNIL</string>
+	<string>AnatUNIL</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.glaglasven.anat-unil</string>
+	<string>com.glaglasven.anatunil</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -13,7 +13,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MinimumOSVersion</key>
-	<string>10.1</string>
+	<string>10.2</string>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
@@ -33,7 +33,9 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
-	<key>UIStatusBarHidden</key>
-	<true/>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>
