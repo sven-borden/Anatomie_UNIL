@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Foundation;
 using Logic;
+using MessageUI;
 using UIKit;
 
 namespace AnatUNIL
@@ -19,6 +20,7 @@ namespace AnatUNIL
 		{
 			base.ViewDidLoad();
 			MyTableView.Source = new TableViewSource(_partie, this);
+			Note.Text = _partie.getNote.ToString();
 			// Perform any additional setup after loading the view, typically from a nib.
 		}
 
@@ -38,6 +40,7 @@ namespace AnatUNIL
 		string CellIdentifier = "TableCell";
 		Partie partie;
 		ResultController mybase;
+		NSIndexPath currentIndexPath;
 
 		public TableViewSource(Partie _partie, ResultController _base)
 		{
@@ -47,11 +50,29 @@ namespace AnatUNIL
 
 		void SendMail(UIAlertAction obj)
 		{
+			MFMailComposeViewController mailController;
+			if (MFMailComposeViewController.CanSendMail)
+			{
+				// do mail operations here
+				mailController = new MFMailComposeViewController();
+				mailController.SetToRecipients(new string[] { "glaglasven@live.com" });
+				mailController.SetSubject("Remarque Anatomie UNIL");
+				mailController.SetMessageBody("Question : "+partie.getListQuestions[currentIndexPath.Row]
+				                              + "\nRéponse système : " + partie.getListAnswer[currentIndexPath.Row] + 
+				                              "\nRéponse utilisateur : " + partie.getListHisAnswer[currentIndexPath.Row], false);
 
+				mailController.Finished += (object s, MFComposeResultEventArgs args) =>
+				{
+					Console.WriteLine(args.Result.ToString());
+					args.Controller.DismissViewController(true, null);
+				};
+				mybase.PresentViewController(mailController, true, null);
+			}
 		}
 
 		public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 		{
+			currentIndexPath = indexPath;
 			var okAlertController = UIAlertController.Create("Un correctif?", partie.getListQuestions[indexPath.Row], UIAlertControllerStyle.Alert);
 			okAlertController.AddAction(UIAlertAction.Create("Oui", UIAlertActionStyle.Default, SendMail));
 			okAlertController.AddAction(UIAlertAction.Create("Non", UIAlertActionStyle.Cancel,null));

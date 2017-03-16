@@ -21,6 +21,7 @@ namespace AnatUNIL
 		private Random random;
 		private int QuestionNb = 0;
 		private int nbofAnswerClicked = 0;
+		private int questionAnswerCorrect = 0;
 
 		public override void ViewDidLoad()
 		{
@@ -151,6 +152,7 @@ namespace AnatUNIL
 				partie.addListQuestions = listQuestion[0];;
 				partie.addListAnswer = realAnswer;
 				partie.addListHisAnswer = HisAnswer;
+				questionAnswerCorrect++;
 			}
 			catch (Exception e)
 			{
@@ -221,7 +223,8 @@ namespace AnatUNIL
 		public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
 		{
 			base.PrepareForSegue(segue, sender);
-
+			int note = ComputeNote();
+			partie.addNote = note;
 			var resultView = segue.DestinationViewController as ResultController;
 
 			if (resultView != null)
@@ -230,5 +233,36 @@ namespace AnatUNIL
 				resultView._settings = this.settings;
 			}
 		}
-	}
+
+		int ComputeNote()
+		{
+			int Note = 0;
+			float percent = questionAnswerCorrect / settings.nbQuestionToDo;
+			if (percent < 30)
+			{ Note = 1; }
+			else
+			{
+				if (percent < 50)
+				{ Note = 2; }
+				else
+				{
+					if (percent < 72)
+					{ Note = 3; }
+					else
+					{
+						if (percent < 85)
+						{ Note = 4; }
+						else
+						{
+							if (percent < 92)
+							{ Note = 5; }
+							else
+							{ Note = 6; }
+						}
+					}
+				}
+			}
+			return Note;
+		}
+}
 }
