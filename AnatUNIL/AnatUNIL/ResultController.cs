@@ -57,9 +57,9 @@ namespace AnatUNIL
 				mailController = new MFMailComposeViewController();
 				mailController.SetToRecipients(new string[] { "glaglasven@live.com" });
 				mailController.SetSubject("Remarque Anatomie UNIL");
-				mailController.SetMessageBody("Question : "+partie.getListQuestions[currentIndexPath.Row]
-				                              + "\nRéponse système : " + partie.getListAnswer[currentIndexPath.Row] + 
-				                              "\nRéponse utilisateur : " + partie.getListHisAnswer[currentIndexPath.Row], false);
+				mailController.SetMessageBody("Question : " + partie.getListQuestions[currentIndexPath.Row]
+											  + "\nRéponse système : " + partie.getListAnswer[currentIndexPath.Row] +
+											  "\nRéponse utilisateur : " + partie.getListHisAnswer[currentIndexPath.Row], false);
 
 				mailController.Finished += (object s, MFComposeResultEventArgs args) =>
 				{
@@ -67,6 +67,12 @@ namespace AnatUNIL
 					args.Controller.DismissViewController(true, null);
 				};
 				mybase.PresentViewController(mailController, true, null);
+			}
+			else
+			{
+				var okAlertController = UIAlertController.Create("Erreur", "Cet appareil n'est pas connecté à la poste électronique", UIAlertControllerStyle.Alert);
+				okAlertController.AddAction(UIAlertAction.Create("Ok", UIAlertActionStyle.Default, null));
+				mybase.PresentViewController(okAlertController, true, null);
 			}
 		}
 
