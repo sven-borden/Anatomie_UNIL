@@ -1,3 +1,0 @@
-MainPackage=C:\Users\glagl\Documents\Visual Studio 2015\Projects\Anatomie_UNIL\Anatomie_UNIL\bin\ARM\Release\Upload\Anatomie_UNIL_5.2.20.0_ARM.appx
-SymbolPackage=C:\Users\glagl\Documents\Visual Studio 2015\Projects\Anatomie_UNIL\Anatomie_UNIL\AppPackages\Anatomie_UNIL_5.2.20.0\Anatomie_UNIL_5.2.20.0_ARM.appxsym
-ResourcePack=C:\Users\glagl\Documents\Visual Studio 2015\Projects\Anatomie_UNIL\Anatomie_UNIL\_scale-100.appx
