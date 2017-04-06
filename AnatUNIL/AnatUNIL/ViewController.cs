@@ -17,11 +17,11 @@ namespace AnatUNIL
 		{
 			base.PrepareForSegue(segue, sender);
 
-			var questionView = segue.DestinationViewController as QuestionController;
+			var questionView = segue.DestinationViewController as ChoiceController;
 
 			if (questionView != null)
 			{
-				questionView.ViewTitle = (sender as UIButton).Title(UIControlState.Normal).ToString();
+				questionView.Type = (sender as UIButton).Title(UIControlState.Normal).ToString();
 				questionView.settings = this.settings;
 			}
 		}
