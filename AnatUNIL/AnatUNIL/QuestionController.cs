@@ -3,6 +3,7 @@ using System;
 using UIKit;
 using Logic;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace AnatUNIL
 {
@@ -152,7 +153,8 @@ namespace AnatUNIL
 				partie.addListQuestions = listQuestion[0];;
 				partie.addListAnswer = realAnswer;
 				partie.addListHisAnswer = HisAnswer;
-				questionAnswerCorrect++;
+				if(realAnswer == HisAnswer)
+					questionAnswerCorrect++;
 			}
 			catch (Exception e)
 			{
@@ -237,7 +239,8 @@ namespace AnatUNIL
 		int ComputeNote()
 		{
 			int Note = 0;
-			float percent = questionAnswerCorrect / settings.nbQuestionToDo;
+			float percent = (float)questionAnswerCorrect / (float)settings.nbQuestionToDo * 100;
+			Debug.WriteLine(percent);
 			if (percent < 30)
 			{ Note = 1; }
 			else
