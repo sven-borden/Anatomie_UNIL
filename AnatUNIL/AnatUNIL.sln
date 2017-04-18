@@ -20,4 +20,11 @@ Global
 		{0C8D961B-931A-48EA-8DBF-0AC703D08A4C}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{0C8D961B-931A-48EA-8DBF-0AC703D08A4C}.Debug|iPhone.Build.0 = Debug|iPhone
 	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.StandardHeader = $1
+		$1.Text = 
+		$1.IncludeInNewFiles = True
+		version = 0.2
+	EndGlobalSection
 EndGlobal
