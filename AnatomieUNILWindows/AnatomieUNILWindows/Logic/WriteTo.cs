@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Anatomie_UNIL
 {
-    class WriteTo
+    public class WriteTo : INotifyPropertyChanged
     {
         Windows.Storage.ApplicationDataContainer RoamingSettings;
         //Windows.Storage.StorageFolder localFolder;
@@ -25,7 +26,9 @@ namespace Anatomie_UNIL
 
         private int viewCount;
 
-        public WriteTo()
+		public event PropertyChangedEventHandler PropertyChanged;
+
+		public WriteTo()
         {
             ReadSettings();
         }
@@ -33,22 +36,23 @@ namespace Anatomie_UNIL
         public int nbQuestionToDo
         {
             get { return questionToDo; }
-            set { questionToDo = value; WriteSettings(); }
+            set { questionToDo = value; WriteSettings(); OnPropertyChanged("nbQuestionToDo"); }
         }
-        public int nbQuestionDone
+
+		public int nbQuestionDone
         {
             get { return totalQuestionDone; }
-            set { totalQuestionDone = value; WriteSettings(); }
+            set { totalQuestionDone = value; WriteSettings(); OnPropertyChanged("nbQuestionDone"); }
         }
         public int nbQuestionRight
         {
             get { return totalQuestionRight; }
-            set { totalQuestionRight = value; WriteSettings(); }
+            set { totalQuestionRight = value; WriteSettings(); OnPropertyChanged("nbQuestionRight"); }
         }
         public int nbQuestionFalse
         {
             get { return totalQuestionFalse; }
-            set { totalQuestionFalse = value; WriteSettings(); }
+            set { totalQuestionFalse = value; WriteSettings(); OnPropertyChanged("nbQuestionFalse"); }
         }
         public bool displayResults
         {
@@ -88,7 +92,15 @@ namespace Anatomie_UNIL
             set { mouvementChecked = value; WriteSettings(); }
         }
 
-        public void ResetSettings()
+
+		private void OnPropertyChanged(string name)
+		{
+			if (this.PropertyChanged != null)
+				PropertyChanged(this, new PropertyChangedEventArgs(name));
+		}
+
+
+		public void ResetSettings()
         {
             RoamingSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
             compositeResults = new Windows.Storage.ApplicationDataCompositeValue();

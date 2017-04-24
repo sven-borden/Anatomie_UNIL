@@ -6,15 +6,21 @@ using System.Threading.Tasks;
 
 namespace Anatomie_UNIL
 {
-    class Partie
+    public class Partie
     {
-        private string _membre;
+		/// <summary>
+		/// 1 = memb sup
+		/// 2 = memb inf
+		/// 3 = tronc
+		/// 4 = tout
+		/// </summary>
+        private int _membre;
         private int _note;
         private List<string> listQuestions;
         private List<string> listHisAnswer;
         private List<string> listAnswer;
 
-        public Partie(string membre)
+        public Partie(int membre)
         {
             _membre = membre;
             listQuestions = new List<string>();
@@ -30,7 +36,7 @@ namespace Anatomie_UNIL
         public List<string> getListQuestions { get { return listQuestions; } }
         public List<string> getListHisAnswer { get { return listHisAnswer; } }
         public List<string> getListAnswer { get { return listAnswer; } }
-        public string getMembre { get { return _membre; } }
+        public int getMembre { get { return _membre; } }
         public int getNote { get { return _note; } }
     }
 }

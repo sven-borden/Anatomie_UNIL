@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="1d3ba89f-c1bc-4e3a-8a41-7c77368e2d99"
-    Publisher="CN=Sven Borden"
+    Name="be6068f0-d895-41a7-9dd8-7aab7fa12177"
+    Publisher="CN=glagl"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="1d3ba89f-c1bc-4e3a-8a41-7c77368e2d99" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="be6068f0-d895-41a7-9dd8-7aab7fa12177" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>AnatomieUNILWindows</DisplayName>
-    <PublisherDisplayName>Sven Borden</PublisherDisplayName>
+    <PublisherDisplayName>glagl</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
