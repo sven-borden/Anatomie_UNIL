@@ -37,8 +37,8 @@ namespace AnatomieUNILWindows.Logic
 				OnPropertyChanged("NbQuestionFalse");
 			}
 		}
-
-		private int nbQuestionDone = 1;
+		public double Minimum = 0;
+		private int nbQuestionDone = 10;
 		public int NbQuestionDone
 		{
 			get
