@@ -68,7 +68,7 @@
 				<TextBlock Grid.Column="2" Style="{StaticResource BottomBlock}" Text="Note" />
 			</Grid>
 			<Grid>
-				<ProgressBar Minimum="1" Maximum="{x:Bind WriteTo.nbQuestionToDo, Mode=OneWay}" Value="{x:Bind Question.NbQuestionDone, Mode=OneWay}"  Margin="10" Height="20"/>
+				<ProgressBar Maximum="{Binding WriteTo.nbQuestionToDo, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Minimum="0" Value="{Binding Question.NbQuestionDone, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Margin="10" Height="20"/>
 				<TextBlock Style="{StaticResource BottomBlock}" Text="12/20" />
 			</Grid>
 		</StackPanel>
