@@ -199,7 +199,7 @@ namespace AnatomieUNILWindows.Logic
 			{"muscle opposant du 5e orteil", "Lig. plantaire long et gaine du m. long fibulaire", "Bord latéral du 5e métatarsien", "N. plantaire latéral"},
 			{"muscle court fléchisseur des orteils", "Tubérosité postérieur du calcanéus et aponévrose plantaire", "Par des tendons divisés à la phalange moyenne des orteils 2-5", "N. plantaire latéral"},
 			{"muscle carré plantaire", "Bord médial et latéral du calcanéus", "Bord latéral du tendon du m. long fléchisseur des orteils", "N. plantaire latéral"},
-			{"muscles lombricaux", "Côté médial des tendons du m. long fléchisseur des orteils", "Bord. méd des phalanges prox. des orteils 2 à 5", "N. plantaire latéral"},
+			{"muscles lombricaux", "Côté médial des tendons du m. long fléchisseur des orteils", "Bord. méd des phalanges prox. des orteils 2 à 5", "N. plantaire latéral et latéral"},
 			{"muscles interosseux plantaires", "Par 1 seul chef sur les métatarsiens 2-5", "Base des phalanges prox. des orteils 3-5", "N. plantaire latéral"},
 			{"muscles interosseux dorsaux", "Par 2 chefs sur les métatarsiens adjacents 1-5", "Aponévrose dorsale des phalanges prox. des orteils 2 à 4", "N. plantaire latéral"},
 		};
