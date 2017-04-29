@@ -31,7 +31,7 @@
             Margin="10"
             />
 		<TextBox
-            x:Name="NameBox"
+            Text="{x:Bind Mailing.Name,Mode=TwoWay}"
             Grid.Row="1"
             PlaceholderText="Entrez votre nom"
             Margin="10"
@@ -42,7 +42,7 @@
             AcceptsReturn="True"
             TextWrapping="Wrap"
             ScrollViewer.VerticalScrollBarVisibility="Auto"
-            x:Name="TextBox"
+            Text="{x:Bind Mailing.Body,Mode=TwoWay}"
             Grid.Row="2"
             PlaceholderText="Erreurs ou suggestions"
             Margin="10"

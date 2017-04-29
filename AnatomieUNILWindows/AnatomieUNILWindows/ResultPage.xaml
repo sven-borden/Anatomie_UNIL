@@ -132,7 +132,7 @@
 				<TextBlock Grid.Row="0" Text="Résumé de la session" Style="{StaticResource BlockNote}" FontSize="25" Margin="10,10,10,0"/>
 				<Rectangle Height="1" Fill="LightGray" VerticalAlignment="Bottom" Width="200"/>
 
-				<ListView Margin="10" Grid.Row="1" ItemsSource="{x:Bind QuestionList}">
+				<ListView Margin="10" Grid.Row="1" ItemsSource="{x:Bind QuestionList}" SelectionMode="Single" SelectionChanged="ListView_SelectionChanged">
 					<ListView.ItemTemplate>
 						<DataTemplate x:DataType="local:ResultQuestion">
 							<Grid>

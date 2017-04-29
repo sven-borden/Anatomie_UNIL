@@ -1,6 +1,7 @@
 ﻿using Anatomie_UNIL;
 using System.Collections.ObjectModel;
 using Windows.UI.Core;
+using System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
@@ -38,6 +39,29 @@ namespace AnatomieUNILWindows
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
 			Frame.Navigate(typeof(MainPage));
+		}
+
+		private async void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			int index = (sender as ListView).SelectedIndex;
+			string his = QuestionList[index].HisAnswer;
+			string ans = QuestionList[index].SysAnswer;
+			if (ans == string.Empty)
+				ans = his;
+			string s = "La réponse était : " + ans + "\nVous avez répondu : " + his;
+			ContentDialog d = new ContentDialog()
+			{
+				Title = QuestionList[index].Question,
+				Content = s,
+				PrimaryButtonText = "Fermer",
+				SecondaryButtonText = "Contester"
+			};
+			var result = await d.ShowAsync();
+			if (result == ContentDialogResult.Secondary)
+				Frame.Navigate(typeof(Contact), new Mailing() { Body = s });
+			(sender as ListView).SelectionChanged -= ListView_SelectionChanged;
+			(sender as ListView).SelectedIndex = -1;
+			(sender as ListView).SelectionChanged += ListView_SelectionChanged;
 		}
 	}
 
