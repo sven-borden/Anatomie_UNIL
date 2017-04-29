@@ -38,7 +38,7 @@ namespace AnatomieUNILWindows.Logic
 			}
 		}
 		public double Minimum = 0;
-		private int nbQuestionDone = 10;
+		private int nbQuestionDone = 0;
 		public int NbQuestionDone
 		{
 			get

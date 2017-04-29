@@ -1,19 +1,10 @@
 ﻿using Anatomie_UNIL;
 using AnatomieUNILWindows.Logic;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
@@ -68,6 +59,7 @@ namespace AnatomieUNILWindows
 			Partie.addListQuestions = Question.MyQuestion;
 			Partie.addListAnswer = Question.Answer;
 			Question.NbQuestionDone++;
+			WriteTo.nbQuestionDone++;
 		}
 
 		private void QuestionPage_BackRequested(object sender, BackRequestedEventArgs e)
@@ -92,13 +84,19 @@ namespace AnatomieUNILWindows
 			{
 				b.Background = new SolidColorBrush(Colors.Red);
 				if (nbTry == 0)
+				{
 					Question.NbQuestionFalse++;
+					WriteTo.nbQuestionFalse++;
+				}
 			}
 			else
 			{
 				b.Background = new SolidColorBrush(Colors.Green);
 				if (nbTry == 0)
+				{
 					Question.NbQuestionRight++;
+					WriteTo.nbQuestionRight++;
+				}
 				CorrectAnswer();
 			}
 			nbTry++;
@@ -106,7 +104,16 @@ namespace AnatomieUNILWindows
 
 		private void CorrectAnswer()
 		{
+			ComputeNote();
+			if (Question.NbQuestionDone == WriteTo.nbQuestionToDo)
+				Frame.Navigate(typeof(ResultPage),Partie);//Navigate
 			Timer.Start();
+		}
+
+		private void ComputeNote()
+		{
+			float percent = (float)Question.NbQuestionRight / (float)Question.NbQuestionDone * 100;
+			Partie.Note = (int)percent;
 		}
 	}
 }

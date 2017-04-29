@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace Anatomie_UNIL
 {
-    public class Partie
+	public class Partie :INotifyPropertyChanged
     {
 		/// <summary>
 		/// 1 = memb sup
@@ -16,6 +13,11 @@ namespace Anatomie_UNIL
 		/// </summary>
         private int _membre;
         private int _note;
+		public int Note//in percent
+		{
+			get { return _note; }
+			set { _note = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Note))); }
+		}
         private List<string> listQuestions;
         private List<string> listHisAnswer;
         private List<string> listAnswer;
@@ -37,6 +39,7 @@ namespace Anatomie_UNIL
         public List<string> getListHisAnswer { get { return listHisAnswer; } }
         public List<string> getListAnswer { get { return listAnswer; } }
         public int getMembre { get { return _membre; } }
-        public int getNote { get { return _note; } }
-    }
+
+		public event PropertyChangedEventHandler PropertyChanged;
+	}
 }
