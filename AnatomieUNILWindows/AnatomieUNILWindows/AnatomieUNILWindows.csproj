@@ -17,8 +17,8 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
-    <PackageCertificateKeyFile>AnatomieUNILWindows_StoreKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>C5F618A0078D4C0056E2C4E99CA4801EB8079B92</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>AnatomieUNILWindows_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>0ADFC2AC428E12ABE30632DA69513D4A611BB983</PackageCertificateThumbprint>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
@@ -128,7 +128,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="AnatomieUNILWindows_StoreKey.pfx" />
     <None Include="AnatomieUNILWindows_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

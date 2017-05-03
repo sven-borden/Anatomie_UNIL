@@ -154,7 +154,7 @@ namespace AnatomieUNILWindows.Logic
 		/// <summary>
 		/// Obvious
 		/// </summary>
-		private Random rand;
+		private Random rand = new System.Random();
 
 		/// <summary>
 		/// Write to the settings
@@ -173,7 +173,6 @@ namespace AnatomieUNILWindows.Logic
 		public Question(int membre)
 		{
 			_membre = membre;
-			rand = new Random();
 		}
 
 		/// <summary>
@@ -201,34 +200,31 @@ namespace AnatomieUNILWindows.Logic
 			Answer = tmp[1];
 			string[] tmp2 = new string[] { tmp[1], tmp[2], tmp[3], tmp[4] };
 			tmp2 = MixArray(tmp2);
-			Propo1 = tmp[0];
-			Propo2 = tmp[1];
-			Propo3 = tmp[2];
-			Propo4 = tmp[3];
+			Propo1 = tmp2[0];
+			Propo2 = tmp2[1];
+			Propo3 = tmp2[2];
+			Propo4 = tmp2[3];
 		}
 
 		private string[] MixArray(string[] input)
 		{
 			Random random = new Random();
-			List<KeyValuePair<int, string>> list = new List<KeyValuePair<int, string>>();
-
+			List<string> randomList = new List<string>();
+			List<string> inputList = new List<string>();
 			foreach (string s in input)
+				inputList.Add(s);
+
+			int randomIndex = 0;
+			while (inputList.Count > 0)
 			{
-				list.Add(new KeyValuePair<int, string>(random.Next(), s));
+				randomIndex = rand.Next(0, inputList.Count); //Choose a random object in the list
+				randomList.Add(inputList[randomIndex]); //add it to the new, random list
+				inputList.RemoveAt(randomIndex); //remove to avoid duplicates
 			}
 
-
-			list.Sort((x, y) => x.Value.Length.CompareTo(y.Value.Length));
-
-			string[] result = new string[input.Length];
-
-			int index = 0;
-			foreach (KeyValuePair<int, string> pair in list)
-			{
-				result[index] = pair.Value;
-				index++;
-			}
-			return result;
+			for (int i = 0; i < 4; i++)
+				input[i] = randomList[i];
+			return input;
 		}
 
 		/// <summary>

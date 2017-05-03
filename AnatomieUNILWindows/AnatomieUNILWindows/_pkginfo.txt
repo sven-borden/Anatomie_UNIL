@@ -1,1 +1,1 @@
-C:\Users\glagl\Documents\GitHub\Anatomie_UNIL\AnatomieUNILWindows\AnatomieUNILWindows\bin\ARM\Release\Upload\AnatomieUNILWindows_6.0.3.0\AnatomieUNILWindows_6.0.3.0_x86_x64_arm.appxbundle
+C:\Users\glagl\Documents\GitHub\Anatomie_UNIL\AnatomieUNILWindows\AnatomieUNILWindows\bin\ARM\Release\Upload\AnatomieUNILWindows_6.0.8.0\AnatomieUNILWindows_6.0.8.0_x86_x64_arm.appxbundle
