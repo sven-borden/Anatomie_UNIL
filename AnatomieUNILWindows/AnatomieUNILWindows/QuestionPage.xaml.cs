@@ -59,7 +59,6 @@ namespace AnatomieUNILWindows
 			Partie.addListQuestions = Question.MyQuestion;
 			Partie.addListAnswer = Question.Answer;
 			Question.NbQuestionDone++;
-			WriteTo.nbQuestionDone++;
 		}
 
 		private void QuestionPage_BackRequested(object sender, BackRequestedEventArgs e)
@@ -85,6 +84,7 @@ namespace AnatomieUNILWindows
 				b.Background = new SolidColorBrush(Colors.Red);
 				if (nbTry == 0)
 				{
+					WriteTo.nbQuestionDone++;
 					Question.NbQuestionFalse++;
 					WriteTo.nbQuestionFalse++;
 				}
@@ -94,6 +94,7 @@ namespace AnatomieUNILWindows
 				b.Background = new SolidColorBrush(Colors.Green);
 				if (nbTry == 0)
 				{
+					WriteTo.nbQuestionDone++;
 					Question.NbQuestionRight++;
 					WriteTo.nbQuestionRight++;
 				}
@@ -105,9 +106,15 @@ namespace AnatomieUNILWindows
 		private void CorrectAnswer()
 		{
 			ComputeNote();
-			if (Question.NbQuestionDone == WriteTo.nbQuestionToDo)
-				Frame.Navigate(typeof(ResultPage),Partie);//Navigate
-			Timer.Start();
+			if (Question.NbQuestionDone < WriteTo.nbQuestionToDo || WriteTo.nbQuestionToDo == 0)
+			{
+				Timer.Start();
+				return;
+			}
+			if (WriteTo.displayResults)
+				Frame.Navigate(typeof(ResultPage), Partie);//Navigate
+			else
+				Frame.Navigate(typeof(MainPage));
 		}
 
 		private void ComputeNote()

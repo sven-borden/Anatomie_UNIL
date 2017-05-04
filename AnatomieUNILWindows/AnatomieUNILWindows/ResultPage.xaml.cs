@@ -31,9 +31,7 @@ namespace AnatomieUNILWindows
 		{
 			Partie = e.Parameter as Partie;
 			for(int i = 0; i < Partie.getListQuestions.Count; i++)
-			{
 				QuestionList.Add(new ResultQuestion(Partie.getListQuestions[i], Partie.getListAnswer[i], Partie.getListHisAnswer[i]));
-			}
 		}
 
 		private void Button_Click(object sender, RoutedEventArgs e)

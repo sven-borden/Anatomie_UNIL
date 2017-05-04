@@ -1,2 +1,2 @@
-MainPackage=C:\Users\glagl\Documents\GitHub\Anatomie_UNIL\AnatomieUNILWindows\AnatomieUNILWindows\bin\x86\Release\AnatomieUNILWindows_6.0.8.0_x86.appx
-SymbolPackage=C:\Users\glagl\Documents\GitHub\Anatomie_UNIL\AnatomieUNILWindows\AnatomieUNILWindows\AppPackages\AnatomieUNILWindows_6.0.8.0_Test\AnatomieUNILWindows_6.0.8.0_x86.appxsym
+MainPackage=C:\Users\glagl\Documents\GitHub\Anatomie_UNIL\AnatomieUNILWindows\AnatomieUNILWindows\bin\x86\Release\AnatomieUNILWindows_6.0.9.0_x86.appx
+SymbolPackage=C:\Users\glagl\Documents\GitHub\Anatomie_UNIL\AnatomieUNILWindows\AnatomieUNILWindows\AppPackages\AnatomieUNILWindows_6.0.9.0_Test\AnatomieUNILWindows_6.0.9.0_x86.appxsym

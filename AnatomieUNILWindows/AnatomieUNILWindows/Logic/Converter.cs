@@ -12,8 +12,10 @@ namespace AnatomieUNILWindows.Logic
 		{
 			WriteTo s = new WriteTo();
 			int tmp = (int)value;
-
-			return tmp + " sur " + s.nbQuestionToDo;
+			if (s.nbQuestionToDo != 0)
+				return tmp + " sur " + s.nbQuestionToDo;
+			else
+				return "Sans fin";
 		}
 
 		public object ConvertBack(object value, Type targetType, object parameter, string language)

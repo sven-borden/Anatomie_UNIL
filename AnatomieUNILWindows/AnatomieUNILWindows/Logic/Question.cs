@@ -217,7 +217,7 @@ namespace AnatomieUNILWindows.Logic
 			int randomIndex = 0;
 			while (inputList.Count > 0)
 			{
-				randomIndex = rand.Next(0, inputList.Count); //Choose a random object in the list
+				randomIndex = random.Next(0, inputList.Count); //Choose a random object in the list
 				randomList.Add(inputList[randomIndex]); //add it to the new, random list
 				inputList.RemoveAt(randomIndex); //remove to avoid duplicates
 			}
