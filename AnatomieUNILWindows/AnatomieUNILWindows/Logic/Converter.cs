@@ -86,7 +86,7 @@ namespace AnatomieUNILWindows.Logic
 			string s = (string)value;
 			try
 			{
-				string st = s.Split(new string[] { "muscles ", "muscle " }, StringSplitOptions.RemoveEmptyEntries)[1];
+				string st = s.Split(new [] { "muscles ", "muscle " }, StringSplitOptions.RemoveEmptyEntries)[1];
 				string a = st[0].ToString().ToUpperInvariant();
 				st.Remove(0, 1);
 				st.Insert(0, a);

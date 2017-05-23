@@ -5,9 +5,11 @@
     xmlns:local="using:AnatomieUNILWindows"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:media="using:Windows.UI.Xaml.Media"
     mc:Ignorable="d" Loaded="Page_Loaded" SizeChanged="Size_Changed">
 
 	<Page.Resources>
+
 		<Style TargetType="Button" x:Key="ButtonStd">
 			<Setter Property="FontSize" Value="15" />
 			<Setter Property="HorizontalAlignment" Value="Stretch" />
