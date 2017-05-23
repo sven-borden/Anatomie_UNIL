@@ -47,7 +47,7 @@ namespace AnatomieUNILWindows
 			if (ans == string.Empty)
 				ans = his;
 			string s = "La réponse était : " + ans + "\nVous avez répondu : " + his;
-			ContentDialog d = new ContentDialog()
+			ContentDialog d = new ContentDialog
 			{
 				Title = QuestionList[index].Question,
 				Content = s,
