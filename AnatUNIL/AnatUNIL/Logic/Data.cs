@@ -3,14 +3,14 @@ namespace Logic
 {
 	public class Data
 	{
-		public static string[,] epauleAnterieur = new string[5, 4] {
+		public static readonly string[,] epauleAnterieur = new string[,] {
 			{"muscle grand pectoral", "Clavicule(1/2 méd), sternum, 4 à 6 cartilages costaux, gaine du muscle droit de l'abdomen", "Crète du tubercule majeur de l'humérus", "N. pectoraux"},
 			{"muscle petit pectoral", "Côtes 3-5","Processus coracoïde","N. pectoraux"},
 			{"muscle subclavier","Cartilage 1ère côte","Face inférieure de la clavicule","N. pectoraux"},
 			{"muscle sterno-cléido-mastoïdien","Sternum et clavicule","Processus mastoïde et ligne nuchale supérieur","N. accessoire et plexus cervical"},
 			{"muscle deltoïde","Clavicule (tier latéral), acromion et épine de la scapula","Tubérosité deltoïdienne de l'humérus","N. axillaire"}
 			};
-		public static string[,] epaulePosterieur = new string[11, 4]{
+		public static readonly string[,] epaulePosterieur = new string[,]{
 			{"muscle supra-épineux", "Fosse supra-épineuse", "Facette supérieurs du tubercule majeur de l'humérus", "N. supra-scapulaire"},
 			{"muscle infra-épineux", "Fosse infra-épineuse", "Facette moyenne du tubercule majeur de l'humérus", "N. supra-scapulaire"},
 			{"muscle petit rond", "Bord latéral supérieur de la scapula", "Facette inférieure du tubercule majeur de l'humérus", "N. axillaire"},
@@ -23,7 +23,7 @@ namespace Logic
 			{"muscle élévateur de la scapula", "Processus transverse, C1-C4", "Angle supérieur de la scapula", "N. dorsal de la scapula"},
 			{"muscle trapèze", "Protubérance occipitale ext. ligne nuchale supérieur, ligament nuchal supérieur, processus épineux C7-T12", "Clavicule (1/3 latéral), acromion et épine de la scapula", "N. accessoire et plexus cervical"},
 		};
-		public static string[,] bras = new string[8, 4]{
+		public static readonly string[,] bras = new string[,]{
 			{"muscle biceps brachial chef long", "Tubercule supra-glénoïdal", "Tubérosité du radius et expansion aponévrotique bicipitale", "N. musculo-cutané"},
 			{"muscle biceps brachial chef court", "Processus coracoïde", "Tubérosité du radius et expansion aponévrotique bicipitale", "N. musculo-cutané"},
 			{"muscle coraco-brachial", "Processus coracoïde", "1/3 moyen face médiale de l'humérus", "N. musculo-cutané"},
@@ -34,7 +34,7 @@ namespace Logic
 			{"muscle anconé", "Epicondyle latéral de l'humérus", "Tier supérieur du bord postérieur de l'ulna", "N. radial"},
 		};
 
-		public static string[,] avantBrasAntérieur = new string[8, 4]{
+		public static string[,] avantBrasAntérieur = new string[,]{
 			{"muscle rond pronateur", "Epicondyle médial de l'humérus et processus coronoïde de l'ulna", "Milieu, face latérale du radius", "N. médian"},
 			{"muscle fléchisseur radial du carpe", "Epicondyle médial de l'humérus", "Base 2e et 3e métacarpiens (palmaire)", "N. médian"},
 			{"muscle long palmaire", "Epicondyle médial de l'humérus", "Aponévrose palmaire", "N. médian"},
@@ -45,7 +45,7 @@ namespace Logic
 			{"muscle carré pronateur", "1/4 distal de face antérieure de l'ulna", "1/4 distal de face antérieure du radius", "N. médian"},
 		};
 
-		public static string[,] avantBrasPostérieur = new string[11, 4]{
+		public static readonly string[,] avantBrasPostérieur = new string[,]{
 			{"muscle brachio-radial", "Septum intermusculaire latéral et bord latéral de l'humérus", "Processus styloïde du radius", "N. radial"},
 			{"muscle long extenseur radial du carpe", "septum intermusculaire latéral et bord latéral de l'humérus", "Base 2e métacarpien postérieur", "N. radial"},
 			{"muscle court extenseur radial du carpe", "Epicondyle latéral de l'humérus", "Base 3e métacarpien postérieur", "N. radial"},
@@ -59,7 +59,7 @@ namespace Logic
 			{"muscle extenseur de l'index", "Tiers inférieur de face postérieur de l'ulna, membrane interosseuse", "Aponévrose dorsale de l'index", "N. radial"},
 		};
 
-		public static string[,] main = new string[13, 4]{
+		public static readonly string[,] main = new string[,]{
 			{"muscle court palmaire", "Aponévrose palmaire", "Peau du bord ulnaire de la main", "N. ulnaire"},
 			{"muscle abducteur du 5e doigt", "Os pisiforme, ligament piso-hamatum et rétinaculum des fléchisseurs", "Base phalange prox. du 5e doigt et aponévrose dorsale", "N. ulnaire"},
 			{"muscle court fléchisseur du 5e doigt", "Rétinaculum des fléchisseurs, crochet (hamulus) de l'hamatum", "Base phalange proximal du 5e doigt, avec m. abd. du 5e doigt", "N. ulnaire"},
@@ -79,7 +79,7 @@ namespace Logic
 		/// Données des muscles de la nuque, du cou, du dos, du thorax et de l'abdomen
 		/// </summary>
 		///
-		public static string[,] nuqueEtCou = new string[10, 4] {
+		public static readonly string[,] nuqueEtCou = new string[,] {
 			{"muscle trapèze", "Processus épineux C7-T12, ligament nuchale, protubérance occipitale ext., ligne nuchale supérieur", "Epine de la scapula, acromion, clavicule (1/3 latéral)", "N. accessoire (XI) et plexus cervical"},
 			{"muscle sterno-cléido-mastoïdien", "Sternum et clavicule", "Processus mastoïde, ligne nuchale supérieure de l'os occipital", "N. accessoire (XI) et plexus cervical"},
 			{"muscle élévateur de la scapula", "Tubercule postérieur des processus transverses de C1-C4", "Angle supérieur de la scapula", "N. dorsal de la scapula"},
@@ -92,7 +92,7 @@ namespace Logic
 			{"muscle oblique inférieur de la tête", "Processus épineux de l'axis", "Processus transverse de l'atlas", "Branche postérieure du n. C1 (suboccipital)"},
 		};
 
-		public static string[,] dos = new string[19, 4] {
+		public static readonly string[,] dos = new string[,] {
 			{"muscle grand dorsal", "Processus épineux T7-L5, aponévrose lombaire, crête iliaque, sacrum", "Crête du tubercule mineur de l'humérus", "N. thoraco-dorsal"},
 			{"muscle grand rhomboïde", "Processus épineux T1-T4", "Bord médial de la scapula, au-dessous de l'épine", "N. dorsal de la scapula"},
 			{"muscle petit rhomboïde", "Processus épineux C6-C7", "Bord médial de la scapula, au-dessus de l'épine", "N. dorsal de la scapula"},
@@ -114,7 +114,7 @@ namespace Logic
 			{"muscle inter-transversaire", "Processus transverse (cervical et lombaire", "Processus transverse adjacent", "Branche postérieure nn. spinaux"},
 		};
 
-		public static string[,] thoraxEtAbdomen = new string[9, 4]{
+		public static string[,] thoraxEtAbdomen = new string[,]{
 			{"muscles intercostaux externes", "Dirigés obliquement en bas et en avant", "Dirigés obliquement en bas et en avant", "NN. intercostaux"},
 			{"muscles intercostaux internes", "Dirigés obliquement en bas et en arrière", "Dirigés obliquement en bas et en arrière", "NN. intercostaux"},
 			{"muscles intercostaux intimes", "Plan le plus profond des muscles intercostaux internes", "Plan le plus profond des muscles intercostaux internes", "NN. intercostaux"},
@@ -127,7 +127,7 @@ namespace Logic
 		};
 
 		///Hanche et jambe
-		public static string[,] hanche = new string[13, 4]{
+		public static readonly string[,] hanche = new string[,]{
 			{"muscle ilio-psoas iliaque", "Fosse iliaque", "Petit trochanter", "Plexus lombaire et n. fémoral (crural)"},
 			{"muscle ilio-psoas psoas", "Corps et disques intervertébrals L1-L4, processus costiforme L1-L5", "Petit trochanter", "Plexus lombaire et n. fémoral (crural)"},
 			{"muscle carré des lombes", "Crête iliaque", "12e côte processus costiforme L1-L4", "N. subcostal et plexus lombaire"},
@@ -144,7 +144,7 @@ namespace Logic
 		};
 
 		//Muscle de la cuisse
-		public static string[,] cuisse = new string[16, 4]{
+		public static readonly string[,] cuisse = new string[,]{
 			{"muscle sartorius (coururier)", "Epine iliaque antéro supérieure", "Face médiale de la tubérosité tibiale (patte d'oie)", "N. fémoral (crural)"},
 			{"muscle quadriceps droit fémoral", "Epine iliaque antéro-inférieure, bord supérieur de l'acétabulum", "Tendon du quadriceps, sur la patella et par le lig. patellaire sur la tubérosité tibiale", "N. fémoral (crural)"},
 			{"muscle quadriceps vaste intermédiaire", "Face antérieure du fémur", "Tendon du quadriceps, sur la patella et par le lig. patellaire sur la tubérosité tibiale", "N. fémoral (crural)"},
@@ -164,7 +164,7 @@ namespace Logic
 		};
 
 		//Muscles de la jambe
-		public static string[,] jambe = new string[14, 4]{
+		public static readonly string[,] jambe = new string[14, 4]{
 			{"muscle tibial antérieur", "Face latérale du tibia, memb. inteross. fascia crural", "Face plantaire, cunéiforme médial, et métatarsien 1", "N. fibulaire profond"},
 			{"muscle long extenseur des orteils", "Condyle latéral du tibia, tête et crête de la fibula, memb. inteross.", "Divisé en quatre tendons au niveau de la cheville, aponévrose dorsale des orteils 2-5", "N. fibulaire profond"},
 			{"muscle 3e fibulaire (péronier antérieur)", "Division du muscle long extenseur", "Base du métatarsien 5", "N. fibulaire profond"},
@@ -182,7 +182,7 @@ namespace Logic
 		};
 
 		//Muscle court du pied
-		public static string[,] pied = new string[14, 4]{
+		public static readonly string[,] pied = new string[,]{
 			{"muscle court extenseur des orteils", "Calcanéus (face dorsale)", "Aponévroses dorsales des orteils 2-4", "N. fibulaire profond"},
 			{"muscle court extenseur de l'hallux", "Calcanéus (face dorsale)", "Face dorsale de la phalange proximale de l'hallux", "N. fibulaire profond"},
 			{"muscle abducteur de l'hallux", "Processus médial de la tubérosité du calcanéus", "Sésamoïde médial et base de la phalange prox. de l'hallux", "N. plantaire médial"},

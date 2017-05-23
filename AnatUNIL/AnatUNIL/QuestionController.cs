@@ -50,7 +50,9 @@ namespace AnatUNIL
 			Answer3.SetTitleColor(UIColor.White, UIControlState.Normal);
 			Answer4.SetTitleColor(UIColor.White, UIControlState.Normal);
 			if (QuestionNb >= settings.nbQuestionToDo)
+			{
 				GoToResults();
+			}
 			else
 			{
 				nbofAnswerClicked = 0;
@@ -89,14 +91,20 @@ namespace AnatUNIL
 		{
 			listQuestion = question.getQuestion(partie.getListQuestions);
 			if (listQuestion == null)
+			{
 				return;
+			}
 			realAnswer = listQuestion[1];
 			List<string> q = new List<string>();
 			for (int i = 0; i < 4; i++)
+			{
 				q.Add(listQuestion[i + 1]);
+			}
 			q = MixArray(q);
 			if (q == null)
+			{
 				return;
+			}
 			QuestionField.Text = listQuestion[0];
 			Answer1.SetTitle(q[0], UIControlState.Normal);
 			Answer2.SetTitle(q[1], UIControlState.Normal);
@@ -147,7 +155,9 @@ namespace AnatUNIL
 		void AddQuestionToPartie(string HisAnswer)
 		{
 			if (nbofAnswerClicked != 1)
+			{
 				return;
+			}
 			try
 			{
 				partie.addListQuestions = listQuestion[0];;
@@ -173,7 +183,9 @@ namespace AnatUNIL
 				waiter = NSTimer.CreateScheduledTimer(new TimeSpan(0, 0, 1), delegate { Ticker(); });
 			}
 			else
+			{
 				sender.SetTitleColor(UIColor.Red, UIControlState.Normal);
+			}
 		}
 
 		partial void Answer2Click(UIButton sender)
@@ -187,7 +199,9 @@ namespace AnatUNIL
 				waiter = NSTimer.CreateScheduledTimer(new TimeSpan(0, 0, 1), delegate { Ticker(); });
 			}
 			else
+			{
 				sender.SetTitleColor(UIColor.Red, UIControlState.Normal);
+			}
 		}
 
 		partial void Answer3Click(UIButton sender)
@@ -215,7 +229,9 @@ namespace AnatUNIL
 				waiter = NSTimer.CreateScheduledTimer(new TimeSpan(0, 0, 1), delegate { Ticker(); });
 			}
 			else
+			{
 				sender.SetTitleColor(UIColor.Red, UIControlState.Normal);
+			}
 		}
 
 		public QuestionController (IntPtr handle) : base (handle)

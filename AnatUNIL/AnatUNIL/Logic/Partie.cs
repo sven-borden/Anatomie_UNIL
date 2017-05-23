@@ -22,7 +22,7 @@ namespace Logic
 		public string addListQuestions { set { listQuestions.Add(value); } }
 		public string addListHisAnswer { set { listHisAnswer.Add(value); } }
 		public string addListAnswer { set { listAnswer.Add(value); } }
-		public int addNote { set { _note = value; } }
+		public int addNote { set { _note = value; } get { return _note;} }
 
 		public List<string> getListQuestions { get { return listQuestions; } }
 		public List<string> getListHisAnswer { get { return listHisAnswer; } }

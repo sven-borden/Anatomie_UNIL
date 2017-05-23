@@ -828,13 +828,13 @@ namespace AnatomieUNILWindows.Logic
 			{
 				type = Random(1, 3);
 				if (type == 1 && settings.isInsertion == true)
-					break;
+				{ break; }
 				if (type == 2 && settings.isTerminaison == true)
-					break;
+				{ break; }
 				if (type == 3 && settings.isInnevervation == true)
-					break;
+				{ break; }
 				if (type == 4 && settings.isMouvement == true)
-					break;
+				{ break; }
 			}
 			return type;
 		}
