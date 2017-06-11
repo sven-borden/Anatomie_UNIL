@@ -6,7 +6,7 @@ namespace Logic
 		public static readonly string[,] epauleAnterieur = new string[,] {
 			{"muscle grand pectoral", "Clavicule(1/2 méd), sternum, 4 à 6 cartilages costaux, gaine du muscle droit de l'abdomen", "Crète du tubercule majeur de l'humérus", "N. pectoraux"},
 			{"muscle petit pectoral", "Côtes 3-5","Processus coracoïde","N. pectoraux"},
-			{"muscle subclavier","Cartilage 1ère côte","Face inférieure de la clavicule","N. pectoraux"},
+			{"muscle subclavier","Cartilage 1ère côte","Face inférieure de la clavicule","N. subclavier"},
 			{"muscle sterno-cléido-mastoïdien","Sternum et clavicule","Processus mastoïde et ligne nuchale supérieur","N. accessoire et plexus cervical"},
 			{"muscle deltoïde","Clavicule (tier latéral), acromion et épine de la scapula","Tubérosité deltoïdienne de l'humérus","N. axillaire"}
 			};
@@ -132,7 +132,7 @@ namespace Logic
 			{"muscle ilio-psoas psoas", "Corps et disques intervertébrals L1-L4, processus costiforme L1-L5", "Petit trochanter", "Plexus lombaire et n. fémoral (crural)"},
 			{"muscle carré des lombes", "Crête iliaque", "12e côte processus costiforme L1-L4", "N. subcostal et plexus lombaire"},
 			{"muscle tenseur du fascia lata", "Côté latéral de l'épine iliaque antéro-supérieure", "Tractus ilio-tibial, latéral à la tubérosité externe du tibia", "N. glutéal supérieur"},
-			{"muscle grand fessier", "Face postérieure et ext. de l'ilium, sacrum, coccyx, lig. sacro-tubéral profond : aile iliaque", "Tractus ilio-tibial, tubérosité glutéale du fémur, septum intermusculaire", "N. glutéal supérieur"},
+			{"muscle grand fessier", "Face postérieure et ext. de l'ilium, sacrum, coccyx, lig. sacro-tubéral profond : aile iliaque", "Tractus ilio-tibial, tubérosité glutéale du fémur, septum intermusculaire", "N. glutéal inférieur"},
 			{"muscle moyen fessier", "Face ext. de l'ilium, entre lignes glutéales postérieures et antérieures", "Grand trochanter", "N. glutéal supérieur"},
 			{"muscle petit fessier", "Face ext. de l'ilium, entre lignes glutéales antérieures et inférieures", "Grand trochanter", "N. glutéal supérieur"},
 			{"muscle piriforme", "Plusieurs digitations sur la face pelvienne du sacrum en dehors des trous sacrés antérieurs et bord de la grande échancrure sciatique", "Face médiale de la pointe du grand trochanter", "Plexus sacré"},

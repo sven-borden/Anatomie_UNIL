@@ -59,7 +59,7 @@
                                 </variation>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anatomie UNIL" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24">
-                                <rect key="frame" x="10" y="45" width="300" height="74"/>
+                                <rect key="frame" x="10" y="45" width="355" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="74" id="30"/>
                                 </constraints>
@@ -79,7 +79,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37">
-                                <rect key="frame" x="10" y="268" width="300" height="60"/>
+                                <rect key="frame" x="10" y="268" width="355" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="101" id="38">
                                         <variation key="heightClass=regular-widthClass=compact" constant="60"/>
@@ -107,7 +107,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51">
-                                <rect key="frame" x="10" y="336" width="300" height="60"/>
+                                <rect key="frame" x="10" y="336" width="355" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="57">
                                         <variation key="heightClass=regular-widthClass=compact" constant="60"/>
@@ -135,7 +135,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66">
-                                <rect key="frame" x="10" y="404" width="300" height="60"/>
+                                <rect key="frame" x="10" y="404" width="355" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="77" id="67">
                                         <variation key="heightClass=regular-widthClass=compact" constant="60"/>
@@ -160,7 +160,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="353">
-                                <rect key="frame" x="10" y="200" width="300" height="60"/>
+                                <rect key="frame" x="10" y="200" width="355" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="356">
                                         <variation key="heightClass=regular-widthClass=compact" constant="60"/>
@@ -606,7 +606,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choix de la partie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="802" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="20" y="20" width="280" height="32"/>
+                                <rect key="frame" x="20" y="20" width="335" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 <nil key="highlightedColor"/>
@@ -615,7 +615,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="895" translatesAutoresizingMaskIntoConstraints="NO" text="Origine">
-                                <rect key="frame" x="20" y="116" width="224" height="29"/>
+                                <rect key="frame" x="20" y="116" width="279" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 <nil key="highlightedColor"/>
@@ -651,7 +651,7 @@
                                 <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="923" translatesAutoresizingMaskIntoConstraints="NO">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="923" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="304" y="210" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="929" translatesAutoresizingMaskIntoConstraints="NO" text="Mouvement (à venir)">
@@ -837,7 +837,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="no9-cl-gqb">
-                                <rect key="frame" x="-39" y="30" width="343" height="492"/>
+                                <rect key="frame" x="16" y="129" width="343" height="492"/>
                                 <color key="backgroundColor" red="0.10588235294117647" green="0.49803921568627452" blue="0.74509803921568629" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="703"/>
@@ -966,7 +966,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="320">
-                                <rect key="frame" x="10" y="21" width="300" height="54"/>
+                                <rect key="frame" x="10" y="21" width="355" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="324"/>
                                 </constraints>
@@ -985,7 +985,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="326">
-                                <rect key="frame" x="10" y="110" width="300" height="102"/>
+                                <rect key="frame" x="10" y="110" width="355" height="102"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="102" id="330"/>
                                 </constraints>
@@ -1005,7 +1005,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="331">
-                                <rect key="frame" x="10" y="222" width="300" height="60"/>
+                                <rect key="frame" x="10" y="222" width="355" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="335">
                                         <variation key="heightClass=regular-widthClass=compact" constant="60"/>
@@ -1035,7 +1035,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="336">
-                                <rect key="frame" x="10" y="290" width="300" height="60"/>
+                                <rect key="frame" x="10" y="290" width="355" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="339">
                                         <variation key="heightClass=regular-widthClass=compact" constant="60"/>
@@ -1065,7 +1065,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="337">
-                                <rect key="frame" x="10" y="358" width="300" height="60"/>
+                                <rect key="frame" x="10" y="358" width="355" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="343">
                                         <variation key="heightClass=regular-widthClass=compact" constant="60"/>
@@ -1095,7 +1095,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="338">
-                                <rect key="frame" x="10" y="426" width="300" height="60"/>
+                                <rect key="frame" x="10" y="426" width="355" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="348">
                                         <variation key="heightClass=regular-widthClass=compact" constant="60"/>
@@ -1125,7 +1125,7 @@
                                 </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="452">
-                                <rect key="frame" x="10" y="561" width="300" height="2"/>
+                                <rect key="frame" x="10" y="660" width="355" height="2"/>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <color key="progressTintColor" red="0.090196078431372548" green="0.29019607843137257" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                                 </variation>
@@ -1301,4 +1301,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="h8D-UL-HTr"/>
     </inferredMetricsTieBreakers>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedScreenMetrics key="destination" type="retina47"/>
+    </simulatedMetricsContainer>
 </document>
