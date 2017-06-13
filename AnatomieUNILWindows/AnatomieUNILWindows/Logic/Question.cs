@@ -193,6 +193,8 @@ namespace AnatomieUNILWindows.Logic
 				case 4:
 					tmp = CaseAll(listQuestion);
 					break;
+				default:
+					break;
 			}
 			if (tmp == null)
 				return;//ERROR TODO
@@ -206,7 +208,7 @@ namespace AnatomieUNILWindows.Logic
 			Propo4 = tmp2[3];
 		}
 
-		private string[] MixArray(string[] input)
+		private static string[] MixArray(string[] input)
 		{
 			Random random = new Random();
 			List<string> randomList = new List<string>();

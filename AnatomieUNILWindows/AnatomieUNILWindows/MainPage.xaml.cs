@@ -69,10 +69,10 @@ namespace AnatomieUNILWindows
 				case "Terminaison":
 					WriteTo.isTerminaison = (sender as CheckBox).IsChecked;
 					break;
-				case "Innervation (BETA)":
+				case "Innervation":
 					WriteTo.isInnevervation = (sender as CheckBox).IsChecked;
 					break;
-				case "Mouvement":
+				case "Vascularisation (BETA)":
 					WriteTo.isMouvement = (sender as CheckBox).IsChecked;
 					break;
 			}

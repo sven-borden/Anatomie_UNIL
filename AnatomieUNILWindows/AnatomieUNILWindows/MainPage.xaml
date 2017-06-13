@@ -140,11 +140,11 @@
 				</Grid.ChildrenTransitions>
 				<StackPanel Grid.Column="0">
 					<CheckBox Content="Origine" IsChecked="True" Checked="CheckBox_Checked" Unchecked="CheckBox_Checked"/>
-					<CheckBox Content="Innervation (BETA)" />
+					<CheckBox Content="Innervation" />
 				</StackPanel>
 				<StackPanel Grid.Column="1">
 					<CheckBox Content="Terminaison" IsChecked="True" Checked="CheckBox_Checked" Unchecked="CheckBox_Checked"/>
-					<CheckBox Content="Mouvement" IsEnabled="False" Checked="CheckBox_Checked" Unchecked="CheckBox_Checked"/>
+					<CheckBox Content="Vascularisation (BETA)" IsEnabled="True" Checked="CheckBox_Checked" Unchecked="CheckBox_Checked"/>
 				</StackPanel>
 			</Grid>
         </StackPanel>
