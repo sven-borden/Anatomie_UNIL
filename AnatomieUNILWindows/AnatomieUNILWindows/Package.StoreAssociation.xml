@@ -364,10 +364,14 @@
     </ReservedNames>
   </ProductReservedInfo>
   <AccountPackageIdentityNames>
+    <MainPackageIdentityName>62394glaglasven.10Lapse</MainPackageIdentityName>
+    <MainPackageIdentityName>62394glaglasven.10mute</MainPackageIdentityName>
     <MainPackageIdentityName>62394glaglasven.10note</MainPackageIdentityName>
     <MainPackageIdentityName>62394glaglasven.BuyAware</MainPackageIdentityName>
     <MainPackageIdentityName>62394glaglasven.Clipstory</MainPackageIdentityName>
     <MainPackageIdentityName>62394glaglasven.Malagueta</MainPackageIdentityName>
+    <MainPackageIdentityName>62394glaglasven.MirrorIOT</MainPackageIdentityName>
+    <MainPackageIdentityName>62394glaglasven.QoqaSuisse</MainPackageIdentityName>
     <MainPackageIdentityName>62394glaglasven.Salt</MainPackageIdentityName>
     <MainPackageIdentityName>62394glaglasven.SJCAM</MainPackageIdentityName>
     <MainPackageIdentityName>62394glaglasven.UNIL</MainPackageIdentityName>

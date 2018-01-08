@@ -2,11 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using static AnatomieUNILWindows.Logic.Data;
+using static Logic.Data;
 
 namespace AnatomieUNILWindows.Logic
 {
-	public class Question : INotifyPropertyChanged
+    public class Question : INotifyPropertyChanged
 	{
 		#region Getter
 		public event PropertyChangedEventHandler PropertyChanged;

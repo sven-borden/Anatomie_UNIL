@@ -87,7 +87,7 @@ namespace AnatomieUNILWindows
 
 			ElementCompositionPreview.SetElementChildVisual(
 				MainGrid, _hostSprite);
-			_hostSprite.Brush = _compositor.CreateHostBackdropBrush();
+			//_hostSprite.Brush = _compositor.CreateHostBackdropBrush();
 		}
 
 		private void Size_Changed(object sender, SizeChangedEventArgs e)

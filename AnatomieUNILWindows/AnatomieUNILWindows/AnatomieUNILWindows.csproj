@@ -11,14 +11,14 @@
     <AssemblyName>AnatomieUNILWindows</AssemblyName>
     <DefaultLanguage>fr-FR</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.15063.0</TargetPlatformVersion>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.14393.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.14393.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
-    <PackageCertificateKeyFile>AnatomieUNILWindows_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>0ADFC2AC428E12ABE30632DA69513D4A611BB983</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>AnatomieUNILWindows_StoreKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>1CC09C173A57D2060DDA121ECD2D502D15BAFCEC</PackageCertificateThumbprint>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
@@ -128,6 +128,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="AnatomieUNILWindows_StoreKey.pfx" />
     <None Include="AnatomieUNILWindows_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
