@@ -23,8 +23,6 @@ Global
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
 		$0.StandardHeader = $1
-		$1.Text = 
-		$1.IncludeInNewFiles = True
 		version = 0.2
 	EndGlobalSection
 EndGlobal

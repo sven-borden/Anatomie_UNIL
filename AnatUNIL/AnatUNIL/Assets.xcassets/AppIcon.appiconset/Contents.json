@@ -1,9 +1,13 @@
 {
   "images": [
     {
-      "filename": "29x29.png",
-      "size": "29x29",
-      "scale": "1x",
+      "size": "20x20",
+      "scale": "2x",
+      "idiom": "iphone"
+    },
+    {
+      "size": "20x20",
+      "scale": "3x",
       "idiom": "iphone"
     },
     {
@@ -31,18 +35,6 @@
       "idiom": "iphone"
     },
     {
-      "filename": "57x57.png",
-      "size": "57x57",
-      "scale": "1x",
-      "idiom": "iphone"
-    },
-    {
-      "filename": "114x114.png",
-      "size": "57x57",
-      "scale": "2x",
-      "idiom": "iphone"
-    },
-    {
       "filename": "120x120.png",
       "size": "60x60",
       "scale": "2x",
@@ -53,6 +45,16 @@
       "size": "60x60",
       "scale": "3x",
       "idiom": "iphone"
+    },
+    {
+      "size": "20x20",
+      "scale": "1x",
+      "idiom": "ipad"
+    },
+    {
+      "size": "20x20",
+      "scale": "2x",
+      "idiom": "ipad"
     },
     {
       "filename": "29x29.png",
@@ -79,32 +81,8 @@
       "idiom": "ipad"
     },
     {
-      "filename": "50x50.png",
-      "size": "50x50",
-      "scale": "1x",
-      "idiom": "ipad"
-    },
-    {
-      "filename": "100x100.png",
-      "size": "50x50",
-      "scale": "2x",
-      "idiom": "ipad"
-    },
-    {
       "filename": "167x167.png",
       "size": "83.5x83.5",
-      "scale": "2x",
-      "idiom": "ipad"
-    },
-    {
-      "filename": "72x72.png",
-      "size": "72x72",
-      "scale": "1x",
-      "idiom": "ipad"
-    },
-    {
-      "filename": "144x144.png",
-      "size": "72x72",
       "scale": "2x",
       "idiom": "ipad"
     },
@@ -119,6 +97,12 @@
       "size": "76x76",
       "scale": "2x",
       "idiom": "ipad"
+    },
+    {
+      "filename": "Fond - copie.png",
+      "size": "1024x1024",
+      "scale": "1x",
+      "idiom": "ios-marketing"
     },
     {
       "role": "notificationCenter",

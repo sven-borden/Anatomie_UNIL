@@ -17,9 +17,9 @@ namespace Logic
 			{"muscle grand rond", "Bord inférieur et latéral de la scapula", "Crète du tubercule mineur de l'humérus", "N. subscapulaire", "Artère circonflexe postérieure de l'humérus"},
 			{"muscle subscapulaire", "Fosse subscapulaire", "Tubercule mineur de l'humérus", "N. subscapulaire", "Artère subscapulaire, artère axiliaire, artère suprascapulaire"},
 			{"muscle grand dorsal", "Processus épineux T7 à L5, aponévrose lombaire, crète iliaque partie postérieure, angle inférieur de la scapula, sacrum, côtes 10-12", "Crète du tubercule mineur de l'humérus", "N. thoraco dorsal", "Artère thoraco-dorsale"},
-			{"muscle dentelé antérieur", "9-10 digitations sur les côtes 1-9", "Angle supérieur, bord médial antérieur, angle inférieur de la scapula", "N. thoracique long"},
+			{"muscle dentelé antérieur", "9-10 digitations sur les côtes 1-9", "Angle supérieur, bord médial antérieur, angle inférieur de la scapula", "N. thoracique long", "Error"},
 			{"muscle petit rhomboïde", "Processus épineux C6 et C7", "Bord médial de la scapula, au-dessus de l'épine scapulaire", "N. dorsal de la scapula", "Artère scapulaire dorsale"},
-			{"muscle grand rhomboïde", "Processus épineux T1 à T4", "Bord médial de la scapula au-dessous de l'épine scapulaire", "N. dorsal de la scapula"},
+			{"muscle grand rhomboïde", "Processus épineux T1 à T4", "Bord médial de la scapula au-dessous de l'épine scapulaire", "N. dorsal de la scapula", "Error"},
 			{"muscle élévateur de la scapula", "Processus transverse, C1-C4", "Angle supérieur de la scapula", "N. dorsal de la scapula", "Artère cervicale transverse"},
 			{"muscle trapèze", "Protubérance occipitale ext. ligne nuchale supérieur, ligament nuchal supérieur, processus épineux C7-T12", "Clavicule (1/3 latéral), acromion et épine de la scapula", "N. accessoire et plexus cervical", "Artère cervicale, artère occipitale"},
 		};
@@ -53,7 +53,7 @@ namespace Logic
 			{"muscle extenseur propre du 5e doigt", "Epicondyle latéral de l'humérus", "Aponévrose dorsale du 5e doigt", "N. radial", "Artère interosseure antérieure"},
 			{"muscle extenseur ulnaire du carpe", "Epicondyle latéral de l'humérus, l'ulna, et ligament collatéral radial", "Base du 5e métacarpien, face postérieure", "N. radial", "Artère récurrente radiale, artère interosseuse postérieure"},
 			{"muscle supinateur", "Crète ulnaire du muscle supinateur, épicondyle latéral de l'humérus, ligament collatéral radial", "Face latérale et bord antérieur du radius", "N. radial", "Artère interosseuse récurrente"},
-			{"muscle long abducteur, du pouce", "Face postérieure membrane interosseuse, faces adjacentes de l'ulna et du radius", "Base du 1er métacarpien", "N. radial"},
+			{"muscle long abducteur, du pouce", "Face postérieure membrane interosseuse, faces adjacentes de l'ulna et du radius", "Base du 1er métacarpien", "N. radial", "Error"},
 			{"muscle court extenseur du pouce", "Face postérieure du radius et de la membane interosseuse", "Base phalange proximale du pouce", "N. radial", "Artère interosseuse postérieure et antérieure"},
 			{"muscle long extenseur du pouce", "Face postérieure de l'ulna et de la membrane interosseuse", "Base phalange distale du pouce", "N. radial", "Artère interosseuse postérieure et antérieure"},
 			{"muscle extenseur de l'index", "Tiers inférieur de face postérieur de l'ulna, membrane interosseuse", "Aponévrose dorsale de l'index", "N. radial", "Artère interosseuse postérieure et antérieure"},
@@ -109,7 +109,7 @@ namespace Logic
 			{"muscle épineux de la tête", "Inconstant", "Inconstant", "Branche postérieure nn. spinaux", ""},
 			{"muscle semi-épineux du cou", "Processus transverses T1-T6", "Processus épineux C2-C5", "Branche postérieure nn. spinaux", ""},
 			{"muscle semi-épineux du thorax", "Processus transverses T7-T12", "Processus épineux C6-T6", "Branche postérieure nn. spinaux", ""},
-			{"muscles rotateurs et multifides", "Processus transverse", "Processus épineux", "Branche postérieure nn. spinaux"},
+			{"muscles rotateurs et multifides", "Processus transverse", "Processus épineux", "Branche postérieure nn. spinaux", ""},
 			{"muscle inter-épineux", "Processus épineux (cervical et lombaire)", "Processus épineux adjacent", "Branche postérieure nn. spinaux", ""},
 			{"muscle inter-transversaire", "Processus transverse (cervical et lombaire", "Processus transverse adjacent", "Branche postérieure nn. spinaux", ""},
 		};
@@ -153,7 +153,7 @@ namespace Logic
 			{"muscle pectiné", "Pecten du pubis", "Ligne pectinéale au-dessous du petit trochanter", "N. fémoral (crural), et branche antérieure du n. obturateur", "Artère circonflexe médiale, artère obturatrice"},
 			{"muscle court petit adducteur (cuisse)", "Moitié inférieur de la branche descendante du pubis", "Tiers supérieur de la lèvre médial de la ligne âpre du fémur", "Branche antérieure du n. obturateur", "Artère obturatrice"},
 			{"muscle long moyen adducteur (cuisse)", "inférieur près de la symphyse pubienne", "Tiers moyen de la lèvre médial de la ligne âpre du fémur", "Branche antérieure du n. obturateur", "Artère obturatrice"},
-			{"muscle grand adducteur faisceau supérieur (cuisse)", "Branche de l'ischion", "Lèvre médial de la ligne âpre du fémur", "N. obturateur"},
+			{"muscle grand adducteur faisceau supérieur (cuisse)", "Branche de l'ischion", "Lèvre médial de la ligne âpre du fémur", "N. obturateur", ""},
 			{"muscle grand adducteur faisceau moyen (cuisse)", "Branche de l'ischion", "Lèvre médial de la ligne âpre du fémur", "N. obturateur", "Artère circonflexe médiale, artères perforantes, artère obturatrice, branche de l'artère poplitée"},
 			{"muscle grand adducteur faisceau inférieur (cuisse)", "Branche de l'ischion jusqu'à la tubérosité ischiatique", "Tubercule du grand adducteur sur l'épicondyle médial du fémur", "N. tibial", "Artère circonflexe médiale, artères perforantes, artère obturatrice, branche de l'artère poplitée"},
 			{"muscle gracile (droit interne)", "Branche descendante du pubis médial au m. grand adducteur", "Face médiale de la tubérosité du tibia (patte d'oie)", "Branche antérieure du n. obturateur", "Artère obturatrice, artère circonflexe médiale"},
@@ -164,11 +164,11 @@ namespace Logic
 		};
 
 		//Muscles de la jambe
-		public static readonly string[,] jambe = new string[14, 4]{
+		public static readonly string[,] jambe = new string[,]{
 			{"muscle tibial antérieur", "Face latérale du tibia, memb. inteross. fascia crural", "Face plantaire, cunéiforme médial, et métatarsien 1", "N. fibulaire profond", "Artère tibiale antérieure"},
-			{"muscle long extenseur des orteils", "Condyle latéral du tibia, tête et crête de la fibula, memb. inteross.", "Divisé en quatre tendons au niveau de la cheville, aponévrose dorsale des orteils 2-5", "N. fibulaire profond", "Artère dorsale du pied", "Artère tibiale antérieure"},
+            {"muscle long extenseur des orteils", "Condyle latéral du tibia, tête et crête de la fibula, memb. inteross.", "Divisé en quatre tendons au niveau de la cheville, aponévrose dorsale des orteils 2-5", "N. fibulaire profond", "Artère dorsale du pied, artère tibiale antérieure"},
 			{"muscle 3e fibulaire (péronier antérieur)", "Division du muscle long extenseur", "Base du métatarsien 5", "N. fibulaire profond", "Artère tibiale antérieure"},
-			{"muscle long extenseur de l'hallux", "Face médiale de la fibula (péroné) et memb. inteross.", "Phalange distale de l'hallux", "N. fibulaire profond", "Artère dorsale du pied", "Artère tibiale antérieure"},
+			{"muscle long extenseur de l'hallux", "Face médiale de la fibula (péroné) et memb. inteross.", "Phalange distale de l'hallux", "N. fibulaire profond", "Artère dorsale du pied, artère tibiale antérieure"},
 			{"muscle long fibulaire", "Fibula et fascia crural", "Traverse la plante du pied, tubercule du métatarsien 1 et cunéiforme médial (1er)", "N. fibulaire superficiel", "Artère fibulaire, artère tibiale antérieure"},
 			{"muscle court fibulaire", "2/3 dist. face latérale de la fibula", "Tubercule du métatarsien 5", "N. fibulaire superficiel", "Artère fibulaire"},
 			{"muscle triceps sural - gastrocnémien chef médial", "Côté proximal du condyle fémoral médial", "Tendon calcanéen (d'Achille), tubérosité postérieur du calcanéus", "N. tibial", "Artère poplitée"},
@@ -183,13 +183,13 @@ namespace Logic
 
 		//Muscle court du pied
 		public static readonly string[,] pied = new string[,]{
-			{"muscle court extenseur des orteils", "Calcanéus (face dorsale)", "Aponévroses dorsales des orteils 2-4", "N. fibulaire profond"},
-			{"muscle court extenseur de l'hallux", "Calcanéus (face dorsale)", "Face dorsale de la phalange proximale de l'hallux", "N. fibulaire profond"},
+			{"muscle court extenseur des orteils", "Calcanéus (face dorsale)", "Aponévroses dorsales des orteils 2-4", "N. fibulaire profond",""},
+			{"muscle court extenseur de l'hallux", "Calcanéus (face dorsale)", "Face dorsale de la phalange proximale de l'hallux", "N. fibulaire profond",""},
 			{"muscle abducteur de l'hallux", "Processus médial de la tubérosité du calcanéus", "Sésamoïde médial et base de la phalange prox. de l'hallux", "N. plantaire médial", "Artère plantaire"},
 			{"muscle court fléchisseur de l'hallux", "Os cuboïde et lig. plantaire", "Deux chefs, sur les deux sésamoïdes et la base de la phalange prox. de l'hallux", "N. plantaire médial", "Artères plantaires"},
 			{"muscle adducteur de l'hallux chef oblique", "Base des métatarsiens 2-4, du 3e cunéiforme (latéral) et du cuboïde", "Os sésamoïde latéral & phalange prox. de l'hallux", "N. plantaire latéral", "Artères plantaires"},
 			{"muscle adducteur de l'hallux chef transverse", "capsule art. métatarsophalangiennes des orteils 3-5", "Os sésamoïde latéral", "N. plantaire latéral", "Artères plantaires"},
-			{"muscle abducteur du 5e orteil", "Tubérosité ext. du calcanéus et aponévrose plantaire", "Côté latéral base phalange prox. du petit orteil", "N. plantaire latéral"},
+			{"muscle abducteur du 5e orteil", "Tubérosité ext. du calcanéus et aponévrose plantaire", "Côté latéral base phalange prox. du petit orteil", "N. plantaire latéral",""},
 			{"muscle court fléchisseur du 5e orteil", "Base du 5e métatarsien", "Base phalange prox. du petit orteil", "N. plantaire latéral", "Artère plantaire"},
 			{"muscle opposant du 5e orteil", "Lig. plantaire long et gaine du m. long fibulaire", "Bord latéral du 5e métatarsien", "N. plantaire latéral", "Artère plantaire"},
 			{"muscle court fléchisseur des orteils", "Tubérosité postérieur du calcanéus et aponévrose plantaire", "Par des tendons divisés à la phalange moyenne des orteils 2-5", "N. plantaire latéral", "Artère plantaire médiale"},

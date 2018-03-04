@@ -5,9 +5,9 @@
 	<key>CFBundleIdentifier</key>
 	<string>com.glaglasven.anatomieunil</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.15</string>
+	<string>1.17</string>
 	<key>CFBundleVersion</key>
-	<string>1.15</string>
+	<string>1.17.2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MinimumOSVersion</key>
